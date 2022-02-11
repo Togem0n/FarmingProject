@@ -1,5 +1,53 @@
 # Overview
 
+[Theme](# theme)
+
+[Core Gameplay](# core gameplay)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -12,7 +60,7 @@
 
 Farming, Building connection, Story base.
 
-[CoreGameplay link](## Core Gameplay)
+[CoreGameplay link](# Core Gameplay)
 
 
 
