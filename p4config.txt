@@ -1,0 +1,6 @@
+P4IGNORE=C:\Users\kai.wang\Perforce\kai.wang_DESKTOP-VE1PF6U_4915\FG21-FT_GP2_Team08\p4ignore.txt;p4ignore.txt
+P4CHARSET=none
+P4INITROOT=$configdir
+P4USER=Kai
+P4PORT=rsh:p4d.exe -i -J off -r "$configdir\.p4root"
+P4CLIENT=Kai-dvcs-1644528810

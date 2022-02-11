@@ -1,0 +1,12 @@
+Perforce server info:
+	2022/02/10 22:33:37 pid 21532 Kai@Kai-dvcs-1644528810 unknown [Helix P4V/NTX64/2021.4/2227050/v91] 'user-info'
+--- db.config
+---   pages in+out+cached 11160+0+2
+---   locks read/write 11158/0 rows get+pos+scan put+del 11158+0+0 0+0
+
+Perforce server info:
+	2022/02/10 22:33:37 pid 21448 Kai@Kai-dvcs-1644528810 unknown [Helix P4V/NTX64/2021.4/2227050/v91] 'user-info'
+--- db.config
+---   pages in+out+cached 11160+0+2
+---   locks read/write 11158/0 rows get+pos+scan put+del 11158+0+0 0+0
+

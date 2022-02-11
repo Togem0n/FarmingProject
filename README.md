@@ -1,4 +1,78 @@
-# FarmingProject
+# Overview
 
-Git test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Theme
+
+Farming, Building connection, Story base.
+
+[ThemeLink](## Theme)
+
+
+
+## Core Gameplay
+
+
+
+
 
