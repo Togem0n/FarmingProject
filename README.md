@@ -1,8 +1,8 @@
 # Overview
 
-[Theme](# theme)
+[Theme](#theme)
 
-[Core Gameplay](# core gameplay)
+[Core Gameplay](#core-gameplay)
 
 
 
