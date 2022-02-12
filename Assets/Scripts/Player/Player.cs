@@ -10,6 +10,7 @@ public class Player : SingletonMonoBehaviour<Player>
     private float xInput;
     private float yInput;
     private Vector2 inputVector;
+    private Vector2 moveDirection;
     private float movmentSpeed;
     private Direction playerDirection;
     private bool _playerInputDisabled = false;
@@ -19,12 +20,14 @@ public class Player : SingletonMonoBehaviour<Player>
 
     #region Components
     private Rigidbody2D rb;
+    private Animator animator;
     #endregion
 
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();    
     }
 
     private void Update()
@@ -47,7 +50,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
             if (!Mathf.Approximately(inputVector.x, 0.0f) || !Mathf.Approximately(inputVector.y, 0.0f))
             {
-                inputVector.Normalize();
+                moveDirection.Set(inputVector.x, inputVector.y);
+                moveDirection.Normalize();
             }
 
             if(xInput != 0 || yInput != 0)
@@ -79,5 +83,10 @@ public class Player : SingletonMonoBehaviour<Player>
         Vector2 move = new Vector2(xInput * movmentSpeed * Time.deltaTime, yInput * movmentSpeed * Time.deltaTime);
 
         rb.MovePosition(rb.position + move);
+    
+        animator.SetFloat("xInput", moveDirection.x);
+        animator.SetFloat("yInput", moveDirection.y);
+        animator.SetFloat("speed", move.normalized.magnitude);
+
     }
 }
