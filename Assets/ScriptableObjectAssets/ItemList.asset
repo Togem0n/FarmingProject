@@ -9,27 +9,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21c7395f7b0ca9c459523237347ce1bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9897315865dd7c04ab467a28fbfe7b7d, type: 3}
   m_Name: ItemList
   m_EditorClassIdentifier: 
   itemDetails:
   - itemCode: 0
     itemType: 0
-    itemName: Corn
-    itemDescription: Canyon Oak Acron
+    itemName: 
+    itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 0}
     itemUseGridRadius: 0
     itemUseRadius: 0
     isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
+    canBePickedUp: 0
+    canBeDropped: 0
     canBeEaten: 0
-    canBeCarried: 1
+    canBeCarried: 0
   - itemCode: 1
     itemType: 0
     itemName: Corn
-    itemDescription: NMSL
+    itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 21300000, guid: 466045dcbda81a94ba506b0140afd117, type: 3}
     itemUseGridRadius: 0
@@ -105,214 +105,6 @@ MonoBehaviour:
     canBeEaten: 0
     canBeCarried: 0
   - itemCode: 7
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 8
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 9
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 10
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 11
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 12
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 13
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 14
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 15
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 16
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 17
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 18
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 19
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 20
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 21
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 22
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 23
     itemType: 0
     itemName: 
     itemDescription: 

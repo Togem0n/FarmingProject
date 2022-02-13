@@ -1,133 +1,105 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 {
-    private Dictionary<int, ItemDetails> itemDetailsDictionary;
+    private Dictionary<int, ItemDetails> itemDetailsDictionary; // using itemCode to look up itemDetail
 
-    public List<InventoryItem>[] inventoryLists;
+    [SerializeField] private ItemLibrary itemLibrary; // ItemLibrary
 
-    [HideInInspector] public int[] inventoryListCapacityIntArray; // the index of the array is the inventory list(from the InventoryLocation enum), and the
-                                                                  // value is the capacity of that inventory list
-
-    [SerializeField] private SO_ItemList itemList = null;
+    private List<InventoryItem> inventoryList = new List<InventoryItem>(); // player's inventory list
+    public List<InventoryItem> InventoryList { get => inventoryList; }
 
     private void Start()
     {
-        CrateInventoryLists();
-
-        CreateIteDetailsDictionary();
-    }
-
-    private void CrateInventoryLists()
-    {
-        inventoryLists = new List<InventoryItem>[(int)InventoryLocation.count];
-
-        for(int i=0; i < (int)InventoryLocation.count; i++)
-        {
-            inventoryLists[i] = new List<InventoryItem>();
-        }
-
-        inventoryListCapacityIntArray = new int[(int)InventoryLocation.count];
-
-        inventoryListCapacityIntArray[(int)InventoryLocation.player] = Settings.playerInitialInventoryCapacity;
+        InitItemDetailsDictionary();
     }
 
     /// <summary>
-    /// Populates the itemDatilsDitionary fro the sriptable object ites list
+    /// Init the itemDatilsDitionary from the sriptable object item list
     /// </summary>
-    private void CreateIteDetailsDictionary()
+    private void InitItemDetailsDictionary()
     {
         itemDetailsDictionary = new Dictionary<int, ItemDetails>();
 
-        foreach(ItemDetails itemDetails in itemList.itemDetails)
+        foreach (ItemDetails itemDetails in itemLibrary.itemDetails)
         {
             itemDetailsDictionary.Add(itemDetails.itemCode, itemDetails);
         }
     }
 
-    /// <summary>
-    /// Add an item to the inventory list for the inventoryLocation and then destory the gameObjectToDelete
-    /// </summary>
-    public void AddItem(InventoryLocation inventoryLocation, Item item, GameObject gameObjectToDelete)
+    public void AddItem(Item item, GameObject itemToDelete)
     {
-        AddItem(inventoryLocation, item);
+        AddItem(item);
 
-        Destroy(gameObjectToDelete);
+        Destroy(itemToDelete);
     }
 
     /// <summary>
-    /// Add an item to the invenotry list for the inventoryLocation
+    /// Add an item to the invenotry
     /// </summary>
-
-    public void AddItem(InventoryLocation inventoryLocation, Item item)
+    public void AddItem(Item item)
     {
         int itemCode = item.ItemCode;
-        List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
 
         // Check if inventory already contains the item
-        int itemPosition = FindItemInInventory(inventoryLocation, itemCode);
+        int itemIndex = CheckIfItemInInventory(itemCode);
 
-        if(itemPosition != -1)
+        if (itemIndex != -1)
         {
-            AddItemAtPosition(inventoryList, itemCode, itemPosition);
+            AddItemAtIndex(InventoryList, itemCode, itemIndex);
         }
         else
         {
-            AddItemAtPosition(inventoryList, itemCode);
+            AddItemAtIndex(InventoryList, itemCode);
         }
 
         // Send event that inventory has been updated
-        EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryLists[(int)inventoryLocation]);
+        EventHandler.CallInventoryUpdatedEvent(InventoryList);
     }
+
 
     /// <summary>
     /// Add item to the end of the inventory
     /// </summary>
-    private void AddItemAtPosition(List<InventoryItem> inventoryList, int itemCode)
+    private void AddItemAtIndex(List<InventoryItem> inventoryList, int itemCode)
     {
         InventoryItem inventoryItem = new InventoryItem();
 
         inventoryItem.itemCode = itemCode;
         inventoryItem.itemQuantity = 1;
         inventoryList.Add(inventoryItem);
-
-        //DebugPrintInventoryList(inventoryList);
+        PrintInventoryList(inventoryList);
     }
 
     /// <summary>
-    /// Add item to position in the inventory
+    /// Add item to the inventory
     /// </summary>
-    private void AddItemAtPosition(List<InventoryItem> inventoryList, int itemCode, int itemPosition)
+    private void AddItemAtIndex(List<InventoryItem> inventoryList, int itemCode, int itemIndex)
     {
         InventoryItem inventoryItem = new InventoryItem();
 
-        int quantity = inventoryList[itemPosition].itemQuantity + 1;
+        int quantity = inventoryList[itemIndex].itemQuantity + 1;
         inventoryItem.itemQuantity = quantity;
         inventoryItem.itemCode = itemCode;
-        inventoryList[itemPosition] = inventoryItem;
-
-        //DebugPrintInventoryList(inventoryList);
+        inventoryList[itemIndex] = inventoryItem;
+        PrintInventoryList(inventoryList);
     }
 
     /// <summary>
-    /// Find if an itemCode is already in the inventory. Return the position
-    /// in the inventory list or -1 if the item is not in the inventory
+    /// return index if item in inventory list
+    /// return -1 if not
     /// </summary>
-    private int FindItemInInventory(InventoryLocation inventoryLocation, int itemCode)
+    private int CheckIfItemInInventory(int itemCode)
     {
-        List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
-
-        for(int i = 0; i < inventoryList.Count; i++)
+        for (int i = 0; i < InventoryList.Count; i++)
         {
-            if(inventoryList[i].itemCode == itemCode)
+            if (InventoryList[i].itemCode == itemCode)
             {
                 return i;
             }
         }
-
         return -1;
     }
 
@@ -135,7 +107,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     {
         ItemDetails itemDetails;
 
-        if(itemDetailsDictionary.TryGetValue(itemCode, out itemDetails))
+        if (itemDetailsDictionary.TryGetValue(itemCode, out itemDetails))
         {
             return itemDetails;
         }
@@ -145,10 +117,10 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         }
     }
 
-    private void DebugPrintInventoryList(List<InventoryItem> inventoryList)
+    private void PrintInventoryList(List<InventoryItem> inventoryList)
     {
-        
-        foreach(InventoryItem inventoryItem in inventoryList)
+
+        foreach (InventoryItem inventoryItem in inventoryList)
         {
             Debug.Log("Item Name: " + InventoryManager.Instance.GetItemDetails(inventoryItem.itemCode).itemName + "   Item Quantity: " + inventoryItem.itemQuantity);
         }

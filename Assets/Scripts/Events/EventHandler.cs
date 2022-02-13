@@ -12,15 +12,15 @@ public delegate void MovementDelegate(float inputX, float inputY, bool isWalking
 public static class EventHandler
 {
     // Inventory Updated Event
-    public static event Action<InventoryLocation, List<InventoryItem>> InventoryUpdatedEvent;
+    public static event Action<List<InventoryItem>> InventoryUpdatedEvent;
 
     // Inventory Event call For Publishers
 
-    public static void CallInventoryUpdatedEvent(InventoryLocation inventoryLocation, List<InventoryItem> inventoryList)
+    public static void CallInventoryUpdatedEvent(List<InventoryItem> inventoryList)
     {
         if(InventoryUpdatedEvent != null)
         {
-            InventoryUpdatedEvent(inventoryLocation, inventoryList);
+            InventoryUpdatedEvent(inventoryList);
         }
     }
 

@@ -13,7 +13,7 @@ public class ItemPickUp : MonoBehaviour
 
             if (itemDetails.canBePickedUp)
             {
-                InventoryManager.Instance.AddItem(InventoryLocation.player, item, collision.gameObject);
+                InventoryManager.Instance.AddItem(item, collision.gameObject);
             }
         }
     }
