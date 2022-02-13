@@ -21,13 +21,15 @@ public class Player : SingletonMonoBehaviour<Player>
     #region Components
     private Rigidbody2D rb;
     private Animator animator;
+    private Camera mainCamera;
     #endregion
 
     protected override void Awake()
     {
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -88,5 +90,10 @@ public class Player : SingletonMonoBehaviour<Player>
         animator.SetFloat("yInput", moveDirection.y);
         animator.SetFloat("speed", move.normalized.magnitude);
 
+    }
+
+    public Vector3 GetPlyerViewportPosition()
+    {
+        return mainCamera.WorldToViewportPoint(transform.position);
     }
 }

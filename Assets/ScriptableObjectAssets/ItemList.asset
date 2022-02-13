@@ -15,7 +15,7 @@ MonoBehaviour:
   itemDetails:
   - itemCode: 0
     itemType: 0
-    itemName: 
+    itemName: Corn
     itemDescription: Canyon Oak Acron
     itemLongDescription: 
     itemSprite: {fileID: 0}
@@ -26,7 +26,33 @@ MonoBehaviour:
     canBeDropped: 1
     canBeEaten: 0
     canBeCarried: 1
-  - itemCode: 0
+  - itemCode: 1
+    itemType: 0
+    itemName: Corn
+    itemDescription: NMSL
+    itemLongDescription: 
+    itemSprite: {fileID: 21300000, guid: 466045dcbda81a94ba506b0140afd117, type: 3}
+    itemUseGridRadius: 0
+    itemUseRadius: 0
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 2
+    itemType: 0
+    itemName: Parsnip
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 21300000, guid: d11eca11a088fab4cb1ac7aa0a3f7a2e, type: 3}
+    itemUseGridRadius: 0
+    itemUseRadius: 0
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 3
     itemType: 0
     itemName: 
     itemDescription: 
@@ -39,7 +65,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 4
     itemType: 0
     itemName: 
     itemDescription: 
@@ -52,7 +78,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 5
     itemType: 0
     itemName: 
     itemDescription: 
@@ -65,7 +91,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 6
     itemType: 0
     itemName: 
     itemDescription: 
@@ -78,7 +104,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 7
     itemType: 0
     itemName: 
     itemDescription: 
@@ -91,7 +117,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 8
     itemType: 0
     itemName: 
     itemDescription: 
@@ -104,7 +130,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 9
     itemType: 0
     itemName: 
     itemDescription: 
@@ -117,7 +143,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 10
     itemType: 0
     itemName: 
     itemDescription: 
@@ -130,7 +156,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 11
     itemType: 0
     itemName: 
     itemDescription: 
@@ -143,7 +169,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 12
     itemType: 0
     itemName: 
     itemDescription: 
@@ -156,7 +182,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 13
     itemType: 0
     itemName: 
     itemDescription: 
@@ -169,7 +195,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 14
     itemType: 0
     itemName: 
     itemDescription: 
@@ -182,7 +208,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 15
     itemType: 0
     itemName: 
     itemDescription: 
@@ -195,7 +221,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 16
     itemType: 0
     itemName: 
     itemDescription: 
@@ -208,7 +234,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 17
     itemType: 0
     itemName: 
     itemDescription: 
@@ -221,7 +247,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 18
     itemType: 0
     itemName: 
     itemDescription: 
@@ -234,7 +260,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 19
     itemType: 0
     itemName: 
     itemDescription: 
@@ -247,7 +273,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 20
     itemType: 0
     itemName: 
     itemDescription: 
@@ -260,7 +286,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 21
     itemType: 0
     itemName: 
     itemDescription: 
@@ -273,7 +299,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 22
     itemType: 0
     itemName: 
     itemDescription: 
@@ -286,33 +312,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
-  - itemCode: 0
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 0
-    itemType: 0
-    itemName: 
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
-  - itemCode: 0
+  - itemCode: 23
     itemType: 0
     itemName: 
     itemDescription: 

@@ -1,3 +1,10 @@
+public enum InventoryLocation
+{
+    player,
+    chest,
+    count
+}
+
 public enum ToolEffect
 {
     none,
@@ -9,7 +16,8 @@ public enum Direction
     up,
     down,
     left,
-    right
+    right,
+    none
 }
 
 public enum ItemType
