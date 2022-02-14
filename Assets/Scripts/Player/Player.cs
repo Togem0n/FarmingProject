@@ -37,6 +37,8 @@ public class Player : SingletonMonoBehaviour<Player>
         if (!PlayerInputDisabled)
         {
             GetPlayerInput();
+
+            PlayerTestInput();
         }
     }
 
@@ -128,4 +130,18 @@ public class Player : SingletonMonoBehaviour<Player>
         animator.SetFloat("yInput", moveDirection.y);
         animator.SetFloat("speed", 0);
     }
+
+    private void PlayerTestInput()
+    {
+        if (Input.GetKey(KeyCode.T))
+        {
+            TimeManager.Instance.TestAdvanceGameMinute();
+        }
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            TimeManager.Instance.TestAdvanceGameDay();
+        }
+    }
+
 }
