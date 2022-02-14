@@ -5,10 +5,19 @@ using UnityEngine;
 public class UISlotsContainer : MonoBehaviour
 {
     [SerializeField] private Sprite blankSprite = null;
+    [SerializeField] private PlayerData data;
+    [SerializeField] private Item item0;
 
     private void Awake()
     {
+
     }
+
+    private void Start()
+    {
+
+    }
+
     private void OnEnable()
     {
         EventHandler.InventoryUpdatedEvent += InventoryUpdated;

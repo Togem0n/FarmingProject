@@ -34,12 +34,18 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void Update()
     {
-        GetPlayerInput();
+        if (!PlayerInputDisabled)
+        {
+            GetPlayerInput();
+        }
     }
 
     private void FixedUpdate()
     {
-        PlayerMovement();
+        if (!PlayerInputDisabled)
+        {
+            PlayerMovement();
+        }
     }
 
     private void GetPlayerInput()
@@ -95,5 +101,31 @@ public class Player : SingletonMonoBehaviour<Player>
     public Vector3 GetPlyerViewportPosition()
     {
         return mainCamera.WorldToViewportPoint(transform.position);
+    }
+
+    public void EnablePlayerInput()
+    {
+        PlayerInputDisabled = false;
+    }
+
+    public void DisablePlayerInput()
+    {
+        PlayerInputDisabled = true;
+    }
+
+    public void DisablePlayerInputAndResetMovement()
+    {
+        DisablePlayerInput();
+
+        ResetMovement();
+    }
+
+    private void ResetMovement()
+    {
+        xInput = 0f;
+        yInput = 0f;
+        animator.SetFloat("xInput", moveDirection.x);
+        animator.SetFloat("yInput", moveDirection.y);
+        animator.SetFloat("speed", 0);
     }
 }

@@ -59,7 +59,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -181,6 +181,7 @@ MonoBehaviour:
   inventorySlotHighlight: {fileID: 7607463699269300959}
   inventorySlotImage: {fileID: 4058898842366144643}
   textMeshProUGUI: {fileID: 736267820396483874}
+  inventoryBar: {fileID: 0}
   itemDetails:
     itemCode: 0
     itemType: 0
@@ -195,6 +196,7 @@ MonoBehaviour:
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
+  itemPrefab: {fileID: 2353854530617570992, guid: 56f7006e65c88e4498ca1e62d03dc6ed, type: 3}
   itemQuantity: 0
 --- !u!1 &6537679595930403916
 GameObject:
@@ -255,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

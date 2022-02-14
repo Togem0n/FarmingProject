@@ -6,4 +6,5 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [SerializeField] public float movementSpeed;
+    [SerializeField] public int currentInventoryCapacity;
 }

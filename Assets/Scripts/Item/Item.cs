@@ -5,8 +5,15 @@ public class Item : MonoBehaviour
     [SerializeField]
     private int _itemCode;
 
+    [SerializeField]
+    private int _itemQuantity;
+
+    [SerializeField]
+    private ItemLibrary itemLibrary;
+
     private SpriteRenderer spriteRenderer;
     public int ItemCode { get => _itemCode; set => _itemCode = value; }
+    public int ItemQuantity { get => _itemQuantity; set => _itemQuantity = value; }
 
     private void Awake()
     {
@@ -15,7 +22,12 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        if(ItemCode != 0)
+        if(ItemQuantity == 0)
+        {
+            ItemQuantity = 1;
+        }
+
+        if (ItemCode != 0)
         {
             Init(ItemCode);
         }
@@ -23,6 +35,6 @@ public class Item : MonoBehaviour
 
     public void Init(int itemCode)
     {
-
+        spriteRenderer.sprite = itemLibrary.itemDetails[ItemCode].itemSprite;
     }
 }
