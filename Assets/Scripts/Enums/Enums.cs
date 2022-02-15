@@ -45,3 +45,28 @@ public enum Season
     none,
     count,
 }
+
+public enum GridBoolProperty
+{
+    diggable,
+    canDropItem,
+    canPlaceFurniture,
+    isPath,
+    isNPCObstacle
+}
+
+public enum GridType
+{
+    diggable,
+    canDropItem,
+    canPlaceFurniture,
+    isPath,
+    isNPCObstacle
+}
+
+public enum SceneName
+{
+    Scene1_Farm,
+    Scene2_Field,
+    Scene3_Cabin
+}
