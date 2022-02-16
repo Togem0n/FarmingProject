@@ -32,6 +32,11 @@ public class Player : SingletonMonoBehaviour<Player>
         mainCamera = Camera.main;
     }
 
+    private void Start()
+    {
+        EventHandler.AfterSceneLoadFadeInEvent += EnablePlayerInput;
+    }
+
     private void Update()
     {
         if (!PlayerInputDisabled)

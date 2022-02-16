@@ -68,6 +68,7 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
     {
         if (!isFading)
         {
+            Player.Instance.DisablePlayerInputAndResetMovement();
             StartCoroutine(FadeAndSwitchScenes(sceneName, spawnPosition));
         }
     }
