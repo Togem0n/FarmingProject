@@ -30,13 +30,21 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private int draggedItemCode;
     private int draggedItemQuantity;
 
+    private void OnEnable()
+    {
+        EventHandler.AfterSceneLoadEvent += SceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= SceneLoaded;
+    }
 
     private void Start()
     {
         SetSlotID(); 
 
         mainCamera = Camera.main;
-        parentItem = GameObject.FindGameObjectWithTag("ItemParentTransform").transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -109,5 +117,10 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private int GetSlotID()
     {
         return id;
+    }
+
+    public void SceneLoaded()
+    {
+        parentItem = GameObject.FindGameObjectWithTag("ItemParentTransform").transform;
     }
 }
