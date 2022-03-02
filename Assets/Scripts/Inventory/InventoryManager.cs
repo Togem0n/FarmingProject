@@ -105,6 +105,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         inventoryItem.itemCode = itemCode;
         inventoryItem.itemQuantity = inventoryList[itemIndex].itemQuantity + itemQuantity;
         inventoryList[itemIndex] = inventoryItem;
+        EventHandler.CallInventoryUpdatedEvent(InventoryList);
     }
 
 

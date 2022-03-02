@@ -76,13 +76,13 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         if(draggedItem != null)
         {
             Destroy(draggedItem);
-
             // if drag ends over inventory bar, swap
-            if(eventData.pointerCurrentRaycast.gameObject != null && eventData.pointerCurrentRaycast.gameObject.GetComponent<UIInventorySlot>() != null)
+            if (eventData.pointerCurrentRaycast.gameObject != null && eventData.pointerCurrentRaycast.gameObject.GetComponent<UIInventorySlot>() != null)
             {
                 int endId = int.Parse(eventData.pointerCurrentRaycast.gameObject.name.ToString().Substring(15));
                 InventoryManager.Instance.AddItemAtIndex(draggedItemCode, id, draggedItemQuantity);
                 InventoryManager.Instance.SwapItem(id, endId);
+                Destroy(draggedItem);
             }
             else
             {
@@ -99,11 +99,23 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -mainCamera.transform.position.z));
 
-            GameObject itemGameObject = Instantiate(itemPrefab, worldPosition, Quaternion.identity, parentItem);
-            Item item = itemGameObject.GetComponent<Item>();
-            item.ItemCode = draggedItemCode;
-            item.ItemQuantity = draggedItemQuantity;
-            Debug.Log(item.ItemQuantity);
+            // check if can drop
+            Vector3Int gridPostion = GridPropertyManager.Instance.grid.WorldToCell(worldPosition);
+            GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(gridPostion.x, gridPostion.y);
+
+            if(gridPropertyDetails != null && gridPropertyDetails.canDropItem)
+            {
+                GameObject itemGameObject = Instantiate(itemPrefab, worldPosition, Quaternion.identity, parentItem);
+                Item item = itemGameObject.GetComponent<Item>();
+                item.ItemCode = draggedItemCode;
+                item.ItemQuantity = draggedItemQuantity;
+                Debug.Log(item.ItemQuantity);
+            }
+            else
+            {
+                InventoryManager.Instance.AddItemAtIndex(draggedItemCode, id, draggedItemQuantity);
+            }
+
         }
     }
 

@@ -9,7 +9,6 @@ using System;
 public class TilemapGridProperties : MonoBehaviour
 {
     private Tilemap tilemap;
-    private Grid grid;
     [SerializeField] private GridPropertyScriptableObjects gridPropertyScriptableObjects;
     [SerializeField] private GridBoolProperty gridBoolProperty = GridBoolProperty.diggable;
 
