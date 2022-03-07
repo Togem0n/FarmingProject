@@ -15,6 +15,7 @@ public class UIInventoryBar : MonoBehaviour
     private bool _isInventoryBarPositionBottom = true;
 
     public bool IsInventoryBarPositionBottom { get => _isInventoryBarPositionBottom; set => _isInventoryBarPositionBottom = value; }
+    public UIInventorySlot[] InventorySlots { get => inventorySlots; set => inventorySlots = value; }
 
     private void Awake()
     {
@@ -33,6 +34,46 @@ public class UIInventoryBar : MonoBehaviour
     private void Update()
     {
         SwitchInventoryBarPosition();
+    }
+
+    public void ClearHighLightOnInventorySlots()
+    {
+        if(InventorySlots.Length > 0)
+        {
+            for(int i = 0; i < InventorySlots.Length; i++)
+            {
+                if (InventorySlots[i].isSelected)
+                {
+                    InventorySlots[i].isSelected = false;
+                    InventorySlots[i].inventorySlotHighlight.color = new Color(0f, 0f, 0f, 0f);
+                    InventoryManager.Instance.ClearSelectedInventoryItem();
+                }
+            }
+        }
+    }
+
+    public void SetHighlightedInventorySlots()
+    {
+        if(InventorySlots.Length > 0)
+        {
+            for(int i = 0; i < InventorySlots.Length; i++)
+            {
+                SetHighlightedInventorySlots(i);
+            }
+        }
+    }
+
+    public void SetHighlightedInventorySlots(int itemPosition)
+    {
+        if(InventorySlots.Length > 0 && InventorySlots[itemPosition].itemDetails != null)
+        {
+            if (InventorySlots[itemPosition].isSelected)
+            {
+                InventorySlots[itemPosition].inventorySlotHighlight.color = new Color(1f, 1f, 1f, 1f);
+
+                InventoryManager.Instance.SetSelectedInventoryItem(InventorySlots[itemPosition].itemDetails.itemCode);
+            }
+        }
     }
 
     private void SwitchInventoryBarPosition()

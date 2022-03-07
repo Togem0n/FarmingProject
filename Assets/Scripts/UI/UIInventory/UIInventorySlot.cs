@@ -6,11 +6,13 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     private Camera mainCamera;
     private Transform parentItem;
     private GameObject draggedItem;
+
+    private GridCursor gridCursor;
 
     public Image inventorySlotHighlight;
     public Image inventorySlotImage;
@@ -25,6 +27,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [SerializeField] private GameObject itemPrefab = null;
 
     [HideInInspector] public int itemQuantity;
+
+    [HideInInspector] public bool isSelected = false;
 
     private int id;
     private int draggedItemCode;
@@ -42,9 +46,17 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     private void Start()
     {
-        SetSlotID(); 
+        SetSlotID();
+        gridCursor = FindObjectOfType<GridCursor>();
 
         mainCamera = Camera.main;
+    }
+
+    private void ClearCursors()
+    {
+        gridCursor.DisableCursor();
+
+        gridCursor.SelectedItemtype = ItemType.none;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -61,6 +73,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             draggedItemImage.sprite = inventorySlotImage.sprite;
             InventoryManager.Instance.RemoveItemAtIndex(id);
         }
+
+        SetSelectedItem();
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -69,6 +83,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             draggedItem.transform.position = Input.mousePosition;
         }
+
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -83,6 +98,9 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                 InventoryManager.Instance.AddItemAtIndex(draggedItemCode, id, draggedItemQuantity);
                 InventoryManager.Instance.SwapItem(id, endId);
                 Destroy(draggedItem);
+
+                inventoryBar.InventorySlots[endId].SetSelectedItem();
+
             }
             else
             {
@@ -103,13 +121,16 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Vector3Int gridPostion = GridPropertyManager.Instance.grid.WorldToCell(worldPosition);
             GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(gridPostion.x, gridPostion.y);
 
-            if(gridPropertyDetails != null && gridPropertyDetails.canDropItem)
+            //if (gridCursor.CursorPositionIsValid) 
+            //{ 
+            if (gridPropertyDetails != null && gridPropertyDetails.canDropItem)
             {
                 GameObject itemGameObject = Instantiate(itemPrefab, worldPosition, Quaternion.identity, parentItem);
                 Item item = itemGameObject.GetComponent<Item>();
                 item.ItemCode = draggedItemCode;
                 item.ItemQuantity = draggedItemQuantity;
                 Debug.Log(item.ItemQuantity);
+                inventoryBar.ClearHighLightOnInventorySlots();
             }
             else
             {
@@ -135,4 +156,58 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         parentItem = GameObject.FindGameObjectWithTag("ItemParentTransform").transform;
     }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(eventData.button == PointerEventData.InputButton.Left)
+        {
+            if (isSelected)
+            {
+                ClearSelectedItem();
+            }
+            else
+            {
+                if(itemQuantity > 0)
+                {
+                    SetSelectedItem();
+                }
+            }
+            Debug.Log("select item: " + InventoryManager.Instance.SelectedItemCode);
+        }
+    }
+    private void SetSelectedItem()
+    {
+        inventoryBar.ClearHighLightOnInventorySlots();
+
+        isSelected = true;
+
+        inventoryBar.SetHighlightedInventorySlots();
+
+        gridCursor.ItemUseGridRadius = itemDetails.itemUseGridRadius;
+
+        if(itemDetails.itemUseGridRadius > 0)
+        {
+            gridCursor.EnableCursor();
+        }
+        else
+        {
+            gridCursor.DisableCursor();
+        }
+
+        gridCursor.SelectedItemtype = itemDetails.itemType;
+
+        InventoryManager.Instance.SetSelectedInventoryItem(itemDetails.itemCode);
+    }
+
+    private void ClearSelectedItem()
+    {
+        ClearCursors();
+
+        inventoryBar.ClearHighLightOnInventorySlots();
+
+        isSelected = false;
+
+        InventoryManager.Instance.ClearSelectedInventoryItem();
+    }
+
 }

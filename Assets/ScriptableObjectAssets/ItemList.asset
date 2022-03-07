@@ -32,8 +32,8 @@ MonoBehaviour:
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 21300000, guid: 466045dcbda81a94ba506b0140afd117, type: 3}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
@@ -45,8 +45,8 @@ MonoBehaviour:
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 21300000, guid: d11eca11a088fab4cb1ac7aa0a3f7a2e, type: 3}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1

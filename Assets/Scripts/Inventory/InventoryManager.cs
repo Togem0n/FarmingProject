@@ -10,6 +10,9 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 
     [SerializeField] private PlayerData data;
 
+    private int selectedItemCode = -1;
+    public int SelectedItemCode { get => selectedItemCode; set => selectedItemCode = value; }
+
     private List<InventoryItem> inventoryList = new List<InventoryItem>(); // player's inventory list
     public List<InventoryItem> InventoryList { get => inventoryList; }
 
@@ -215,6 +218,59 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         {
             return null;
         }
+    }
+
+    public ItemDetails GetSelectedItemDetails()
+    {
+        ItemDetails itemDetails;
+        if (itemDetailsDictionary.TryGetValue(selectedItemCode, out itemDetails))
+        {
+            return itemDetails;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+
+    public ItemDetails GetItemDetailsByLocation(int index)
+    {
+        int itemCode = GetItemCodeAtLocation(index);
+
+        if(itemCode == -1)
+        {
+            return null;
+        }
+        else
+        {
+            return GetItemDetails(itemCode);
+        }
+    }
+
+    public int GetItemCodeAtLocation(int index)
+    {
+        return inventoryList[index].itemCode;
+    }
+
+    public int GetItemQuantitiesAtLocation(int index)
+    {
+        return inventoryList[index].itemQuantity;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="inventoryList"></param>
+
+    public void SetSelectedInventoryItem(int itemCode)
+    {
+        SelectedItemCode = itemCode;
+    }
+
+    public void ClearSelectedInventoryItem()
+    {
+        SelectedItemCode = -1;
     }
 
     public void PrintInventoryList(List<InventoryItem> inventoryList)
