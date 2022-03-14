@@ -1709,7 +1709,7 @@ GameObject:
   m_Component:
   - component: {fileID: 283596983}
   m_Layer: 0
-  m_Name: CropsParentTransform (2)
+  m_Name: Crops
   m_TagString: CropsParentTransform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

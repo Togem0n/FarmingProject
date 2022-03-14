@@ -18,7 +18,17 @@ public class PlayerMoveState : PlayerState
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F)))
         {
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
+            // if position is allowed to hoeing
             stateMachine.ChangeState(player.HoeingState);
+        }
+
+        if (InventoryManager.Instance.SelectedItemCode != -1
+            && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.Seed
+            && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F)))
+        {
+            player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
+            // if position is allowed to plant
+            stateMachine.ChangeState(player.PlantingState);
         }
     }
 

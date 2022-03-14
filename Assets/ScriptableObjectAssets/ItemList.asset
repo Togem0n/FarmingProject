@@ -67,17 +67,17 @@ MonoBehaviour:
     canBeCarried: 1
   - itemCode: 4
     itemType: 0
-    itemName: 
+    itemName: TestSeed
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemSprite: {fileID: -2273560400057252286, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
   - itemCode: 5
     itemType: 0
     itemName: 

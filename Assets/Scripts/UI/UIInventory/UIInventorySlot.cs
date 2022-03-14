@@ -196,7 +196,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         gridCursor.SelectedItemtype = itemDetails.itemType;
 
-        InventoryManager.Instance.SetSelectedInventoryItem(itemDetails.itemCode);
+        InventoryManager.Instance.SetSelectedInventoryItem(itemDetails.itemCode, id);
+        Debug.Log("selected item's index is: " + id);
     }
 
     private void ClearSelectedItem()

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(GenerateGUID))]
 public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, ISaveable
 {
+    private Transform cropParentTransform;
     private Tilemap tilemap;
     private Tilemap dugTilemap;
     private Tilemap wateredTilemap;
@@ -14,6 +16,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
     public Grid grid;
     private Dictionary<string, GridPropertyDetails> gridPropertyDictionary;
+    [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
     [SerializeField] private GridPropertyScriptableObjects[] gridPropertyScriptableObjectsArray = null;
 
     private string _iSaveablUniqueID;
@@ -35,6 +38,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         ISaveableRegister();
 
         EventHandler.AfterSceneLoadEvent += AfterSceneLoaded;
+        EventHandler.AdvanceGameDayEvent += AdvanceDay;
     }
 
     private void OnDisable()
@@ -42,12 +46,100 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         ISaveableDeregister();
 
         EventHandler.AfterSceneLoadEvent -= AfterSceneLoaded;
+        EventHandler.AdvanceGameDayEvent -= AdvanceDay;
     }
 
     private void Start()
     {
         InitialiseGridProperties();
 
+    }
+
+    private void ClearDisplayGroundDecorations()
+    {
+        dugTilemap.ClearAllTiles();
+        wateredTilemap.ClearAllTiles();
+    }
+
+    private void ClearDisplayAllPlantedCrops()
+    {
+        Crop[] crops = FindObjectsOfType<Crop>();
+
+        foreach(Crop crop in crops)
+        {
+            Destroy(crop.gameObject);
+        }
+    }
+
+    private void ClearDisplayGridPropertyDetails()
+    {
+        ClearDisplayGroundDecorations();
+
+        ClearDisplayAllPlantedCrops();
+    }
+    
+    public void DisplayDugGround(GridPropertyDetails gridPropertyDetails)
+    {
+        if(gridPropertyDetails.daysSinceDug > -1)
+        {
+            SetTileToDug(gridPropertyDetails.gridX, gridPropertyDetails.gridY);
+        }
+    }
+
+    // call when save scene
+    private void DisplayGridPropertyDetails()
+    {
+        foreach(KeyValuePair<string, GridPropertyDetails> item in gridPropertyDictionary)
+        {
+            GridPropertyDetails gridPropertyDetails = item.Value;
+
+            DisplayDugGround(gridPropertyDetails);
+
+            // DisplayWaterGround(gridPropertyDetails);
+
+            DisplayPlantedCrop(gridPropertyDetails);
+        }
+    }
+
+    public void DisplayPlantedCrop(GridPropertyDetails gridPropertyDetails)
+    {
+        if(gridPropertyDetails.seedItemCode > -1)
+        {
+            // get crop
+            Debug.Log(gridPropertyDetails.seedItemCode);
+            CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
+
+            GameObject cropPrefab;
+
+            int growthStages = cropDetails.growthDays.Length;
+
+            int currentGrowthStage = 0;
+            int daysCounter = cropDetails.totalGrowDays;
+            for(int i = growthStages - 1; i >=0; i--)
+            {
+                if(gridPropertyDetails.growthDays >= daysCounter)
+                {
+                    currentGrowthStage = i;
+                    break;
+                }
+
+                daysCounter = daysCounter - cropDetails.growthDays[i];
+            }
+
+            cropPrefab = cropDetails.growthPrefab[currentGrowthStage];
+
+            Sprite growthSprite = cropDetails.growthSprite[currentGrowthStage];
+
+            Vector3 worldPosition = dugTilemap.CellToWorld(new Vector3Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY, 0));
+
+            worldPosition = new Vector3(worldPosition.x + Settings.gridCellSize / 2, worldPosition.y + Settings.gridCellSize / 2, worldPosition.z);
+
+            GameObject cropInstance = Instantiate(cropPrefab, worldPosition, Quaternion.identity);
+
+            cropInstance.GetComponentInChildren<SpriteRenderer>().sprite = growthSprite;
+            cropInstance.transform.SetParent(cropParentTransform);
+            cropInstance.GetComponent<Crop>().cropGridPosition = new Vector2Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY);
+        }
     }
 
     /// <summary>
@@ -160,6 +252,49 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         dugTilemap.SetTile(new Vector3Int(gridX, gridY, 0), dugTile);
     }
 
+    private void AfterSceneLoaded()
+    {
+        cropParentTransform = GameObject.FindWithTag("CropsParentTransform").transform;
+        grid = GameObject.FindObjectOfType<Grid>();
+        dugTilemap = GameObject.FindWithTag("DugTilemap").GetComponent<Tilemap>();
+        wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
+    }
+
+    private void AdvanceDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
+    {
+        ClearDisplayGridPropertyDetails();
+
+        foreach(GridPropertyScriptableObjects gridPropertyScriptableObjects in gridPropertyScriptableObjectsArray)
+        {
+            if(GameObjectSave.sceneData.TryGetValue(gridPropertyScriptableObjects.sceneName.ToString(), out SceneSave sceneSave))
+            {
+                if (sceneSave.gridPropertyDetailsDictionary != null)
+                {
+                    for(int i = sceneSave.gridPropertyDetailsDictionary.Count - 1; i >= 0; i--)
+                    {
+                        KeyValuePair<string, GridPropertyDetails> item = sceneSave.gridPropertyDetailsDictionary.ElementAt(i);
+
+                        GridPropertyDetails gridPropertyDetails = item.Value;
+
+                        if(gridPropertyDetails.growthDays > -1)
+                        {
+                            gridPropertyDetails.growthDays += 1;
+                        }
+
+                        if(gridPropertyDetails.daysSinceWatered > -1)
+                        {
+                            gridPropertyDetails.daysSinceWatered = -1;
+                        }
+
+                        SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails, sceneSave.gridPropertyDetailsDictionary);
+                    }
+                }
+            }
+        }
+        DisplayGridPropertyDetails();
+    }
+
+    #region ISaveable
     public void ISaveableDeregister()
     {
         SaveLoadManager.Instance.iSaveableObjectList.Remove(this);
@@ -178,6 +313,13 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
             {
                 gridPropertyDictionary = sceneSave.gridPropertyDetailsDictionary;
             }
+
+            if(gridPropertyDictionary.Count > 0)
+            {
+                ClearDisplayGridPropertyDetails();
+
+                DisplayGridPropertyDetails();
+            }
         }
     }
 
@@ -191,11 +333,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
         GameObjectSave.sceneData.Add(sceneName, sceneSave);
     }
+    #endregion
 
-    private void AfterSceneLoaded()
-    {
-        grid = GameObject.FindObjectOfType<Grid>();
-        dugTilemap = GameObject.FindWithTag("DugTilemap").GetComponent<Tilemap>();
-        wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
-    }
+
 }

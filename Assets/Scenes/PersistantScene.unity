@@ -2512,8 +2512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a09944dd086fc44a8a8a8f7ddef2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dugTile: {fileID: 11400000, guid: 0858239c5e3b54148a5286a44a04e885, type: 2}
+  dugTile: {fileID: 11400000, guid: 58b42f2af723ce5459f4ac776cc5d094, type: 2}
   grid: {fileID: 0}
+  cropDetailsList: {fileID: 11400000, guid: 04fc047ff5c946a4d858645ed90f10bb, type: 2}
   gridPropertyScriptableObjectsArray:
   - {fileID: 11400000, guid: d59860f1dc6b89944bc7548d7391601d, type: 2}
   - {fileID: 11400000, guid: 6cd452a1a8800824aae7e6fa5dba1dc9, type: 2}
@@ -2746,18 +2747,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.018630266, y: -0.003726095}
+  m_Offset: {x: -0.0021861754, y: 0.059701085}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.69628906, y: 1.0068359}
-    newSize: {x: 0.69628906, y: 1.0068359}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5546988, y: 0.9099584}
+  m_Size: {x: 0.14124769, y: 0.12064254}
   m_EdgeRadius: 0
 --- !u!1 &1708667884
 GameObject:
@@ -3434,8 +3435,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 38166850750414666, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 38166850750414666, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 38166850908639362, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38166850908639362, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38166850908639362, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1090217281897295437, guid: b76339a532a37e34b9ed13825c106238, type: 3}
     - target: {fileID: 38166850908639362, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
       propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 38166850908639362, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 38166850908639363, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}

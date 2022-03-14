@@ -19,14 +19,16 @@ public class PlayerHoeingState : PlayerUseToolState
 
         GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
         
-        if(gridPropertyDetails.daysSinceDug == -1)
+        if(gridPropertyDetails != null && gridPropertyDetails.daysSinceDug == -1)
         {
+
             gridPropertyDetails.daysSinceDug = 0;
+            
+            GridPropertyManager.Instance.SetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y, gridPropertyDetails);
+
+            //GridPropertyManager.Instance.SetTileToDug(player.useToolGridPosition.x, player.useToolGridPosition.y);
+            GridPropertyManager.Instance.DisplayDugGround(gridPropertyDetails);
         }
-
-        GridPropertyManager.Instance.SetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y, gridPropertyDetails);
-
-        GridPropertyManager.Instance.SetTileToDug(player.useToolGridPosition.x, player.useToolGridPosition.y);
     }
 
     public override void Exit()

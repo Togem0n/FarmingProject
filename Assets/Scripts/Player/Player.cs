@@ -11,6 +11,8 @@ public class Player : SingletonMonoBehaviour<Player>
     public PlayerIdleState IdleState { get; private set; }
     public PlayerWalkState WalkState { get; private set; }
     public PlayerHoeingState HoeingState { get; private set; }
+    public PlayerCarrySeedState PlantingState { get; private set; }
+
     #endregion
 
     #region Movement
@@ -55,6 +57,7 @@ public class Player : SingletonMonoBehaviour<Player>
         IdleState = new PlayerIdleState(this, Statemachine, playerData, "idle");
         WalkState = new PlayerWalkState(this, Statemachine, playerData, "walk");
         HoeingState = new PlayerHoeingState(this, Statemachine, playerData, "hoeing");
+        PlantingState = new PlayerCarrySeedState(this, Statemachine, playerData, "planting");
     }
 
     private void Start()
@@ -159,7 +162,7 @@ public class Player : SingletonMonoBehaviour<Player>
             TimeManager.Instance.TestAdvanceGameMinute();
         }
 
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKeyUp(KeyCode.G))
         {
             TimeManager.Instance.TestAdvanceGameDay();
         }

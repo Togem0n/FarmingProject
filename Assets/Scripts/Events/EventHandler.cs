@@ -11,11 +11,20 @@ public delegate void MovementDelegate(float inputX, float inputY, bool isWalking
 
 public static class EventHandler
 {
+    public static event Action RemoveSelectedItemFroInventoryEvent;
+
+    public static void CallRemoveSelectedIteFromInventoryEvent()
+    {
+        if(RemoveSelectedItemFroInventoryEvent != null)
+        {
+            RemoveSelectedItemFroInventoryEvent();
+        }
+    }
+
     // Inventory Updated Event
     public static event Action<List<InventoryItem>> InventoryUpdatedEvent;
 
     // Inventory Event call For Publishers
-
     public static void CallInventoryUpdatedEvent(List<InventoryItem> inventoryList)
     {
         if(InventoryUpdatedEvent != null)

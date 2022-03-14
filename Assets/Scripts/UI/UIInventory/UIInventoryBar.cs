@@ -71,7 +71,7 @@ public class UIInventoryBar : MonoBehaviour
             {
                 InventorySlots[itemPosition].inventorySlotHighlight.color = new Color(1f, 1f, 1f, 1f);
 
-                InventoryManager.Instance.SetSelectedInventoryItem(InventorySlots[itemPosition].itemDetails.itemCode);
+                InventoryManager.Instance.SetSelectedInventoryItem(InventorySlots[itemPosition].itemDetails.itemCode, itemPosition);
             }
         }
     }

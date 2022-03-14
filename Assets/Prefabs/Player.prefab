@@ -886,7 +886,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 93636223
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 9da503679daef114b8ca640a8de42d20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -910,7 +910,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d27dd576c798014e88dbf3b43234271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: d27a30b6d5fd738429ea18a2d87513b6, type: 2}
+  playerData: {fileID: 0}
+  xInput: 0
+  yInput: 0
+  inputVector: {x: 0, y: 0}
+  moveDirection: {x: 0, y: 0}
+  movementSpeed: 0
+  playerDirection: 0
+  _playerInputDisabled: 0
+  rb: {fileID: 0}
+  animator: {fileID: 0}
+  mainCamera: {fileID: 0}
+  useToolDirection: {x: 0, y: 0, z: 0}
+  useToolDirectionForAnimator: 0
+  useToolGridDirection: {x: 0, y: 0, z: 0}
+  useToolGridPosition: {x: 0, y: 0, z: 0}
+  workspace: {x: 0, y: 0}
 --- !u!95 &38166850908639360
 Animator:
   serializedVersion: 3

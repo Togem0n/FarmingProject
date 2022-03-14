@@ -13,6 +13,9 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     private int selectedItemCode = -1;
     public int SelectedItemCode { get => selectedItemCode; set => selectedItemCode = value; }
 
+    private int selectedItemIndex = -1;
+    public int SelectedItemIndex { get => selectedItemIndex; set => selectedItemIndex = value; }
+
     private List<InventoryItem> inventoryList = new List<InventoryItem>(); // player's inventory list
     public List<InventoryItem> InventoryList { get => inventoryList; }
 
@@ -262,9 +265,10 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     /// 
     /// </summary>
 
-    public void SetSelectedInventoryItem(int itemCode)
+    public void SetSelectedInventoryItem(int itemCode, int index)
     {
         SelectedItemCode = itemCode;
+        SelectedItemIndex = index;
     }
 
     public void ClearSelectedInventoryItem()
