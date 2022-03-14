@@ -261,7 +261,6 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     /// <summary>
     /// 
     /// </summary>
-    /// <param name="inventoryList"></param>
 
     public void SetSelectedInventoryItem(int itemCode)
     {

@@ -48,6 +48,24 @@ public class GridCursor : MonoBehaviour
         {
             DisplayCursor();
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(GetGridPositionForCursor().x, GetGridPositionForCursor().y);
+            if(gridPropertyDetails != null)
+            {
+                Debug.Log("*******************************************");
+                Debug.Log("Coordination: ( " + GetGridPositionForCursor().x + ", " + GetGridPositionForCursor().y + ")");
+                Debug.Log("can Drop Item: " + gridPropertyDetails.canDropItem);
+                Debug.Log("is Diggable: " + gridPropertyDetails.isDiaggable);
+                Debug.Log("days since dug: " + gridPropertyDetails.daysSinceDug);
+            }
+            else
+            {
+                Debug.Log("*******************************************");
+                Debug.Log("No grid property details contain");
+            }
+        }
     }
 
     private Vector3Int DisplayCursor()
@@ -75,7 +93,7 @@ public class GridCursor : MonoBehaviour
         SetCursorToValid();
 
         if (Mathf.Abs(cursorGridPosition.x - playerGridPosition.x) > ItemUseGridRadius ||
-            Mathf.Abs(cursorGridPosition.x - playerGridPosition.x) > ItemUseGridRadius)
+            Mathf.Abs(cursorGridPosition.y - playerGridPosition.y) > ItemUseGridRadius)
         {
             SetCursorToInValid();
             return;
@@ -106,6 +124,20 @@ public class GridCursor : MonoBehaviour
                 case ItemType.Commodity:
 
                     if (!gridPropertyDetails.canDropItem)
+                    {
+                        SetCursorToInValid();
+                        return;
+                    }
+                    break;
+                case ItemType.HoeingTool:
+                    if (!gridPropertyDetails.isDiaggable)
+                    {
+                        SetCursorToInValid();
+                        return;
+                    }
+                    break;
+                case ItemType.WateringTool:
+                    if (!gridPropertyDetails.isDiaggable)
                     {
                         SetCursorToInValid();
                         return;

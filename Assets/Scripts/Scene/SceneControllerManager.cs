@@ -12,8 +12,7 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
     [SerializeField] private CanvasGroup faderCanvasGroup = null;
     [SerializeField] private Image fadeImage = null;
     public SceneName startingSceneName;
-
-
+    
     private IEnumerator Fade(float finalAlpha)
     {
         isFading = true;

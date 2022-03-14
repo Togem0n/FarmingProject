@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - ItemParentTransform
+  - Tilemap
+  - DugTilemap
+  - WateredTilemap
+  - CropsParentTransform
   layers:
   - Default
   - TransparentFX

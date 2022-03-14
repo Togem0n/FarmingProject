@@ -4,24 +4,44 @@ using UnityEngine;
 
 public class Player : SingletonMonoBehaviour<Player>
 {
-    [SerializeField] private PlayerData data;
+    [SerializeField] public PlayerData playerData;
+
+    #region StateMachine
+    public PlayerStateMachine Statemachine { get; private set; }
+    public PlayerIdleState IdleState { get; private set; }
+    public PlayerWalkState WalkState { get; private set; }
+    public PlayerHoeingState HoeingState { get; private set; }
+    #endregion
 
     #region Movement
-    private float xInput;
-    private float yInput;
-    private Vector2 inputVector;
-    private Vector2 moveDirection;
-    private float movmentSpeed;
-    private Direction playerDirection;
-    private bool _playerInputDisabled = false;
+    public int xInput;
+    public int yInput;
+    public Vector2 inputVector;
+    public Vector2 moveDirection;
+    public float movementSpeed;
+    public Direction playerDirection;
+    public bool _playerInputDisabled = false;
 
     public bool PlayerInputDisabled { get => _playerInputDisabled; set => _playerInputDisabled = value; }
     #endregion
 
     #region Components
-    private Rigidbody2D rb;
-    private Animator animator;
-    private Camera mainCamera;
+    public Rigidbody2D rb;
+    public Animator animator;
+    public Camera mainCamera;
+    #endregion
+
+    #region Use Tool Variables
+    public Vector3 useToolDirection;
+    public float useToolDirectionForAnimator;
+    public Vector3Int useToolGridDirection;
+    public Vector3Int useToolGridPosition;
+    #endregion
+
+    #region Others
+    public Vector2 CurrentVelocity { get; private set; }
+    public int FacingDirection { get; private set; }
+    public Vector2 workspace;
     #endregion
 
     protected override void Awake()
@@ -30,37 +50,45 @@ public class Player : SingletonMonoBehaviour<Player>
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         mainCamera = Camera.main;
+
+        Statemachine = new PlayerStateMachine();
+        IdleState = new PlayerIdleState(this, Statemachine, playerData, "idle");
+        WalkState = new PlayerWalkState(this, Statemachine, playerData, "walk");
+        HoeingState = new PlayerHoeingState(this, Statemachine, playerData, "hoeing");
     }
 
     private void Start()
     {
         EventHandler.AfterSceneLoadFadeInEvent += EnablePlayerInput;
+
+        FacingDirection = 1;
+        Statemachine.Initialize(IdleState);
     }
 
     private void Update()
     {
+
         if (!PlayerInputDisabled)
         {
             GetPlayerInput();
 
             PlayerTestInput();
         }
+
+        Statemachine.CurrentState.LogicUpdate();
     }
 
     private void FixedUpdate()
     {
-        if (!PlayerInputDisabled)
-        {
-            PlayerMovement();
-        }
+        Statemachine.CurrentState.PhysicsUpdate();
     }
 
     private void GetPlayerInput()
     {
         if (!_playerInputDisabled)
         {
-            xInput = Input.GetAxisRaw("Horizontal");
-            yInput = Input.GetAxisRaw("Vertical");
+            xInput = (int)Input.GetAxisRaw("Horizontal");
+            yInput = (int)Input.GetAxisRaw("Vertical");
             inputVector = new Vector2(xInput, yInput);
 
             if (!Mathf.Approximately(inputVector.x, 0.0f) || !Mathf.Approximately(inputVector.y, 0.0f))
@@ -71,7 +99,7 @@ public class Player : SingletonMonoBehaviour<Player>
 
             if(xInput != 0 || yInput != 0)
             {
-                movmentSpeed = data.movementSpeed;
+                movementSpeed = playerData.movementSpeed;
 
                 if (xInput < 0)
                 {
@@ -91,18 +119,6 @@ public class Player : SingletonMonoBehaviour<Player>
                 }
             }
         }
-    }
-
-    private void PlayerMovement()
-    {
-        Vector2 move = new Vector2(xInput * movmentSpeed * Time.deltaTime, yInput * movmentSpeed * Time.deltaTime);
-
-        rb.MovePosition(rb.position + move);
-    
-        animator.SetFloat("xInput", moveDirection.x);
-        animator.SetFloat("yInput", moveDirection.y);
-        animator.SetFloat("speed", move.normalized.magnitude);
-
     }
 
     public Vector3 GetPlyerViewportPosition()
@@ -129,8 +145,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void ResetMovement()
     {
-        xInput = 0f;
-        yInput = 0f;
+        xInput = 0;
+        yInput = 0;
         animator.SetFloat("xInput", moveDirection.x);
         animator.SetFloat("yInput", moveDirection.y);
         animator.SetFloat("speed", 0);
@@ -153,5 +169,88 @@ public class Player : SingletonMonoBehaviour<Player>
             SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene1_Farm.ToString(), transform.position);
         }
     }
+
+    public void SetUseToolDirection(float mousePosX, float mousePosY)
+    {
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosX, mousePosY, -mainCamera.transform.position.z));
+        Vector3 tmp = mouseWorldPosition - transform.position;
+
+        Vector3Int GridOfMouse = GridPropertyManager.Instance.grid.WorldToCell(mouseWorldPosition);
+        Vector3Int GridOfPlayer = GridPropertyManager.Instance.grid.WorldToCell(transform.position);
+
+        int itemUseGridRadius = InventoryManager.Instance.GetSelectedItemDetails().itemUseGridRadius;
+
+
+        if(Mathf.Abs(GridOfMouse.x - GridOfPlayer.x) <= itemUseGridRadius && Mathf.Abs(GridOfMouse.y - GridOfPlayer.y) <= itemUseGridRadius)
+        {
+
+            useToolGridPosition = GridOfMouse;
+
+            useToolGridDirection = GridOfMouse - GridOfPlayer;
+
+            if(GridOfMouse == GridOfPlayer)
+            {
+                useToolGridDirection.x = (int)moveDirection.x;
+                useToolGridDirection.y = (int)moveDirection.y;
+
+                useToolGridPosition = GridOfPlayer + useToolGridDirection;
+            }
+            else if (Vector3.Dot(useToolGridDirection, moveDirection) > 0)
+            {
+                useToolGridDirection.x = (int)moveDirection.x;
+                useToolGridDirection.y = (int)moveDirection.y;
+            }
+            else if(Vector3.Dot(useToolGridDirection, moveDirection) < 0)
+            {
+                useToolGridDirection.x = -(int)moveDirection.x;
+                useToolGridDirection.y = -(int)moveDirection.y;
+                moveDirection.x = useToolGridDirection.x;
+                moveDirection.y = useToolGridDirection.y;
+            }
+            else
+            {
+                moveDirection.x = useToolGridDirection.x;
+                moveDirection.y = useToolGridDirection.y;
+            }
+        }
+        else
+        {
+
+            useToolGridPosition = GridOfMouse;
+
+            useToolGridDirection = GridOfMouse - GridOfPlayer;
+
+            if (Vector3.Dot(useToolGridDirection, moveDirection) > 0)
+            {
+                useToolGridDirection.x = (int)moveDirection.x;
+                useToolGridDirection.y = (int)moveDirection.y;
+            }
+            else if (Vector3.Dot(useToolGridDirection, moveDirection) < 0)
+            {
+                useToolGridDirection.x = -(int)moveDirection.x;
+                useToolGridDirection.y = -(int)moveDirection.y;
+                moveDirection.x = useToolGridDirection.x;
+                moveDirection.y = useToolGridDirection.y;
+            }
+            else
+            {
+                moveDirection.x = useToolGridDirection.x;
+                moveDirection.y = useToolGridDirection.y;
+            }
+
+            useToolGridPosition = GridOfPlayer + useToolGridDirection;
+        }
+
+        animator.SetFloat("useToolDirectionX", useToolGridDirection.x);
+        animator.SetFloat("useToolDirectionY", useToolGridDirection.y);
+        animator.SetFloat("xInput", moveDirection.x);
+        animator.SetFloat("yInput", moveDirection.y);
+
+        Debug.Log("using tool here: " + useToolGridPosition);
+    }
+
+    private void AnimationTrigger() => Statemachine.CurrentState.AnimationTrigger();
+
+    private void AniamtionFinishTrigger() => Statemachine.CurrentState.AnimationFinishTrigger();
 
 }

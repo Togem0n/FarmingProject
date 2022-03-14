@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDetails:
   - itemCode: 0
-    itemType: 0
+    itemType: 10
     itemName: null
     itemDescription: 
     itemLongDescription: 
@@ -27,44 +27,44 @@ MonoBehaviour:
     canBeEaten: 0
     canBeCarried: 0
   - itemCode: 1
-    itemType: 0
-    itemName: Corn
+    itemType: 3
+    itemName: Hoe
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 21300000, guid: 466045dcbda81a94ba506b0140afd117, type: 3}
+    itemSprite: {fileID: 21300000, guid: 66c042570b27f764fbb87f613898a7fa, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
-    isStartingItem: 0
+    isStartingItem: 1
     canBePickedUp: 1
     canBeDropped: 1
-    canBeEaten: 1
+    canBeEaten: 0
     canBeCarried: 1
   - itemCode: 2
-    itemType: 0
-    itemName: Parsnip
+    itemType: 2
+    itemName: Watering
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 21300000, guid: d11eca11a088fab4cb1ac7aa0a3f7a2e, type: 3}
+    itemSprite: {fileID: 21300000, guid: 091bbfe080a13f44e8ab35639bc0f110, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
-    canBeEaten: 1
+    canBeEaten: 0
     canBeCarried: 1
   - itemCode: 3
-    itemType: 0
-    itemName: 
+    itemType: 6
+    itemName: Reaping
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemSprite: {fileID: 21300000, guid: a2d9434df50bcd94497115c220979447, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
+    canBePickedUp: 1
+    canBeDropped: 1
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 4
     itemType: 0
     itemName: 

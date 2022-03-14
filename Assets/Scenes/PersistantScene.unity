@@ -2512,9 +2512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a09944dd086fc44a8a8a8f7ddef2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dugTile: {fileID: 11400000, guid: 0858239c5e3b54148a5286a44a04e885, type: 2}
   grid: {fileID: 0}
   gridPropertyScriptableObjectsArray:
   - {fileID: 11400000, guid: d59860f1dc6b89944bc7548d7391601d, type: 2}
+  - {fileID: 11400000, guid: 6cd452a1a8800824aae7e6fa5dba1dc9, type: 2}
 --- !u!4 &1570452962
 Transform:
   m_ObjectHideFlags: 0
@@ -2747,7 +2749,7 @@ BoxCollider2D:
   m_Offset: {x: -0.018630266, y: -0.003726095}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 0.69628906, y: 1.0068359}
     newSize: {x: 0.69628906, y: 1.0068359}
     adaptiveTilingThreshold: 0.5
@@ -3436,6 +3438,10 @@ PrefabInstance:
       propertyPath: m_SpriteSortPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 38166850908639363, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: d27a30b6d5fd738429ea18a2d87513b6, type: 2}
     - target: {fileID: 38166850908639388, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
       propertyPath: m_RootOrder
       value: 1

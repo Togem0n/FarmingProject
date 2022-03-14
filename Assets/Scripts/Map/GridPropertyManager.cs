@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(GenerateGUID))]
 public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, ISaveable
 {
+    private Tilemap tilemap;
+    private Tilemap dugTilemap;
+    private Tilemap wateredTilemap;
+
+    [SerializeField] private Tile dugTile;
+
     public Grid grid;
     private Dictionary<string, GridPropertyDetails> gridPropertyDictionary;
     [SerializeField] private GridPropertyScriptableObjects[] gridPropertyScriptableObjectsArray = null;
@@ -40,6 +47,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
     private void Start()
     {
         InitialiseGridProperties();
+
     }
 
     /// <summary>
@@ -53,7 +61,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
             // create dictionary of grid property details
             Dictionary<string, GridPropertyDetails> gridPropertyDictionary = new Dictionary<string, GridPropertyDetails>();
 
-            // populate grid property dictionary -
+            // loop through gridproperty in the current map
             foreach(GridProperty gridProperty in gridPropertyScriptableObject.gridPropertyList)
             {
                 GridPropertyDetails gridPropertyDetails;
@@ -147,6 +155,11 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         return GetGridPropertyDetails(gridX, gridY, gridPropertyDictionary);
     }
 
+    public void SetTileToDug(int gridX, int gridY)
+    {
+        dugTilemap.SetTile(new Vector3Int(gridX, gridY, 0), dugTile);
+    }
+
     public void ISaveableDeregister()
     {
         SaveLoadManager.Instance.iSaveableObjectList.Remove(this);
@@ -159,9 +172,9 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
     public void ISaveableRestoreScene(string sceneName)
     {
-        if(GameObjectSave.sceneData.TryGetValue(sceneName, out SceneSave sceneSave))
+        if (GameObjectSave.sceneData.TryGetValue(sceneName, out SceneSave sceneSave))
         {
-            if(sceneSave.gridPropertyDetailsDictionary != null)
+            if (sceneSave.gridPropertyDetailsDictionary != null)
             {
                 gridPropertyDictionary = sceneSave.gridPropertyDetailsDictionary;
             }
@@ -182,5 +195,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
     private void AfterSceneLoaded()
     {
         grid = GameObject.FindObjectOfType<Grid>();
+        dugTilemap = GameObject.FindWithTag("DugTilemap").GetComponent<Tilemap>();
+        wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
     }
 }
