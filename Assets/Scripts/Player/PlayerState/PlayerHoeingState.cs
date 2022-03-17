@@ -17,18 +17,11 @@ public class PlayerHoeingState : PlayerUseToolState
     {
         base.Enter();
 
-        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
-        
-        if(gridPropertyDetails != null && gridPropertyDetails.daysSinceDug == -1)
-        {
+        player.animator.SetFloat("useToolDirectionX", player.useToolGridDirection.x);
+        player.animator.SetFloat("useToolDirectionY", player.useToolGridDirection.y);
+        player.animator.SetFloat("xInput", player.moveDirection.x);
+        player.animator.SetFloat("yInput", player.moveDirection.y);
 
-            gridPropertyDetails.daysSinceDug = 0;
-            
-            GridPropertyManager.Instance.SetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y, gridPropertyDetails);
-
-            //GridPropertyManager.Instance.SetTileToDug(player.useToolGridPosition.x, player.useToolGridPosition.y);
-            GridPropertyManager.Instance.DisplayDugGround(gridPropertyDetails);
-        }
     }
 
     public override void Exit()

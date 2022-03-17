@@ -9,6 +9,7 @@ TagManager:
   - DugTilemap
   - WateredTilemap
   - CropsParentTransform
+  - BoundsConfiner
   layers:
   - Default
   - TransparentFX
@@ -45,6 +46,24 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Collions
+    uniqueID: 1254968739
+    locked: 0
+  - name: Background
+    uniqueID: 3948272483
+    locked: 0
+  - name: Decoration1
+    uniqueID: 2706023177
+    locked: 0
+  - name: Decoration2
+    uniqueID: 1578279281
+    locked: 0
+  - name: DugTilemap
+    uniqueID: 3424205973
+    locked: 0
+  - name: WateredTilemap
+    uniqueID: 2875692523
     locked: 0
   - name: Instances
     uniqueID: 93636223

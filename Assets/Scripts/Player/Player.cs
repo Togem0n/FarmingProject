@@ -5,13 +5,16 @@ using UnityEngine;
 public class Player : SingletonMonoBehaviour<Player>
 {
     [SerializeField] public PlayerData playerData;
-
+    [SerializeField] public GridCursor gridCursor;
+        
     #region StateMachine
     public PlayerStateMachine Statemachine { get; private set; }
     public PlayerIdleState IdleState { get; private set; }
     public PlayerWalkState WalkState { get; private set; }
     public PlayerHoeingState HoeingState { get; private set; }
-    public PlayerCarrySeedState PlantingState { get; private set; }
+    public PlayerWateringState WateringState { get; private set; }
+    public PlayerCarrySeedState CarryingSeedState { get; private set; }
+    public PlayerHarvestingState HarvestingState { get; private set; }
 
     #endregion
 
@@ -57,7 +60,9 @@ public class Player : SingletonMonoBehaviour<Player>
         IdleState = new PlayerIdleState(this, Statemachine, playerData, "idle");
         WalkState = new PlayerWalkState(this, Statemachine, playerData, "walk");
         HoeingState = new PlayerHoeingState(this, Statemachine, playerData, "hoeing");
-        PlantingState = new PlayerCarrySeedState(this, Statemachine, playerData, "planting");
+        WateringState = new PlayerWateringState(this, Statemachine, playerData, "watering");
+        CarryingSeedState = new PlayerCarrySeedState(this, Statemachine, playerData, "planting");
+        HarvestingState = new PlayerHarvestingState(this, Statemachine, playerData, "harvesting");
     }
 
     private void Start()
@@ -183,7 +188,6 @@ public class Player : SingletonMonoBehaviour<Player>
 
         int itemUseGridRadius = InventoryManager.Instance.GetSelectedItemDetails().itemUseGridRadius;
 
-
         if(Mathf.Abs(GridOfMouse.x - GridOfPlayer.x) <= itemUseGridRadius && Mathf.Abs(GridOfMouse.y - GridOfPlayer.y) <= itemUseGridRadius)
         {
 
@@ -191,65 +195,75 @@ public class Player : SingletonMonoBehaviour<Player>
 
             useToolGridDirection = GridOfMouse - GridOfPlayer;
 
-            if(GridOfMouse == GridOfPlayer)
+            if (GridOfMouse == GridOfPlayer)
             {
                 useToolGridDirection.x = (int)moveDirection.x;
                 useToolGridDirection.y = (int)moveDirection.y;
 
                 useToolGridPosition = GridOfPlayer + useToolGridDirection;
             }
-            else if (Vector3.Dot(useToolGridDirection, moveDirection) > 0)
+            
+
+            if(useToolGridDirection.y != 0)
             {
-                useToolGridDirection.x = (int)moveDirection.x;
-                useToolGridDirection.y = (int)moveDirection.y;
+                useToolGridDirection.x = 0;
             }
-            else if(Vector3.Dot(useToolGridDirection, moveDirection) < 0)
-            {
-                useToolGridDirection.x = -(int)moveDirection.x;
-                useToolGridDirection.y = -(int)moveDirection.y;
-                moveDirection.x = useToolGridDirection.x;
-                moveDirection.y = useToolGridDirection.y;
-            }
-            else
-            {
-                moveDirection.x = useToolGridDirection.x;
-                moveDirection.y = useToolGridDirection.y;
-            }
+            moveDirection.x = useToolGridDirection.x;
+            moveDirection.y = useToolGridDirection.y;
+
         }
         else
+        {
+            useToolGridDirection.x = (int)moveDirection.x;
+            useToolGridDirection.y = (int)moveDirection.y;
+
+            useToolGridPosition = GridOfPlayer + useToolGridDirection;
+        }
+        
+    }
+
+    public void SetPlantDirection(float mousePosX, float mousePosY)
+    {
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosX, mousePosY, -mainCamera.transform.position.z));
+        Vector3 tmp = mouseWorldPosition - transform.position;
+
+        Vector3Int GridOfMouse = GridPropertyManager.Instance.grid.WorldToCell(mouseWorldPosition);
+        Vector3Int GridOfPlayer = GridPropertyManager.Instance.grid.WorldToCell(transform.position);
+
+        int itemUseGridRadius = InventoryManager.Instance.GetSelectedItemDetails().itemUseGridRadius;
+
+        if (Mathf.Abs(GridOfMouse.x - GridOfPlayer.x) <= itemUseGridRadius && Mathf.Abs(GridOfMouse.y - GridOfPlayer.y) <= itemUseGridRadius)
         {
 
             useToolGridPosition = GridOfMouse;
 
             useToolGridDirection = GridOfMouse - GridOfPlayer;
 
-            if (Vector3.Dot(useToolGridDirection, moveDirection) > 0)
+            if (GridOfMouse == GridOfPlayer)
             {
                 useToolGridDirection.x = (int)moveDirection.x;
                 useToolGridDirection.y = (int)moveDirection.y;
+
+                useToolGridPosition = GridOfPlayer;
+                return;
             }
-            else if (Vector3.Dot(useToolGridDirection, moveDirection) < 0)
+
+
+            if (useToolGridDirection.y != 0)
             {
-                useToolGridDirection.x = -(int)moveDirection.x;
-                useToolGridDirection.y = -(int)moveDirection.y;
-                moveDirection.x = useToolGridDirection.x;
-                moveDirection.y = useToolGridDirection.y;
+                useToolGridDirection.x = 0;
             }
-            else
-            {
-                moveDirection.x = useToolGridDirection.x;
-                moveDirection.y = useToolGridDirection.y;
-            }
+            moveDirection.x = useToolGridDirection.x;
+            moveDirection.y = useToolGridDirection.y;
+
+        }
+        else
+        {
+            useToolGridDirection.x = (int)moveDirection.x;
+            useToolGridDirection.y = (int)moveDirection.y;
 
             useToolGridPosition = GridOfPlayer + useToolGridDirection;
         }
-
-        animator.SetFloat("useToolDirectionX", useToolGridDirection.x);
-        animator.SetFloat("useToolDirectionY", useToolGridDirection.y);
-        animator.SetFloat("xInput", moveDirection.x);
-        animator.SetFloat("yInput", moveDirection.y);
-
-        Debug.Log("using tool here: " + useToolGridPosition);
     }
 
     private void AnimationTrigger() => Statemachine.CurrentState.AnimationTrigger();

@@ -31,7 +31,7 @@ MonoBehaviour:
     itemName: Hoe
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 21300000, guid: 66c042570b27f764fbb87f613898a7fa, type: 3}
+    itemSprite: {fileID: 8145018172073923741, guid: 950cab927359608409e2298f8ddfb4d1, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
     itemName: Watering
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 21300000, guid: 091bbfe080a13f44e8ab35639bc0f110, type: 3}
+    itemSprite: {fileID: -4853547902551681098, guid: d1688d428fc22c248bca8f806d8f1b48, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
     canBeEaten: 0
     canBeCarried: 1
   - itemCode: 3
-    itemType: 6
-    itemName: Reaping
+    itemType: 7
+    itemName: Collecting
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 21300000, guid: a2d9434df50bcd94497115c220979447, type: 3}
@@ -67,7 +67,7 @@ MonoBehaviour:
     canBeCarried: 1
   - itemCode: 4
     itemType: 0
-    itemName: TestSeed
+    itemName: CarrotSeed
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: -2273560400057252286, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
@@ -79,18 +79,18 @@ MonoBehaviour:
     canBeEaten: 1
     canBeCarried: 1
   - itemCode: 5
-    itemType: 0
-    itemName: 
+    itemType: 1
+    itemName: Carrot
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemSprite: {fileID: -4334497548603019903, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
-    canBePickedUp: 0
-    canBeDropped: 0
-    canBeEaten: 0
-    canBeCarried: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
   - itemCode: 6
     itemType: 0
     itemName: 
@@ -110,10 +110,309 @@ MonoBehaviour:
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 0}
-    itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
+  - itemCode: 8
+    itemType: 0
+    itemName: 
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 0}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 0
+    canBeDropped: 0
+    canBeEaten: 0
+    canBeCarried: 0
+  - itemCode: 9
+    itemType: 0
+    itemName: 
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 0}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 0
+    canBeDropped: 0
+    canBeEaten: 0
+    canBeCarried: 0
+  - itemCode: 10
+    itemType: 1
+    itemName: Carrot
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 212435436568993074, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 11
+    itemType: 1
+    itemName: Tomato
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 6042121045007173237, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 0
+    itemUseRadius: 0
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 12
+    itemType: 1
+    itemName: Strawberry
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -4832472288645180632, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 13
+    itemType: 1
+    itemName: Pumpkin
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -4307972976803304064, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 14
+    itemType: 1
+    itemName: Corn
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 4424480562007942895, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 0
+    itemUseRadius: 0
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 15
+    itemType: 1
+    itemName: Potato
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 7661187416891751384, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 16
+    itemType: 1
+    itemName: Watermelon
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 8012098278024134177, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 17
+    itemType: 1
+    itemName: Onions
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 2091145203471059505, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 18
+    itemType: 1
+    itemName: Cabbage
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 4240935727487974636, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 19
+    itemType: 1
+    itemName: Straw
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 1217961538471316934, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 20
+    itemType: 0
+    itemName: CarrotSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 8902764129226356341, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 21
+    itemType: 0
+    itemName: TomatoSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 1530993877042961689, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 22
+    itemType: 0
+    itemName: StrawberrySeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -7100280429707273417, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 23
+    itemType: 0
+    itemName: PumpkinSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 1148123142949428641, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 24
+    itemType: 0
+    itemName: CornSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -3559285446721225208, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 25
+    itemType: 0
+    itemName: PotatoSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -4905369738129954342, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 26
+    itemType: 0
+    itemName: WatermelonSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -2735866498999463491, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 27
+    itemType: 0
+    itemName: OnionsSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 3020240861920078960, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 28
+    itemType: 0
+    itemName: Cabbage
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -783739196014399847, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 29
+    itemType: 0
+    itemName: StrawSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 8812169861478436503, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 30
+    itemType: 0
+    itemName: CarrotSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 8812169861478436503, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1

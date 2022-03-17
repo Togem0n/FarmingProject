@@ -8,6 +8,8 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 
     [SerializeField] private ItemLibrary itemLibrary; // ItemLibrary
 
+    [SerializeField] private UIInventoryBar inventoryBar;
+
     [SerializeField] private PlayerData data;
 
     private int selectedItemCode = -1;
@@ -55,6 +57,10 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         PrintInventoryList(InventoryList);
     }
 
+    public void AddItem(int itemCode, int itemQuantity)
+    {
+
+    }
 
     public void AddItem(int itemCode, int itemQuantity, GameObject itemToDelete)
     {
@@ -65,6 +71,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         else
         {
             // Inventory full !!!
+            Debug.Log("oops, inventory full");
         }
     }
 
@@ -137,6 +144,30 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
             inventoryItem.itemQuantity = 0;
             inventoryItem.itemCode = 0;
             inventoryList[itemIndex] = inventoryItem;
+        }
+        EventHandler.CallInventoryUpdatedEvent(InventoryList);
+    }
+
+    public void RemoveSelectedItemByOne()
+    {
+        InventoryItem inventoryItem = new InventoryItem();
+
+        int quantity = inventoryList[SelectedItemIndex].itemQuantity - 1;
+        int itemCode = InventoryList[SelectedItemIndex].itemCode;
+
+        if (quantity > 0)
+        {
+            inventoryItem.itemQuantity = quantity;
+            inventoryItem.itemCode = itemCode;
+            inventoryList[SelectedItemIndex] = inventoryItem;
+        }
+        else
+        {
+            inventoryItem.itemQuantity = 0;
+            inventoryItem.itemCode = 0;
+            inventoryList[SelectedItemIndex] = inventoryItem;
+            //ClearSelectedInventoryItem();
+            inventoryBar.ClearHighLightOnInventorySlots();
         }
         EventHandler.CallInventoryUpdatedEvent(InventoryList);
     }
@@ -274,6 +305,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     public void ClearSelectedInventoryItem()
     {
         SelectedItemCode = -1;
+        selectedItemIndex = -1;
     }
 
     public void PrintInventoryList(List<InventoryItem> inventoryList)

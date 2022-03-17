@@ -185,7 +185,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         gridCursor.ItemUseGridRadius = itemDetails.itemUseGridRadius;
 
-        if(itemDetails.itemUseGridRadius > 0)
+        if (itemDetails.itemUseGridRadius > 0)
         {
             gridCursor.EnableCursor();
         }

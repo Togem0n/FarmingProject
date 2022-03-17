@@ -29,7 +29,10 @@ public class PlayerCarrySeedState : PlayerUseToolState
 
         GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
-        if (gridPropertyDetails != null && gridPropertyDetails.daysSinceDug > -1 && gridPropertyDetails.seedItemCode == -1)
+        if (gridPropertyDetails != null 
+            && gridPropertyDetails.daysSinceDug > -1 
+            && gridPropertyDetails.seedItemCode == -1
+            )
         {
             gridPropertyDetails.seedItemCode = InventoryManager.Instance.SelectedItemCode;
             gridPropertyDetails.growthDays = 0;
@@ -37,7 +40,7 @@ public class PlayerCarrySeedState : PlayerUseToolState
             GridPropertyManager.Instance.DisplayPlantedCrop(gridPropertyDetails);
 
             // remove item;
-            InventoryManager.Instance.RemoveItemByOneAtIndex(InventoryManager.Instance.SelectedItemIndex);
+            InventoryManager.Instance.RemoveSelectedItemByOne();
         }
 
         stateMachine.ChangeState(player.IdleState);

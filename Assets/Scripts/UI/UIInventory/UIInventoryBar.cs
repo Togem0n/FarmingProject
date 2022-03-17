@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UIInventoryBar : MonoBehaviour
 {
-    [SerializeField] private Sprite blankSprite = null;
+    //[SerializeField] private Sprite blankSprite = null;
     [SerializeField] private UIInventorySlot[] inventorySlots = null;
 
     public GameObject inventoryBarDraggedItem;

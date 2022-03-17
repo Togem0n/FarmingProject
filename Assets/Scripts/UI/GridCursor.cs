@@ -12,6 +12,7 @@ public class GridCursor : MonoBehaviour
     [SerializeField] private RectTransform cursorRectTransform = null;
     [SerializeField] private Sprite greenCursorSprite = null;
     [SerializeField] private Sprite redCursorSprite = null;
+    [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
 
     private bool _cursorPositionIsValid = false;
     public bool CursorPositionIsValid { get => _cursorPositionIsValid; set => _cursorPositionIsValid = value; }
@@ -130,18 +131,21 @@ public class GridCursor : MonoBehaviour
                     }
                     break;
                 case ItemType.HoeingTool:
-                    if (!gridPropertyDetails.isDiaggable)
+                case ItemType.WateringTool:
+                case ItemType.BreakingTool:
+                case ItemType.ChoppingTool:
+                case ItemType.ReapingTool:
+                case ItemType.CollectingTool:
+                    if(!IsCursorValidForTool(gridPropertyDetails, itemDetails))
                     {
                         SetCursorToInValid();
                         return;
                     }
                     break;
-                case ItemType.WateringTool:
-                    if (!gridPropertyDetails.isDiaggable)
-                    {
-                        SetCursorToInValid();
-                        return;
-                    }
+
+                case ItemType.none:
+                    break;
+                case ItemType.count:
                     break;
                 default:
                     break;
@@ -153,6 +157,62 @@ public class GridCursor : MonoBehaviour
             return;
         }
 
+    }
+
+    private bool IsCursorValidForTool(GridPropertyDetails gridPropertyDetails, ItemDetails itemDetails)
+    {
+        switch (itemDetails.itemType)
+        {
+            case ItemType.HoeingTool:
+                if(gridPropertyDetails.isDiaggable == true && gridPropertyDetails.daysSinceDug == -1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            case ItemType.WateringTool:
+                if(gridPropertyDetails.daysSinceDug > -1 && gridPropertyDetails.daysSinceWatered == -1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+            case ItemType.ChoppingTool:
+            case ItemType.BreakingTool:
+            case ItemType.CollectingTool:
+
+                if(gridPropertyDetails.seedItemCode != -1)
+                {
+                    CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
+
+                    if(cropDetails != null)
+                    {
+                        if (gridPropertyDetails.growthDays >= cropDetails.growthDays[cropDetails.growthDays.Length - 1])
+                        {
+                            if (cropDetails.CanUseToolToHarvestCrop(itemDetails.itemCode))
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+                return false;
+            default:
+                return false;
+        }
     }
 
     private void SetCursorToValid()
@@ -205,5 +265,8 @@ public class GridCursor : MonoBehaviour
         grid = GameObject.FindObjectOfType<Grid>();
     }
 
-
+    public Vector3 GetWorldPositionForCursor()
+    {
+        return grid.CellToWorld(GetGridPositionForCursor());
+    }
 }
