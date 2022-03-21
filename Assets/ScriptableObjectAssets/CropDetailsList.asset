@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cropDetails:
   - seedItemCode: 20
-    growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
+    growthDays: 000000000100000002000000030000000400000005000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -45,7 +44,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 21
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -75,7 +73,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 22
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -105,7 +102,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 23
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -135,7 +131,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 24
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -165,7 +160,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 25
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -195,7 +189,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 26
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -225,7 +218,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 27
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -234,12 +226,12 @@ MonoBehaviour:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     growthSprite:
-    - {fileID: -8041696769663522673, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: 2990324659091684093, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: 7544863540137535682, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: 1960539659799745754, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: 6586604860108274605, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: -8223979532953032098, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    - {fileID: 7939795009530705247, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -6283841932703186598, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -5399025308815863455, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: 1623897466111502077, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -2425579493439346394, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -5654957157512210657, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
     seasons: 00000000
     harvestedSprite: {fileID: 2091145203471059505, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
     harvestedTransfromItemCode: 0
@@ -255,7 +247,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 28
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -285,7 +276,6 @@ MonoBehaviour:
     daysToRegrow: 0
   - seedItemCode: 29
     growthDays: 010000000100000001000000010000000100000001000000
-    totalGrowDays: 6
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -294,12 +284,12 @@ MonoBehaviour:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     growthSprite:
-    - {fileID: 4367401840365510655, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: -134482017292569116, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: -5334906765595171110, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: 2047603490372393046, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: -3401641216410614008, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
-    - {fileID: 801294303021109908, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    - {fileID: -4069586700723171749, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -3085945388132976002, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -5552177675114556612, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: 406936385445148674, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: 646407353341687259, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -7017202247838496533, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
     seasons: 00000000
     harvestedSprite: {fileID: 4240935727487974636, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
     harvestedTransfromItemCode: 0
@@ -312,4 +302,71 @@ MonoBehaviour:
     cropProducedItemCode: 13000000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
+    daysToRegrow: 0
+  - seedItemCode: 31
+    growthDays: 000000000100000002000000030000000400000005000000
+    growthPrefab:
+    - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
+    - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
+    - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
+    - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
+    - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
+    - {fileID: 4738321048216021523, guid: 704a59a61abac2d498730d95232ddc05, type: 3}
+    growthSprite:
+    - {fileID: 3908536003752592963, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: 6960096479862379934, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -2807027969274648962, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -1138152229542321017, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -1316513940826341611, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    - {fileID: -2221636975057552412, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    seasons: 00000000
+    harvestedSprite: {fileID: 0}
+    harvestedTransfromItemCode: 32
+    hideCropBeforeHarvestedAniamtion: 0
+    disableCropCollidersBeforeHarvestedAnimation: 0
+    isHarvestedAnimation: 0
+    spawnCropProducedAtPlayerPosition: 0
+    harvestToolItemCode: 010000000200000003000000
+    requiredHarvestActions: 010000000100000005000000
+    cropProducedItemCode: 1e0000001f000000
+    cropProducedMinQuantity: 0200000001000000
+    cropProducedMaxQuantity: 0500000002000000
+    daysToRegrow: 0
+  - seedItemCode: 32
+    growthDays: 00000000
+    growthPrefab:
+    - {fileID: 2256429782838796452, guid: fcc3a6673e0cdbe4d8d32ff54a1bdc91, type: 3}
+    growthSprite:
+    - {fileID: 5448451854125577616, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    seasons: 00000000010000000200000003000000
+    harvestedSprite: {fileID: 0}
+    harvestedTransfromItemCode: 0
+    hideCropBeforeHarvestedAniamtion: 0
+    disableCropCollidersBeforeHarvestedAnimation: 0
+    isHarvestedAnimation: 0
+    spawnCropProducedAtPlayerPosition: 0
+    harvestToolItemCode: 01000000020000000300000004000000
+    requiredHarvestActions: 01000000010000000500000005000000
+    cropProducedItemCode: 1e000000
+    cropProducedMinQuantity: 02000000
+    cropProducedMaxQuantity: 05000000
+    daysToRegrow: 0
+  - seedItemCode: 33
+    growthDays: 000000000100000002000000030000000400000005000000
+    growthPrefab:
+    - {fileID: 2256429782838796452, guid: fcc3a6673e0cdbe4d8d32ff54a1bdc91, type: 3}
+    growthSprite:
+    - {fileID: 3908536003752592963, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    seasons: 00000000010000000200000003000000
+    harvestedSprite: {fileID: 0}
+    harvestedTransfromItemCode: 0
+    hideCropBeforeHarvestedAniamtion: 0
+    disableCropCollidersBeforeHarvestedAnimation: 0
+    isHarvestedAnimation: 0
+    spawnCropProducedAtPlayerPosition: 0
+    harvestToolItemCode: 01000000020000000300000004000000
+    requiredHarvestActions: 01000000010000000500000005000000
+    cropProducedItemCode: 1e0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f0000001f000000
+    cropProducedMinQuantity: 02000000
+    cropProducedMaxQuantity: 05000000
     daysToRegrow: 0

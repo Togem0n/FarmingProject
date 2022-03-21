@@ -58,7 +58,25 @@ public class Crop : MonoBehaviour
     private void HarvestActions(CropDetails cropDetails, GridPropertyDetails gridPropertyDetails)
     {
         SpawnHarvestedItems(cropDetails);
+
+        if(cropDetails.harvestedTransfromItemCode > 0)
+        {
+            CreateHarvestedTransformCrop(cropDetails, gridPropertyDetails);
+        }
+
         Destroy(gameObject);
+    }
+
+    private void CreateHarvestedTransformCrop(CropDetails cropDetails, GridPropertyDetails gridPropertyDetails)
+    {
+        gridPropertyDetails.seedItemCode = cropDetails.harvestedTransfromItemCode;
+        gridPropertyDetails.growthDays = 0;
+        gridPropertyDetails.daysSinceLastHarvest = -1;
+        gridPropertyDetails.daysSinceWatered = -1;
+
+        GridPropertyManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
+
+        GridPropertyManager.Instance.DisplayPlantedCrop(gridPropertyDetails);
     }
 
     private void SpawnHarvestedItems(CropDetails cropDetails)
@@ -78,17 +96,23 @@ public class Crop : MonoBehaviour
                 cropsToProduce = UnityEngine.Random.Range(cropDetails.cropProducedMinQuantity[i], cropDetails.cropProducedMaxQuantity[i] + 1);
             }
 
-            if (InventoryManager.Instance.TryAddItem(cropDetails.cropProducedItemCode[i], cropsToProduce))
-            {
+            //if (InventoryManager.Instance.TryAddItem(cropDetails.cropProducedItemCode[i], cropsToProduce))
+            //{
 
-            }
-            else
+            //}
+            //else
+            //{
+            //    Debug.Log("Inventory is full");
+            //    Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-1f, 1f), transform.position.y + UnityEngine.Random.Range(-1f, 1f), 0f);
+            //    Debug.Log("Produce item code:" + cropDetails.cropProducedItemCode[i]);
+            //    SceneItemsManager.Instance.InstantiateSceneItem(cropDetails.cropProducedItemCode[i], spawnPosition);
+            //}
+            for(int j = 0; j < cropsToProduce; j++)
             {
-                Debug.Log("Inventory is full");
                 Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-1f, 1f), transform.position.y + UnityEngine.Random.Range(-1f, 1f), 0f);
-                Debug.Log("Produce item code:" + cropDetails.cropProducedItemCode[i]);
                 SceneItemsManager.Instance.InstantiateSceneItem(cropDetails.cropProducedItemCode[i], spawnPosition);
             }
+
         }
 
     }

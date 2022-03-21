@@ -21,6 +21,16 @@ public static class EventHandler
         }
     }
 
+    public static event Action InstantiateCropPrefabsEvent;
+
+    public static void CallInstantiateCropPrefabsEvent()
+    {
+        if(InstantiateCropPrefabsEvent != null)
+        {
+            InstantiateCropPrefabsEvent();
+        }
+    }
+
     // Inventory Updated Event
     public static event Action<List<InventoryItem>> InventoryUpdatedEvent;
 

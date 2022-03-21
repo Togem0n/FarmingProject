@@ -57,22 +57,40 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         PrintInventoryList(InventoryList);
     }
 
-    public void AddItem(int itemCode, int itemQuantity)
-    {
-
-    }
-
     public void AddItem(int itemCode, int itemQuantity, GameObject itemToDelete)
     {
-        if (TryAddItem(itemCode, itemQuantity))
+        AddItem(itemCode, itemQuantity);
+        
+        Destroy(itemToDelete);
+        
+    }
+
+    public void AddItem(int itemCode, int itemQuantity)
+    {
+        // Check if inventory already contains the item
+        int itemIndex = GetItemIndexInInventory(itemCode);
+
+        // if contain
+        if (itemIndex != -1)
         {
-            Destroy(itemToDelete);
+            AddItemAtIndex(itemCode, itemIndex, itemQuantity);
         }
+        // if not contain
         else
         {
-            // Inventory full !!!
-            Debug.Log("oops, inventory full");
+            // check inventory full or not
+            if (GetFirstBlankSlotIndex() != -1)
+            {
+                AddItemAtIndex(itemCode, GetFirstBlankSlotIndex(), itemQuantity);
+            }
+            else
+            {
+                return;
+            }
         }
+        // Send event that inventory has been updated
+        EventHandler.CallInventoryUpdatedEvent(InventoryList);
+        return;
     }
 
     /// <summary>
@@ -88,7 +106,8 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         // if contain
         if (itemIndex != -1)
         {
-            AddItemAtIndex(itemCode, itemIndex, itemQuantity);
+            return true;
+            //AddItemAtIndex(itemCode, itemIndex, itemQuantity);
         }
         // if not contain
         else
@@ -96,16 +115,16 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
             // check inventory full or not
             if(GetFirstBlankSlotIndex() != -1)
             {
-                AddItemAtIndex(itemCode, GetFirstBlankSlotIndex(), itemQuantity);
+                return true;
+                //AddItemAtIndex(itemCode, GetFirstBlankSlotIndex(), itemQuantity);
             }
             else
             {
                 return false;
             }
         }
-        // Send event that inventory has been updated
-        EventHandler.CallInventoryUpdatedEvent(InventoryList);
-        return true;
+
+        // return true;
     }
 
     /// <summary>

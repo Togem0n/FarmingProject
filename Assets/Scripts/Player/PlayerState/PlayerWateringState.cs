@@ -27,6 +27,20 @@ public class PlayerWateringState : PlayerUseToolState
     public override void Enter()
     {
         base.Enter();
+
+        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
+
+        if (gridPropertyDetails != null
+            && gridPropertyDetails.daysSinceDug > -1
+            && gridPropertyDetails.seedItemCode == -1
+            )
+        {
+            gridPropertyDetails.daysSinceWatered = 1;
+
+            GridPropertyManager.Instance.DisplayPlantedCrop(gridPropertyDetails);
+        }
+
+        stateMachine.ChangeState(player.IdleState);
     }
 
     public override void Exit()

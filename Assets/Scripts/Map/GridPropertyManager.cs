@@ -11,6 +11,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
     private Tilemap tilemap;
     private Tilemap dugTilemap;
     private Tilemap wateredTilemap;
+    private bool isFirstTimeSceneLoaded = true;
 
     [SerializeField] private Tile dugTile;
 
@@ -205,6 +206,9 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
                 this.gridPropertyDictionary = gridPropertyDictionary;
             }
 
+            sceneSave.boolDictionary = new Dictionary<string, bool>();
+            sceneSave.boolDictionary.Add("isFirstTimeLoaded", true);
+
             GameObjectSave.sceneData.Add(gridPropertyScriptableObject.sceneName.ToString(), sceneSave);
         }
     }
@@ -346,11 +350,26 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
                 gridPropertyDictionary = sceneSave.gridPropertyDetailsDictionary;
             }
 
+            if(sceneSave.boolDictionary != null && sceneSave.boolDictionary.TryGetValue("isFirstTimeSceneLoaded", out bool storedIsFirstTimeSceneLoaded))
+            {
+                isFirstTimeSceneLoaded = storedIsFirstTimeSceneLoaded;
+            }
+
+            if (isFirstTimeSceneLoaded)
+            {
+                EventHandler.CallInstantiateCropPrefabsEvent();
+            }
+
             if(gridPropertyDictionary.Count > 0)
             {
                 ClearDisplayGridPropertyDetails();
 
                 DisplayGridPropertyDetails();
+            }
+
+            if (isFirstTimeSceneLoaded)
+            {
+                isFirstTimeSceneLoaded = false;
             }
         }
     }
@@ -362,6 +381,9 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         SceneSave sceneSave = new SceneSave();
 
         sceneSave.gridPropertyDetailsDictionary = gridPropertyDictionary;
+
+        sceneSave.boolDictionary = new Dictionary<string, bool>();
+        sceneSave.boolDictionary.Add("isFirstTimeSceneLoaded", isFirstTimeSceneLoaded);
 
         GameObjectSave.sceneData.Add(sceneName, sceneSave);
     }

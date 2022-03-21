@@ -51,8 +51,21 @@ public class PlayerMoveState : PlayerState
             stateMachine.ChangeState(player.CarryingSeedState);
         }
 
+        // water crop logic
+        if (InventoryManager.Instance.SelectedItemCode != -1
+            && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.WateringTool
+            && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
+            && !UIManager.Instance.IsPointerOverUIElement())
+        {
+            player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
+            // if position is allowed to plant
+            stateMachine.ChangeState(player.WateringState);
+        }
+
         // harvest logic
-        if(InventoryManager.Instance.SelectedItemCode != -1
+        // change line 57 to
+        // if InventoryManager.Instance.GetSelectedItemDetails().itemType == getcropdetails? if can harvest?
+        if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.CollectingTool
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
             && !UIManager.Instance.IsPointerOverUIElement()

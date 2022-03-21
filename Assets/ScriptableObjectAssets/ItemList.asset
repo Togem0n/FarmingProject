@@ -66,11 +66,11 @@ MonoBehaviour:
     canBeEaten: 0
     canBeCarried: 1
   - itemCode: 4
-    itemType: 0
-    itemName: CarrotSeed
+    itemType: 4
+    itemName: Axe
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: -2273560400057252286, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    itemSprite: {fileID: -6308079867175785215, guid: 4c15f3a81745ba54ea1bbb9234c5aa09, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0
@@ -404,11 +404,37 @@ MonoBehaviour:
     canBeEaten: 1
     canBeCarried: 1
   - itemCode: 30
-    itemType: 0
-    itemName: CarrotSeed
+    itemType: 1
+    itemName: Wood
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 8812169861478436503, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemSprite: {fileID: 2047603490372393046, guid: c02bc083a00274d4d9c5dd7dca7e629f, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 31
+    itemType: 0
+    itemName: TreeSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -6424128661320584164, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 32
+    itemType: 0
+    itemName: TreeTrunkSeed
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 5448451854125577616, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0
