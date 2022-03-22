@@ -131,7 +131,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
             Sprite growthSprite = cropDetails.growthSprite[currentGrowthStage];
 
-            Debug.Log("current growth stage" + currentGrowthStage);
+            //Debug.Log("current growth stage" + currentGrowthStage);
 
             Vector3 worldPosition = dugTilemap.CellToWorld(new Vector3Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY, 0));
 

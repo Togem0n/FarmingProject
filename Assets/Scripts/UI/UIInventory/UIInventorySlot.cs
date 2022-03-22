@@ -172,7 +172,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                     SetSelectedItem();
                 }
             }
-            Debug.Log("select item: " + InventoryManager.Instance.SelectedItemCode);
+            //Debug.Log("select item: " + InventoryManager.Instance.SelectedItemCode);
         }
     }
     private void SetSelectedItem()
@@ -197,7 +197,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         gridCursor.SelectedItemtype = itemDetails.itemType;
 
         InventoryManager.Instance.SetSelectedInventoryItem(itemDetails.itemCode, id);
-        Debug.Log("selected item's index is: " + id);
+        //Debug.Log("selected item's index is: " + id);
     }
 
     private void ClearSelectedItem()

@@ -26,21 +26,24 @@ public class PlayerWateringState : PlayerUseToolState
 
     public override void Enter()
     {
+        player.animator.SetFloat("useToolDirectionX", player.useToolGridDirection.x);
+        player.animator.SetFloat("useToolDirectionY", player.useToolGridDirection.y);
+        player.animator.SetFloat("xInput", player.moveDirection.x);
+        player.animator.SetFloat("yInput", player.moveDirection.y);
+
         base.Enter();
+
+
 
         GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
         if (gridPropertyDetails != null
             && gridPropertyDetails.daysSinceDug > -1
-            && gridPropertyDetails.seedItemCode == -1
             )
         {
             gridPropertyDetails.daysSinceWatered = 1;
-
             GridPropertyManager.Instance.DisplayPlantedCrop(gridPropertyDetails);
         }
-
-        stateMachine.ChangeState(player.IdleState);
     }
 
     public override void Exit()

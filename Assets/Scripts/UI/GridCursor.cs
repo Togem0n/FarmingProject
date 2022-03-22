@@ -132,9 +132,9 @@ public class GridCursor : MonoBehaviour
                     break;
                 case ItemType.HoeingTool:
                 case ItemType.WateringTool:
+                case ItemType.ReapingTool:
                 case ItemType.BreakingTool:
                 case ItemType.ChoppingTool:
-                case ItemType.ReapingTool:
                 case ItemType.CollectingTool:
                     if(!IsCursorValidForTool(gridPropertyDetails, itemDetails))
                     {
@@ -185,8 +185,8 @@ public class GridCursor : MonoBehaviour
             case ItemType.ChoppingTool:
             case ItemType.BreakingTool:
             case ItemType.CollectingTool:
-
-                if(gridPropertyDetails.seedItemCode != -1)
+                Debug.Log("nmslchop");
+                if (gridPropertyDetails.seedItemCode != -1)
                 {
                     CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
 

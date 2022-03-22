@@ -3222,6 +3222,37 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &2107611983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3009617463962976938, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+  m_PrefabInstance: {fileID: 3009617463487674242}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &2107611988
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107611983}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.09614234}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.18653783}
+  m_EdgeRadius: 0
 --- !u!4 &2120185518 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3009617464119116076, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
@@ -3250,6 +3281,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1090217281897295437, guid: b76339a532a37e34b9ed13825c106238, type: 3}
+    - target: {fileID: 3009617463962976942, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3009617464119116076, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
       propertyPath: m_RootOrder
       value: 2

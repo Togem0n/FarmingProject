@@ -26,7 +26,10 @@ public class PlayerUseToolState : PlayerState
     public override void Enter()
     {
         base.Enter();
-
+        player.animator.SetFloat("useToolDirectionX", player.useToolGridDirection.x);
+        player.animator.SetFloat("useToolDirectionY", player.useToolGridDirection.y);
+        player.animator.SetFloat("xInput", player.moveDirection.x);
+        player.animator.SetFloat("yInput", player.moveDirection.y);
         player.animator.SetFloat("speed", 0);
         player.DisablePlayerInput();
         // enable when animation finish
