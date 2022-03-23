@@ -71,3 +71,6 @@ TagManager:
   - name: Instances
     uniqueID: 93636223
     locked: 0
+  - name: BoolProperty
+    uniqueID: 2752231313
+    locked: 0

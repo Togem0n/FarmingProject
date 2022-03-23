@@ -79,11 +79,11 @@ MonoBehaviour:
     canBeEaten: 1
     canBeCarried: 1
   - itemCode: 5
-    itemType: 1
-    itemName: Carrot
+    itemType: 5
+    itemName: brakingtool
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: -4334497548603019903, guid: e7a9a4599ccb6b04f8991525627dd4f2, type: 3}
+    itemSprite: {fileID: 3991527062789968029, guid: 76630148571074f4d8958fd19eb2d6f5, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0
@@ -435,6 +435,32 @@ MonoBehaviour:
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 5448451854125577616, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 33
+    itemType: 1
+    itemName: Stone1
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -3397633461966191818, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 34
+    itemType: 1
+    itemName: Stone2
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: 3001671013770881885, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0

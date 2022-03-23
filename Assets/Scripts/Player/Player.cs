@@ -16,6 +16,7 @@ public class Player : SingletonMonoBehaviour<Player>
     public PlayerCarrySeedState CarryingSeedState { get; private set; }
     public PlayerHarvestingState HarvestingState { get; private set; }
     public PlayerChoppingState ChoppingState { get; private set; }
+    public PlayerBreakingState BreakingState { get; private set; }
 
     #endregion
 
@@ -65,6 +66,7 @@ public class Player : SingletonMonoBehaviour<Player>
         CarryingSeedState = new PlayerCarrySeedState(this, Statemachine, playerData, "planting");
         HarvestingState = new PlayerHarvestingState(this, Statemachine, playerData, "harvesting");
         ChoppingState = new PlayerChoppingState(this, Statemachine, playerData, "chopping");
+        BreakingState = new PlayerBreakingState(this, Statemachine, playerData, "breaking");
     }
 
     private void Start()

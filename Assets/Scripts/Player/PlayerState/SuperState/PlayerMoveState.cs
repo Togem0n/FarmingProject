@@ -85,6 +85,9 @@ public class PlayerMoveState : PlayerState
                 switch (InventoryManager.Instance.GetSelectedItemDetails().itemType)
                 {
                     case ItemType.BreakingTool:
+                        crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
+                        stateMachine.ChangeState(player.BreakingState);
+                        break;
                     case ItemType.ChoppingTool:
                         crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
                         stateMachine.ChangeState(player.ChoppingState);

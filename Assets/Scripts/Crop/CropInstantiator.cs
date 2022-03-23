@@ -11,6 +11,8 @@ public class CropInstantiator : MonoBehaviour
     [SerializeField] private int seedItemCode = 0;
     [SerializeField] private int growthDays = 0;
 
+    [SerializeField] private bool isStone; // stone item code 33 - 36
+
     private void OnEnable()
     {
         EventHandler.InstantiateCropPrefabsEvent += InstantiateCropPrefab;
@@ -19,6 +21,14 @@ public class CropInstantiator : MonoBehaviour
     private void OnDisable()
     {
         EventHandler.InstantiateCropPrefabsEvent -= InstantiateCropPrefab;
+    }
+
+    private void Start()
+    {
+        if (isStone)
+        {
+            seedItemCode = Random.Range(33, 35);
+        }
     }
 
     private void InstantiateCropPrefab()
@@ -34,8 +44,9 @@ public class CropInstantiator : MonoBehaviour
 
     private void SetCropGridProperties(Vector3Int cropGridPosition)
     {
-        if(seedItemCode > 0)
+        if (seedItemCode > 0)
         {
+
             GridPropertyDetails gridPropertyDetails;
 
             gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(cropGridPosition.x, cropGridPosition.y);
