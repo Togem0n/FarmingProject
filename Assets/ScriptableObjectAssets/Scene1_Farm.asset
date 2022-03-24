@@ -54595,12 +54595,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -39
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -38
       y: -47
     gridBoolProperty: 0
@@ -55083,12 +55077,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -38
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -38
-      y: 38
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -55579,12 +55567,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -37
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -36
       y: -47
     gridBoolProperty: 0
@@ -56067,12 +56049,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -36
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -36
-      y: 38
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -56569,42 +56545,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -35
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -35
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -35
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -35
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -35
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -35
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -34
       y: -45
     gridBoolProperty: 0
@@ -57103,42 +57043,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -34
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -34
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -34
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -34
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -34
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -34
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -33
       y: -45
     gridBoolProperty: 0
@@ -57613,42 +57517,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -33
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -33
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -33
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -33
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -33
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -33
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -32
       y: -45
     gridBoolProperty: 0
@@ -58101,42 +57969,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -32
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -32
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -32
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -32
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -32
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -32
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -32
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -58597,42 +58429,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -31
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -31
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -31
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -31
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -31
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -31
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -30
       y: -45
     gridBoolProperty: 0
@@ -59085,42 +58881,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -30
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -30
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -30
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -30
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -30
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -30
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -30
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -59581,42 +59341,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -29
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -29
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -29
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -29
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -29
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -29
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -28
       y: -45
     gridBoolProperty: 0
@@ -60069,42 +59793,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -28
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -28
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -28
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -28
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -28
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -28
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -28
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -60565,42 +60253,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -27
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -27
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -27
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -27
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -27
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -27
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -26
       y: -45
     gridBoolProperty: 0
@@ -61053,42 +60705,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -26
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -26
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -26
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -26
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -26
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -26
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -26
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -61557,42 +61173,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -25
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -25
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -25
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -25
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -25
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -25
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -25
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -62095,42 +61675,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -24
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -24
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -24
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -24
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -24
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -24
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -23
       y: -45
     gridBoolProperty: 0
@@ -62625,42 +62169,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -23
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -23
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -23
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -23
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -23
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -23
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -23
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -63163,42 +62671,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -22
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -22
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -22
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -22
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -22
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -22
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -21
       y: -45
     gridBoolProperty: 0
@@ -63693,42 +63165,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -21
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -21
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -21
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -21
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -21
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -21
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -21
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -64231,42 +63667,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -20
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -20
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -20
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -20
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -20
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -20
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -19
       y: -45
     gridBoolProperty: 0
@@ -64765,42 +64165,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -19
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -19
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -19
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -19
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -19
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -19
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -18
       y: -45
     gridBoolProperty: 0
@@ -65295,42 +64659,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -18
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -18
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -18
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -18
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -18
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -18
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -18
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -65863,42 +65191,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -17
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -17
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -17
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -17
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -17
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -17
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -16
       y: -50
     gridBoolProperty: 0
@@ -66423,42 +65715,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -16
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -16
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -16
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -16
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -16
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -16
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -16
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -66991,42 +66247,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -15
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -15
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -15
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -15
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -15
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -15
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -14
       y: -45
     gridBoolProperty: 0
@@ -67521,42 +66741,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -14
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -14
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -14
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -14
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -14
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -14
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -14
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -68059,42 +67243,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -13
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -13
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -13
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -13
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -13
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -13
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -12
       y: -45
     gridBoolProperty: 0
@@ -68589,42 +67737,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -12
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -12
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -12
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -12
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -12
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -12
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -12
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1
@@ -69127,42 +68239,6 @@ MonoBehaviour:
     gridBoolPropertyList: 
     gridBoolValue: 1
   - gridCoordinate:
-      x: -11
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -11
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -11
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -11
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -11
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -11
-      y: 43
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
       x: -10
       y: -45
     gridBoolProperty: 0
@@ -69657,42 +68733,6 @@ MonoBehaviour:
   - gridCoordinate:
       x: -10
       y: 37
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -10
-      y: 38
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -10
-      y: 39
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -10
-      y: 40
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -10
-      y: 41
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -10
-      y: 42
-    gridBoolProperty: 0
-    gridBoolPropertyList: 
-    gridBoolValue: 1
-  - gridCoordinate:
-      x: -10
-      y: 43
     gridBoolProperty: 0
     gridBoolPropertyList: 
     gridBoolValue: 1

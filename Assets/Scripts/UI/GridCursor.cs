@@ -53,7 +53,7 @@ public class GridCursor : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(GetGridPositionForCursor().x, GetGridPositionForCursor().y);
-            if(gridPropertyDetails != null)
+            if (gridPropertyDetails != null)
             {
                 Debug.Log("*******************************************");
                 Debug.Log("Coordination: ( " + GetGridPositionForCursor().x + ", " + GetGridPositionForCursor().y + ")");

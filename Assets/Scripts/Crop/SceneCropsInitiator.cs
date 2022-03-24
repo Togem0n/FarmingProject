@@ -26,7 +26,6 @@ public class SceneCropsInitiator : MonoBehaviour
 
     private void InstantiateSceneCrops()
     {
-        Debug.Log("testing2");
         Debug.Log(currentSceneGrid.originX);
         Debug.Log(currentSceneGrid.originY);
         Debug.Log(currentSceneGrid.gridWidth);
@@ -38,7 +37,6 @@ public class SceneCropsInitiator : MonoBehaviour
 
         for (int i = currentSceneGrid.originX; i < currentSceneGrid.originX + currentSceneGrid.gridWidth; i++)
         {
-            Debug.Log(i);
             for(int j = currentSceneGrid.originY; j < currentSceneGrid.originY + currentSceneGrid.gridHeight; j++)
             {
                 GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(i, j);
