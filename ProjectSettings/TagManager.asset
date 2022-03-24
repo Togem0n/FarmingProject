@@ -68,6 +68,9 @@ TagManager:
   - name: WateredTilemap
     uniqueID: 2875692523
     locked: 0
+  - name: Buildings
+    uniqueID: 1609328061
+    locked: 0
   - name: Instances
     uniqueID: 93636223
     locked: 0

@@ -418,7 +418,7 @@ MonoBehaviour:
     canBeCarried: 1
   - itemCode: 31
     itemType: 0
-    itemName: TreeSeed
+    itemName: TreeSeed1
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: -6424128661320584164, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
@@ -461,6 +461,19 @@ MonoBehaviour:
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 3001671013770881885, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
+  - itemCode: 35
+    itemType: 0
+    itemName: TreeSeed2
+    itemDescription: 
+    itemLongDescription: 
+    itemSprite: {fileID: -6424128661320584164, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
     itemUseGridRadius: 1
     itemUseRadius: 1
     isStartingItem: 0

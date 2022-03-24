@@ -9,13 +9,9 @@ public class SceneCropsInitiator : MonoBehaviour
     [SerializeField] private GameObject stonePrefab;
     [SerializeField] private GameObject treePrefab;
 
-    private int width;
-    private int height;
-
     private void Start()
     {
-        width = currentSceneGrid.gridWidth;
-        height = currentSceneGrid.gridHeight;
+
     }
 
     private void OnEnable()
@@ -28,20 +24,22 @@ public class SceneCropsInitiator : MonoBehaviour
         EventHandler.InstantiateCropPrefabsEvent -= InstantiateSceneCrops;
     }
 
-    //grid = GameObject.FindObjectOfType<Grid>();
-
-    //    Vector3Int cropGridPosition = grid.WorldToCell(transform.position);
-
-    //SetCropGridProperties(cropGridPosition);
-
-    //Destroy(gameObject);
     private void InstantiateSceneCrops()
     {
+        Debug.Log("testing2");
+        Debug.Log(currentSceneGrid.originX);
+        Debug.Log(currentSceneGrid.originY);
+        Debug.Log(currentSceneGrid.gridWidth);
+        Debug.Log(currentSceneGrid.gridHeight);
+        Debug.Log(currentSceneGrid.originX + currentSceneGrid.gridWidth);
+        Debug.Log(currentSceneGrid.originY + currentSceneGrid.gridHeight);
+
         grid = GameObject.FindObjectOfType<Grid>();
 
-        for (int i = currentSceneGrid.originX; i < currentSceneGrid.originX + width; i++)
+        for (int i = currentSceneGrid.originX; i < currentSceneGrid.originX + currentSceneGrid.gridWidth; i++)
         {
-            for(int j = currentSceneGrid.originY; j < currentSceneGrid.originY + height; j++)
+            Debug.Log(i);
+            for(int j = currentSceneGrid.originY; j < currentSceneGrid.originY + currentSceneGrid.gridHeight; j++)
             {
                 GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(i, j);
 
@@ -65,7 +63,11 @@ public class SceneCropsInitiator : MonoBehaviour
                         {
                             gridPropertyDetails.daysSinceDug = -1;
                             gridPropertyDetails.daysSinceWatered = -1;
-                            gridPropertyDetails.seedItemCode = 31;
+                            List<int> tmp = new List<int>();
+                            tmp.Add(31);
+                            tmp.Add(35);
+                            int num = Random.Range(0, tmp.Count);
+                            gridPropertyDetails.seedItemCode = tmp[num];
                             gridPropertyDetails.growthDays = 6;
                             GridPropertyManager.Instance.SetGridPropertyDetails(i, j, gridPropertyDetails);
                         }

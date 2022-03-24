@@ -357,6 +357,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
             if (isFirstTimeSceneLoaded)
             {
+                Debug.Log("testing");
                 EventHandler.CallInstantiateCropPrefabsEvent();
             }
 
