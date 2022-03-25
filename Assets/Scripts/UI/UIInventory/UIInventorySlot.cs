@@ -10,7 +10,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 {
     private Camera mainCamera;
     private Transform parentItem;
-    private GameObject draggedItem;
+    public GameObject draggedItem;
 
     private GridCursor gridCursor;
 
@@ -175,7 +175,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             //Debug.Log("select item: " + InventoryManager.Instance.SelectedItemCode);
         }
     }
-    private void SetSelectedItem()
+    public void SetSelectedItem()
     {
         inventoryBar.ClearHighLightOnInventorySlots();
 
@@ -200,7 +200,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         //Debug.Log("selected item's index is: " + id);
     }
 
-    private void ClearSelectedItem()
+    public void ClearSelectedItem()
     {
         ClearCursors();
 

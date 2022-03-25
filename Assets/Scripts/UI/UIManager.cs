@@ -1,12 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class UIManager : SingletonMonoBehaviour<UIManager>
 {
     int UILayer;
     int SceneTransitionLayer;
+
+    private bool pauseMenuOn = false;
+    [SerializeField] private UIInventoryBar uiInventoryBar = null;
+    [SerializeField] private PauseMenuInventoryManagement pauseMenuInventoryManagement = null;
+    [SerializeField] private GameObject pauseMenu = null;
+    [SerializeField] private GameObject[] menuTabs = null;
+    [SerializeField] private Button[] menuButtons = null;
+
+    public bool PauseMenuOn { get => pauseMenuOn; set => pauseMenuOn = value; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        pauseMenu.SetActive(false);
+    }
 
     private void Start()
     {
@@ -14,11 +31,102 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         SceneTransitionLayer = LayerMask.NameToLayer("SceneTransition");
     }
 
-    private void Update()
+    private void PauseMenu()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseMenuOn)
+            {
+                DisablePauseMenu();
+            }
+            else
+            {
+                EnablePauseMenu();
+            }
+        }
     }
 
+    private void DisablePauseMenu()
+    {
+        pauseMenuInventoryManagement.DestroyCurrentlyDraggedItem();
+
+        pauseMenuOn = false;
+        Player.Instance.EnablePlayerInput();
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
+    }
+
+    private void EnablePauseMenu()
+    {
+        uiInventoryBar.DestoryCurrentlyDraggedItem();
+
+        uiInventoryBar.ClearCurrentlySelectedItems();
+
+
+        pauseMenuOn = true;
+        Player.Instance.DisablePlayerInput();
+        Time.timeScale = 0;
+        pauseMenu.SetActive(true);
+
+        System.GC.Collect();
+
+        HighLightButtonForSelectedTab();
+    }
+
+    private void Update()
+    {
+        PauseMenu();
+    }
+
+    private void HighLightButtonForSelectedTab()
+    {
+        for(int i = 0; i < menuTabs.Length; i++)
+        {
+            if (menuTabs[i].activeSelf)
+            {
+                SetButtonColorToActive(menuButtons[i]);
+            }
+            else
+            {
+                SetButtonColorToInactive(menuButtons[i]);
+            }
+        }
+    }
+
+    private void SetButtonColorToInactive(Button button)
+    {
+        ColorBlock colors = button.colors;
+        colors.normalColor = colors.disabledColor;
+        button.colors = colors;
+    }
+
+    private void SetButtonColorToActive(Button button)
+    {
+        ColorBlock colors = button.colors;
+        colors.normalColor = colors.pressedColor;
+        button.colors = colors;
+    }
+
+    
+    public void SwitchPauseMenuTab(int tabNum)
+    {
+        for(int i = 0; i < menuTabs.Length; i++)
+        {
+            if(i != tabNum)
+            {
+                menuTabs[i].SetActive(false);
+            }
+            else
+            {
+                menuTabs[i].SetActive(true);
+            }
+        }
+
+        HighLightButtonForSelectedTab();
+    }
+
+
+    #region hover mouse
     public bool IsPointerOverUIElement()
     {
         return IsPointerOverUIElement(GetEventSystemRaycastResults());
@@ -62,4 +170,5 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         EventSystem.current.RaycastAll(eventData, raysastResults);
         return raysastResults;
     }
+    #endregion
 }

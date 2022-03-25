@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  currentInventoryCapacity: 9
+  currentInventoryCapacity: 18

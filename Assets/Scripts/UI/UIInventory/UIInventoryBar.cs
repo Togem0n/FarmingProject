@@ -7,7 +7,7 @@ public class UIInventoryBar : MonoBehaviour
 {
     //[SerializeField] private Sprite blankSprite = null;
     [SerializeField] private UIInventorySlot[] inventorySlots = null;
-
+    int test = 0;
     public GameObject inventoryBarDraggedItem;
 
     private RectTransform rectTransform;
@@ -16,6 +16,18 @@ public class UIInventoryBar : MonoBehaviour
 
     public bool IsInventoryBarPositionBottom { get => _isInventoryBarPositionBottom; set => _isInventoryBarPositionBottom = value; }
     public UIInventorySlot[] InventorySlots { get => inventorySlots; set => inventorySlots = value; }
+
+    private KeyCode[] keyCodes = {
+         KeyCode.Alpha1,
+         KeyCode.Alpha2,
+         KeyCode.Alpha3,
+         KeyCode.Alpha4,
+         KeyCode.Alpha5,
+         KeyCode.Alpha6,
+         KeyCode.Alpha7,
+         KeyCode.Alpha8,
+         KeyCode.Alpha9,
+     };
 
     private void Awake()
     {
@@ -33,6 +45,8 @@ public class UIInventoryBar : MonoBehaviour
 
     private void Update()
     {
+        SetSelectedItemFromUserInput();
+
         SwitchInventoryBarPosition();
     }
 
@@ -97,5 +111,74 @@ public class UIInventoryBar : MonoBehaviour
 
             IsInventoryBarPositionBottom = false;
         }
+    }
+
+    public void DestoryCurrentlyDraggedItem()
+    {
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            if(inventorySlots[i].draggedItem != null)
+            {
+                Destroy(inventorySlots[i].draggedItem);
+            }
+        }
+    }
+
+    public void ClearCurrentlySelectedItems()
+    {
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            inventorySlots[i].ClearSelectedItem();
+        }
+    }
+
+    public void SetSelectedItemFromUserInput()
+    {
+
+        for (int i = 0; i < keyCodes.Length; i++)
+        {
+            if (Input.GetKeyDown(keyCodes[i]) && inventorySlots[i].itemDetails.itemCode != 0)
+            {
+                inventorySlots[i].SetSelectedItem();
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") != 0 && GetCurrentCapacityOfInventorySlots() != 0)
+        {
+            int index = InventoryManager.Instance.SelectedItemIndex == -1? 0: InventoryManager.Instance.SelectedItemIndex;
+
+            index += Mathf.FloorToInt(-Input.GetAxis("Mouse ScrollWheel") * 10);
+            index %= GetCurrentCapacityOfInventorySlots();
+            Debug.Log(index %= GetCurrentCapacityOfInventorySlots());
+            index = index < 0 ? GetCurrentCapacityOfInventorySlots() + index : index;
+            inventorySlots[index].SetSelectedItem();
+
+        }
+
+    }
+
+    public void SetSelectedItem(int index)
+    {
+        inventorySlots[index].SetSelectedItem();
+    }
+
+    public void ClearSelectedItem()
+    {
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            inventorySlots[i].ClearSelectedItem();
+        }
+    }
+
+    public int GetCurrentCapacityOfInventorySlots()
+    {
+        int num = 0;
+        for (int i = 0; i < inventorySlots.Length; i++)
+        {
+            if(inventorySlots[i].itemDetails.itemCode != 0)
+            {
+                num++;
+            }
+        }
+        return num;
     }
 }

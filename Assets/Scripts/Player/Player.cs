@@ -6,7 +6,9 @@ public class Player : SingletonMonoBehaviour<Player>
 {
     [SerializeField] public PlayerData playerData;
     [SerializeField] public GridCursor gridCursor;
-        
+    [SerializeField] public UIInventoryBar uiInventoryBar;
+
+
     #region StateMachine
     public PlayerStateMachine Statemachine { get; private set; }
     public PlayerIdleState IdleState { get; private set; }
@@ -109,7 +111,7 @@ public class Player : SingletonMonoBehaviour<Player>
                 moveDirection.Normalize();
             }
 
-            if(xInput != 0 || yInput != 0)
+            if (xInput != 0 || yInput != 0)
             {
                 movementSpeed = playerData.movementSpeed;
 
@@ -192,7 +194,7 @@ public class Player : SingletonMonoBehaviour<Player>
 
         int itemUseGridRadius = InventoryManager.Instance.GetSelectedItemDetails().itemUseGridRadius;
 
-        if(Mathf.Abs(GridOfMouse.x - GridOfPlayer.x) <= itemUseGridRadius && Mathf.Abs(GridOfMouse.y - GridOfPlayer.y) <= itemUseGridRadius)
+        if (Mathf.Abs(GridOfMouse.x - GridOfPlayer.x) <= itemUseGridRadius && Mathf.Abs(GridOfMouse.y - GridOfPlayer.y) <= itemUseGridRadius)
         {
 
             useToolGridPosition = GridOfMouse;
@@ -206,9 +208,9 @@ public class Player : SingletonMonoBehaviour<Player>
 
                 useToolGridPosition = GridOfPlayer + useToolGridDirection;
             }
-            
 
-            if(useToolGridDirection.y != 0)
+
+            if (useToolGridDirection.y != 0)
             {
                 useToolGridDirection.x = 0;
             }
@@ -223,7 +225,7 @@ public class Player : SingletonMonoBehaviour<Player>
 
             useToolGridPosition = GridOfPlayer + useToolGridDirection;
         }
-        
+
     }
 
     public void SetPlantDirection(float mousePosX, float mousePosY)
