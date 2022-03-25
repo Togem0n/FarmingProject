@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/PersistantScene.unity
+    guid: fd13772e5b149dc4bb461da2f8551fd1
+  - enabled: 1
+    path: Assets/Scenes/Scene1_Farm.unity
+    guid: d9c7b66e0a91f0a4e98093a42243ede9
+  - enabled: 1
     path: Assets/Scenes/Scene2_Field.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Scene3_Cabin.unity
+    guid: c4623f567ccd7ca4da0bbd323cb714a9
+  - enabled: 1
+    path: Assets/Scenes/Scene4_Market.unity
+    guid: a60fb29a022854f4b979977a58f816cb
   m_configObjects: {}
