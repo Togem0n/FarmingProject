@@ -47,7 +47,7 @@ public class UIInventoryBar : MonoBehaviour
     {
         SetSelectedItemFromUserInput();
 
-        SwitchInventoryBarPosition();
+        //SwitchInventoryBarPosition();
     }
 
     public void ClearHighLightOnInventorySlots()
