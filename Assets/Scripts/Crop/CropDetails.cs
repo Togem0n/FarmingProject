@@ -4,7 +4,8 @@ using UnityEngine;
 [System.Serializable]
 public class CropDetails
 {
-    // [ItemCodeDescription]
+    public string name;
+    [ItemCodeDescription]
     public int seedItemCode;
     public int[] growthDays;
     //public int totalGrowDays;
@@ -13,7 +14,7 @@ public class CropDetails
     public Season[] seasons;
     public Sprite harvestedSprite;
 
-    // [ItemCodeDescription]
+    [ItemCodeDescription]
     public int harvestedTransfromItemCode;
     public bool hideCropBeforeHarvestedAniamtion;
     public bool disableCropCollidersBeforeHarvestedAnimation;
@@ -21,11 +22,11 @@ public class CropDetails
     public bool spawnCropProducedAtPlayerPosition;
     //public HarvestActionEffect harvestActionEffect;
 
-    // [ItemCodeDescription]
+    [ItemCodeDescription]
     public int[] harvestToolItemCode;
     public int[] requiredHarvestActions;
 
-    // [ItemCodeDescription]
+    [ItemCodeDescription]
     public int[] cropProducedItemCode;
     public int[] cropProducedMinQuantity;
     public int[] cropProducedMaxQuantity;

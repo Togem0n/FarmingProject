@@ -68,6 +68,16 @@ public static class EventHandler
         }
     }
 
+    public static event Action BuyItemEvent;
+
+    public static void CallBuyItemEvent()
+    {
+        if (BuyItemEvent != null)
+        {
+            BuyItemEvent();
+        }
+    }
+
     // Time Event
 
     // Advance game minute

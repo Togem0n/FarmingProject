@@ -12,7 +12,7 @@ public class ShopInventoryContainer : MonoBehaviour
 
     private void Awake()
     {
-        shopInventoryList = shopInventoryScriptableObject.itemDetails;
+        shopInventoryList = shopInventoryScriptableObject.itemDetailsLibrary;
     }
 
     private void Start()

@@ -34,7 +34,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
     {
         itemDetailsDictionary = new Dictionary<int, ItemDetails>();
 
-        foreach (ItemDetails itemDetails in itemLibrary.itemDetails)
+        foreach (ItemDetails itemDetails in itemLibrary.itemDetailsLibrary)
         {
             itemDetailsDictionary.Add(itemDetails.itemCode, itemDetails);
         }

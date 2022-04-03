@@ -38,7 +38,7 @@ public class ItemCodeDescriptionDrawer : PropertyDrawer
         ItemLibrary itemLibrary;
         itemLibrary = AssetDatabase.LoadAssetAtPath("Assets/ScriptableObjectAssets/ItemList.asset", typeof(ItemLibrary)) as ItemLibrary;
 
-        List<ItemDetails> itemDetailsList = itemLibrary.itemDetails;
+        List<ItemDetails> itemDetailsList = itemLibrary.itemDetailsLibrary;
 
         ItemDetails itemDetail = itemDetailsList.Find(x => x.itemCode == itemCode);
 

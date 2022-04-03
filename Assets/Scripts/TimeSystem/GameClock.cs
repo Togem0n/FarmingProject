@@ -9,16 +9,28 @@ public class GameClock : MonoBehaviour
     [SerializeField] private TextMeshProUGUI dateText = null;
     [SerializeField] private TextMeshProUGUI seasonText = null;
     [SerializeField] private TextMeshProUGUI yearText = null;
+    [SerializeField] private TextMeshProUGUI moneyText = null;
 
+    private void Start()
+    {
+        moneyText.SetText("Money: " + Player.Instance.playerData.currentMoney.ToString());
+    }
 
     private void OnEnable()
     {
         EventHandler.AdvanceGameMinuteEvent += UpdateGameTime;
+        EventHandler.BuyItemEvent += UpdateMoneyValue;
     }
 
     private void OnDisable()
     {
         EventHandler.AdvanceGameMinuteEvent -= UpdateGameTime;
+        EventHandler.BuyItemEvent -= UpdateMoneyValue;
+    }
+
+    private void UpdateMoneyValue()
+    {
+        moneyText.SetText("Money: " + Player.Instance.playerData.currentMoney.ToString());
     }
 
     private void UpdateGameTime(int year, Season season, int day, string dayOfWeek, int hour, int minute, int second)

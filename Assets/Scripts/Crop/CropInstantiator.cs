@@ -27,7 +27,7 @@ public class CropInstantiator : MonoBehaviour
     {
         if (isStone)
         {
-            seedItemCode = Random.Range(33, 35);
+            seedItemCode = Random.Range(20014, 20015);
         }
     }
 

@@ -37,6 +37,7 @@ public class Item : MonoBehaviour
     public void Init(int itemCode)
     {
         ItemCode = itemCode;
-        spriteRenderer.sprite = itemLibrary.itemDetails[itemCode].itemSprite;
+        spriteRenderer.sprite = itemLibrary.GetItemDetails(itemCode).itemSprite;
+        // spriteRenderer.sprite = itemLibrary.itemDetailsLibrary[itemCode].itemSprite;
     }
 }

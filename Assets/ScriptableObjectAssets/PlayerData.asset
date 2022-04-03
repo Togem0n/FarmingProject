@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   currentInventoryCapacity: 18
+  currentMoney: 500
+  maxReachMoney: 500

@@ -54,7 +54,7 @@ public class SceneCropsInitiator : MonoBehaviour
                         {
                             gridPropertyDetails.daysSinceDug = -1;
                             gridPropertyDetails.daysSinceWatered = -1;
-                            gridPropertyDetails.seedItemCode = Random.Range(33, 35);
+                            gridPropertyDetails.seedItemCode = Random.Range(20014, 20016);
                             gridPropertyDetails.growthDays = 0;
                             GridPropertyManager.Instance.SetGridPropertyDetails(i, j, gridPropertyDetails);
                         }else if(dice < 75)
@@ -62,8 +62,8 @@ public class SceneCropsInitiator : MonoBehaviour
                             gridPropertyDetails.daysSinceDug = -1;
                             gridPropertyDetails.daysSinceWatered = -1;
                             List<int> tmp = new List<int>();
-                            tmp.Add(31);
-                            tmp.Add(35);
+                            tmp.Add(20011);
+                            tmp.Add(20012);
                             int num = Random.Range(0, tmp.Count);
                             gridPropertyDetails.seedItemCode = tmp[num];
                             gridPropertyDetails.growthDays = 6;
