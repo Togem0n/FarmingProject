@@ -96,14 +96,15 @@ MonoBehaviour:
   inventoryManagement: {fileID: 0}
   inventoryTextBoxPrefab: {fileID: 7335016026829367044}
   itemDetails:
+    itemName: 
     itemCode: 0
     itemType: 0
-    itemName: 
     itemDescription: 
     itemLongDescription: 
     itemSprite: {fileID: 0}
     itemUseGridRadius: 0
     itemUseRadius: 0
+    itemPrice: 0
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 0
