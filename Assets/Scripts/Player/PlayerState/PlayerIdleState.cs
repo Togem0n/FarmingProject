@@ -16,6 +16,14 @@ public class PlayerIdleState : PlayerMoveState
         player.animator.SetFloat("xInput", player.moveDirection.x);
         player.animator.SetFloat("yInput", player.moveDirection.y);
         player.animator.SetFloat("speed", 0);
+
+        player.animator_hair.SetFloat("xInput", player.moveDirection.x);
+        player.animator_hair.SetFloat("yInput", player.moveDirection.y);
+        player.animator_hair.SetFloat("speed", 0);
+
+        player.animator_cloth.SetFloat("xInput", player.moveDirection.x);
+        player.animator_cloth.SetFloat("yInput", player.moveDirection.y);
+        player.animator_cloth.SetFloat("speed", 0);
     }
 
     public override void Exit()

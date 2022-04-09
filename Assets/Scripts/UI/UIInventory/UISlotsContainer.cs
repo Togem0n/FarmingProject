@@ -51,7 +51,7 @@ public class UISlotsContainer : MonoBehaviour
                     {
                         UIInventorySlot currentSlot = transform.GetChild(i).GetComponent<UIInventorySlot>();
                         currentSlot.inventorySlotImage.sprite = itemDetails.itemSprite;
-                        currentSlot.textMeshProUGUI.text = inventoryList[i].itemQuantity.ToString();
+                        currentSlot.textMeshProUGUI.text = inventoryList[i].itemQuantity == 0? "" : inventoryList[i].itemQuantity.ToString();
                         currentSlot.itemDetails = itemDetails;
                         currentSlot.itemQuantity = inventoryList[i].itemQuantity;
                     }

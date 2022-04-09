@@ -35,9 +35,11 @@ public class Player : SingletonMonoBehaviour<Player>
     #endregion
 
     #region Components
-    public Rigidbody2D rb;
-    public Animator animator;
-    public Camera mainCamera;
+    [HideInInspector] public Rigidbody2D rb;
+    [HideInInspector] public Animator animator;
+    [SerializeField] public Animator animator_hair;
+    [SerializeField] public Animator animator_cloth;
+    [HideInInspector] public Camera mainCamera;
     #endregion
 
     #region Use Tool Variables

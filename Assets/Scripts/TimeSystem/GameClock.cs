@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameClock : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI timeText = null;
-    [SerializeField] private TextMeshProUGUI dateText = null;
-    [SerializeField] private TextMeshProUGUI seasonText = null;
-    [SerializeField] private TextMeshProUGUI yearText = null;
-    [SerializeField] private TextMeshProUGUI moneyText = null;
+    [SerializeField] private Text hourText = null;
+    [SerializeField] private Text minuteText = null;
+    [SerializeField] private Text dateText = null;
+    [SerializeField] private Text seasonText = null;
+    [SerializeField] private Text yearText = null;
+    [SerializeField] private Text moneyText = null;
 
     private void Start()
     {
-        moneyText.SetText("Money: " + Player.Instance.playerData.currentMoney.ToString());
+        moneyText.text = "Money: " + Player.Instance.playerData.currentMoney.ToString();
     }
 
     private void OnEnable()
@@ -30,7 +32,7 @@ public class GameClock : MonoBehaviour
 
     private void UpdateMoneyValue()
     {
-        moneyText.SetText("Money: " + Player.Instance.playerData.currentMoney.ToString());
+        moneyText.text = "Money: " + Player.Instance.playerData.currentMoney.ToString();
     }
 
     private void UpdateGameTime(int year, Season season, int day, string dayOfWeek, int hour, int minute, int second)
@@ -63,12 +65,14 @@ public class GameClock : MonoBehaviour
             sminute = minute.ToString();
         }
 
-        string time = hour.ToString() + " : " + sminute + ampm;
+        string time = hour.ToString() + " " + sminute + ampm;
 
-        timeText.SetText(time);
-        dateText.SetText(dayOfWeek + ". " + day.ToString());
-        seasonText.SetText(season.ToString());
-        yearText.SetText("Year " + year);
+        hourText.text = hour.ToString();
+        minuteText.text = sminute;
+        //dateText.text = dayOfWeek + ". " + day.ToString();
+        dateText.text = dayOfWeek.ToLower();
+        seasonText.text = season.ToString().ToLower();
+        yearText.text = "Year " + year;
 
     }
 }

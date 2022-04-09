@@ -71,6 +71,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             draggedItem = Instantiate(inventoryBar.inventoryBarDraggedItem, inventoryBar.transform);
             Image draggedItemImage = draggedItem.GetComponentInChildren<Image>();
             draggedItemImage.sprite = inventorySlotImage.sprite;
+            Debug.Log(draggedItemImage.sprite);
             InventoryManager.Instance.RemoveItemAtIndex(id);
         }
 

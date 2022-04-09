@@ -97,19 +97,19 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>
         switch (dayOfWeek)
         {
             case 1:
-                return "Mon";
+                return "mon";
             case 2:
-                return "Tue";
+                return "tue";
             case 3:
-                return "Wed";
+                return "wed";
             case 4:
-                return "Thu";
+                return "thu";
             case 5:
-                return "Fri";
+                return "fri";
             case 6:
-                return "Sat";
+                return "sat";
             case 0:
-                return "Sun";
+                return "sun";
 
             default:
                 return "";

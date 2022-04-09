@@ -47,5 +47,13 @@ public class PlayerWalkState : PlayerMoveState
         player.animator.SetFloat("yInput", player.moveDirection.y);
         player.animator.SetFloat("speed", move.normalized.magnitude);
 
+        player.animator_hair.SetFloat("xInput", player.moveDirection.x);
+        player.animator_hair.SetFloat("yInput", player.moveDirection.y);
+        player.animator_hair.SetFloat("speed", move.normalized.magnitude);
+
+        player.animator_cloth.SetFloat("xInput", player.moveDirection.x);
+        player.animator_cloth.SetFloat("yInput", player.moveDirection.y);
+        player.animator_cloth.SetFloat("speed", move.normalized.magnitude);
+
     }
 }

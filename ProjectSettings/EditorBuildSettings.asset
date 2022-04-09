@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene4_Market.unity
     guid: a60fb29a022854f4b979977a58f816cb
+  - enabled: 1
+    path: Assets/Scenes/Scene5_Trod.unity
+    guid: 932e62939a0ff1c4995f1ffb4eb0950a
   m_configObjects: {}

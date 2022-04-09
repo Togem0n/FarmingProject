@@ -5,7 +5,6 @@ public class AttractingItem : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Item item = collision.GetComponent<Item>();
-        Debug.Log(collision.name);
         if(item != null)
         {
             //Get item details

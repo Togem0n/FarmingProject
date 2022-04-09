@@ -62,7 +62,9 @@ public class PauseMenuInventoryManagement : MonoBehaviour
             {
                 inventoryManagementSlot[i].inventorySlotImage.sprite = inventoryManagementSlot[i].itemDetails.itemSprite;
 
-                inventoryManagementSlot[i].textMeshProUGUI.text = inventoryManagementSlot[i].itemQuantity.ToString();
+                inventoryManagementSlot[i].textMeshProUGUI.text = 
+                    inventoryManagementSlot[i].itemQuantity == 0? 
+                    "" : inventoryManagementSlot[i].itemQuantity.ToString();
             }
 
         }
