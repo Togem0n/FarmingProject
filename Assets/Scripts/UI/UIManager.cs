@@ -125,6 +125,11 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         HighLightButtonForSelectedTab();
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("quit game;");
+        Application.Quit();
+    }
 
     #region hover mouse
     public bool IsPointerOverUIElement()
