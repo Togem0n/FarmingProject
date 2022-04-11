@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.SceneManagement;
 
-public class Player : SingletonMonoBehaviour<Player>
+public class Player : SingletonMonoBehaviour<Player>, ISaveable
 {
     [SerializeField] public PlayerData playerData;
     [SerializeField] public GridCursor gridCursor;
@@ -52,6 +54,14 @@ public class Player : SingletonMonoBehaviour<Player>
     #region Others
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
+
+    private string _iSaveableUniqueID;
+    public string ISaveableUniqueID { get => _iSaveableUniqueID; set => _iSaveableUniqueID = value; }
+
+    private GameObjectSave _gameObjectSave;
+    public GameObjectSave GameObjectSave { get => _gameObjectSave; set => _gameObjectSave = value; }
+    
+
     public Vector2 workspace;
     #endregion
 
@@ -71,6 +81,10 @@ public class Player : SingletonMonoBehaviour<Player>
         HarvestingState = new PlayerHarvestingState(this, Statemachine, playerData, "harvesting");
         ChoppingState = new PlayerChoppingState(this, Statemachine, playerData, "chopping");
         BreakingState = new PlayerBreakingState(this, Statemachine, playerData, "breaking");
+
+        ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
+
+        GameObjectSave = new GameObjectSave();
     }
 
     private void Start()
@@ -79,6 +93,16 @@ public class Player : SingletonMonoBehaviour<Player>
 
         FacingDirection = 1;
         Statemachine.Initialize(IdleState);
+    }
+
+    private void OnDisable()
+    {
+        ISaveableDeregister();
+    }
+
+    private void OnEnable()
+    {
+        ISaveableRegister();
     }
 
     private void Update()
@@ -278,4 +302,72 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void AniamtionFinishTrigger() => Statemachine.CurrentState.AnimationFinishTrigger();
 
+    public void ISaveableRegister()
+    {
+        SaveLoadManager.Instance.iSaveableObjectList.Add(this);
+    }
+
+    public void ISaveableDeregister()
+    {
+        SaveLoadManager.Instance.iSaveableObjectList.Remove(this);
+    }
+
+    public GameObjectSave ISaveableSave()
+    {
+        GameObjectSave.sceneData.Remove(Settings.PersistentScene);
+
+        SceneSave sceneSave = new SceneSave();
+
+        sceneSave.vector3Dictionary = new Dictionary<string, Vector3Serializable>();
+
+        sceneSave.stringDictionary = new Dictionary<string, string>();
+
+        Vector3Serializable vector3Serializable = 
+            new Vector3Serializable(transform.position.x, transform.position.y, transform.position.z);
+
+        sceneSave.vector3Dictionary.Add("playerPosition", vector3Serializable);
+
+        sceneSave.stringDictionary.Add("currentScene", SceneManager.GetActiveScene().name);
+
+        sceneSave.stringDictionary.Add("playerDirection", playerDirection.ToString());
+
+        GameObjectSave.sceneData.Add(Settings.PersistentScene, sceneSave);
+
+        return GameObjectSave;
+
+    }
+
+    public void ISaveableLoad(GameSave gameSave)
+    {
+        if(gameSave.gameObjectData.TryGetValue(ISaveableUniqueID, out GameObjectSave gameObjectSave))
+        {
+            if(gameObjectSave.sceneData.TryGetValue(Settings.PersistentScene, out SceneSave sceneSave))
+            {
+                if (sceneSave.vector3Dictionary != null &&
+                    sceneSave.vector3Dictionary.TryGetValue("playerPosition", out Vector3Serializable playerPosition))
+                {
+                    transform.position = new Vector3(playerPosition.x, playerPosition.y, playerPosition.z);
+                }
+
+                if(sceneSave.stringDictionary != null)
+                {
+                    if(sceneSave.stringDictionary.TryGetValue("currentScene", out string currentScene))
+                    {
+                        SceneControllerManager.Instance.FadeAndLoadScene(currentScene, transform.position);
+                    }
+
+                }
+            }
+        }
+    }
+
+    public void ISaveableStoreScene(string sceneName)
+    {
+        
+    }
+
+    public void ISaveableRestoreScene(string sceneName)
+    {
+        
+    }
 }

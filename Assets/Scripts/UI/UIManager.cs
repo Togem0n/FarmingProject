@@ -46,7 +46,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         }
     }
 
-    private void DisablePauseMenu()
+    public void DisablePauseMenu()
     {
         pauseMenuInventoryManagement.DestroyCurrentlyDraggedItem();
 
@@ -56,7 +56,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         pauseMenu.SetActive(false);
     }
 
-    private void EnablePauseMenu()
+    public void EnablePauseMenu()
     {
         uiInventoryBar.DestoryCurrentlyDraggedItem();
 

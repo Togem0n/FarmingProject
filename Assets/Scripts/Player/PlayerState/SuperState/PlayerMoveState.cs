@@ -14,6 +14,7 @@ public class PlayerMoveState : PlayerState
         base.LogicUpdate();
 
         // dug logic
+
         if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.HoeingTool
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
@@ -23,7 +24,7 @@ public class PlayerMoveState : PlayerState
 
             //TODO make if position is allowed to hoeing into a method
             GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
-
+            
             if (gridPropertyDetails != null && gridPropertyDetails.daysSinceDug == -1 && gridPropertyDetails.seedItemCode == -1)
             {
                 gridPropertyDetails.daysSinceDug = 0;

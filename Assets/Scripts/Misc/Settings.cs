@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class Settings
 {
+    public const string PersistentScene = "PersistentScene";
+
     // Inventory
     public static int playerInitialInventoryCapacity = 9;
     public static int playerMaximumInventoryCapacity = 27;

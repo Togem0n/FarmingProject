@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
+public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISaveable
 {
     private Dictionary<int, ItemDetails> itemDetailsDictionary; // using itemCode to look up itemDetail
 
@@ -20,6 +20,31 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 
     private List<InventoryItem> inventoryList = new List<InventoryItem>(); // player's inventory list
     public List<InventoryItem> InventoryList { get => inventoryList; }
+
+    private string iSaveableUniqueID;
+    public string ISaveableUniqueID { get => iSaveableUniqueID; set => iSaveableUniqueID = value; }
+
+    private GameObjectSave _gameObjectSave;
+    public GameObjectSave GameObjectSave { get => _gameObjectSave; set => _gameObjectSave = value; }
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
+
+        GameObjectSave = new GameObjectSave();
+    }
+
+    private void OnEnable()
+    {
+        ISaveableRegister();
+    }
+
+    private void OnDisable()
+    {
+        ISaveableDeregister();
+    }
 
     private void Start()
     {
@@ -335,5 +360,58 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
         //    Debug.Log("Item Name: " + InventoryManager.Instance.GetItemDetails(inventoryItem.itemCode).itemName + "   Item Quantity: " + inventoryItem.itemQuantity);
         //}
         //Debug.Log("************************************************************************");
+    }
+
+    public void ISaveableRegister()
+    {
+        SaveLoadManager.Instance.iSaveableObjectList.Add(this);
+    }
+
+    public void ISaveableDeregister()
+    {
+        SaveLoadManager.Instance.iSaveableObjectList.Remove(this);
+    }
+
+    public GameObjectSave ISaveableSave()
+    {
+        SceneSave sceneSave = new SceneSave();
+
+        GameObjectSave.sceneData.Remove(Settings.PersistentScene);
+
+        sceneSave.listInventoryItem = InventoryList;
+
+        GameObjectSave.sceneData.Add(Settings.PersistentScene, sceneSave);
+
+        return GameObjectSave;
+    }
+
+    public void ISaveableLoad(GameSave gameSave)
+    {
+        if(gameSave.gameObjectData.TryGetValue(ISaveableUniqueID, out GameObjectSave gameObjectSave))
+        {
+            GameObjectSave = gameObjectSave;
+
+            if(gameObjectSave.sceneData.TryGetValue(Settings.PersistentScene, out SceneSave sceneSave))
+            {
+                if(sceneSave.listInventoryItem != null)
+                {
+                    inventoryList = sceneSave.listInventoryItem;
+
+                    EventHandler.CallInventoryUpdatedEvent(inventoryList);
+                }
+
+                //inventoryBar.ClearHighLightOnInventorySlots();
+            }
+        }
+    }
+
+    public void ISaveableStoreScene(string sceneName)
+    {
+
+    }
+
+    public void ISaveableRestoreScene(string sceneName)
+    {
+
     }
 }
