@@ -14,506 +14,506 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDetailsLibrary:
   - itemName: null
-    itemCode: 0
-    itemType: 0
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 21300000, guid: 7e54e0f3d7090894780e977a01fa2951, type: 3}
+    itemCode: 0
+    itemPrice: 0
     itemUseGridRadius: 0
     itemUseRadius: 0
-    itemPrice: 0
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 0
     canBeEaten: 0
     canBeCarried: 0
+    itemType: 0
+    itemSprite: {fileID: 21300000, guid: 7e54e0f3d7090894780e977a01fa2951, type: 3}
   - itemName: ToolHoeing
+    itemDescription: NMSL
+    itemLongDescription: NMSL
     itemCode: 1
-    itemType: 3
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 8145018172073923741, guid: 950cab927359608409e2298f8ddfb4d1, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 130
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 0
     canBeCarried: 1
+    itemType: 3
+    itemSprite: {fileID: 8145018172073923741, guid: 950cab927359608409e2298f8ddfb4d1, type: 3}
   - itemName: ToolWatering
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 2
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 2
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 5005184587537450830, guid: d1688d428fc22c248bca8f806d8f1b48, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: ToolAxe
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 3
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 0
+    canBeCarried: 1
     itemType: 4
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -6308079867175785215, guid: 4c15f3a81745ba54ea1bbb9234c5aa09, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 0
-    canBeCarried: 1
   - itemName: ToolBreaking
-    itemCode: 4
-    itemType: 5
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 3991527062789968029, guid: 76630148571074f4d8958fd19eb2d6f5, type: 3}
+    itemCode: 4
+    itemPrice: 0
     itemUseGridRadius: 1
     itemUseRadius: 1
-    itemPrice: 0
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 0
     canBeCarried: 1
+    itemType: 5
+    itemSprite: {fileID: 3991527062789968029, guid: 76630148571074f4d8958fd19eb2d6f5, type: 3}
   - itemName: ToolCollecting
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 5
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 7
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -7321504987044370213, guid: 4dfd759cdd4d71a49941a9585816f32d, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityCarrot
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10000
+    itemPrice: 25
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 6761164967045977113, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 25
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityTomato
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10001
-    itemType: 1
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 5508725064705088119, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 30
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 1
+    itemSprite: {fileID: 5508725064705088119, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
   - itemName: CommodityStrawbery
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10002
+    itemPrice: 80
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -68751727340038015, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 80
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityPumpkin
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10003
+    itemPrice: 50
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 6099581493293703690, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 50
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityCorn
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10004
+    itemPrice: 15
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -5428206428529569624, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 15
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityPotato
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10005
-    itemType: 1
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: -7833671090200325546, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 13
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 1
+    itemSprite: {fileID: -7833671090200325546, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
   - itemName: CommodityWatermelon
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10006
+    itemPrice: 50
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 5860025163644826426, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 50
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityOnions
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10007
+    itemPrice: 25
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -7583409310137716746, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 25
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityCabbage
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10008
+    itemPrice: 15
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 980155311395259703, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 15
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityStraw
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10009
+    itemPrice: 5
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -732356172534689064, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 5
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityEggplant
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10010
+    itemPrice: 25
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 8132948862792318974, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 25
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityWood
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10011
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 7072109450132228763, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityStone
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10012
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 8069547862873273568, guid: b2f764d9230361a4497edf985a6289e4, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: CommodityTreetrunk
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 10013
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 1
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: SeedCarrot
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20000
+    itemPrice: 20
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 0
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 8902764129226356341, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 20
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: SeedTomato
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20001
+    itemPrice: 15
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 0
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 1530993877042961689, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 15
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: SeedStrawberry
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20002
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: -7100280429707273417, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 50
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: -7100280429707273417, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedPumpkin
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20003
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 1148123142949428641, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 25
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 1148123142949428641, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedCorn
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20004
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: -3559285446721225208, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 35
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: -3559285446721225208, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedPotato
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20005
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: -4905369738129954342, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 15
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: -4905369738129954342, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedWatermelon
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20006
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: -2735866498999463491, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 80
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: -2735866498999463491, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedOnions
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20007
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 3020240861920078960, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 20
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 3020240861920078960, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedCabbage
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20008
+    itemPrice: 40
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 0
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: -783739196014399847, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 40
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: SeedStraw
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20009
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 8812169861478436503, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 5
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 8812169861478436503, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedEggplant
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20010
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 5331068988810996039, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
     itemPrice: 40
+    itemUseGridRadius: 1
+    itemUseRadius: 1
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 5331068988810996039, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
   - itemName: SeedTree1
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20011
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 0
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 3667721418466701847, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: SeedTree2
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20012
+    itemPrice: 0
+    itemUseGridRadius: 1
+    itemUseRadius: 1
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 1
+    canBeCarried: 1
     itemType: 0
-    itemDescription: 
-    itemLongDescription: 
     itemSprite: {fileID: 2984211651893649715, guid: c02f05cd5bb50624ea01ce23b88b2ffe, type: 3}
-    itemUseGridRadius: 1
-    itemUseRadius: 1
-    itemPrice: 0
-    isStartingItem: 0
-    canBePickedUp: 1
-    canBeDropped: 1
-    canBeEaten: 1
-    canBeCarried: 1
   - itemName: SeedTreetrunk
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20013
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    itemPrice: 0
     itemUseGridRadius: 1
     itemUseRadius: 1
-    itemPrice: 0
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
   - itemName: SeedStone1
+    itemDescription: 
+    itemLongDescription: 
     itemCode: 20014
-    itemType: 0
-    itemDescription: 
-    itemLongDescription: 
-    itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    itemPrice: 0
     itemUseGridRadius: 1
     itemUseRadius: 1
-    itemPrice: 0
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
   - itemName: SeedStone2
-    itemCode: 20015
-    itemType: 0
     itemDescription: 
     itemLongDescription: 
-    itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}
+    itemCode: 20015
+    itemPrice: 0
     itemUseGridRadius: 1
     itemUseRadius: 1
-    itemPrice: 0
     isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 1
     canBeCarried: 1
+    itemType: 0
+    itemSprite: {fileID: 2272816688825957189, guid: 6a4dd8eace446ad449ad239be0424bc3, type: 3}

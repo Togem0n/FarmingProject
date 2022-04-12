@@ -43,7 +43,7 @@ public class ShopInventorySlot : MonoBehaviour
         int index = int.Parse(sid);
         int itemcode = container.shopInventoryList[index].itemCode;
 
-        if(InventoryManager.Instance.TryAddItem(itemcode, 1) && Player.Instance.playerData.currentMoney >= price)
+        if(InventoryManager.Instance.CheckIfCanAddItem(itemcode, 1) && Player.Instance.playerData.currentMoney >= price)
         {
             Player.Instance.playerData.currentMoney -= price;
             InventoryManager.Instance.AddItem(itemcode, 1);

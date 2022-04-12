@@ -3,16 +3,12 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     [ItemCodeDescription]
-    [SerializeField]
-    private int _itemCode;
-
-    [SerializeField]
-    private int _itemQuantity;
-
-    [SerializeField]
-    private ItemLibrary itemLibrary;
+    [SerializeField] private int _itemCode;
+    [SerializeField] private int _itemQuantity;
+    [SerializeField] private ItemLibrary itemLibrary;
 
     private SpriteRenderer spriteRenderer;
+
     public int ItemCode { get => _itemCode; set => _itemCode = value; }
     public int ItemQuantity { get => _itemQuantity; set => _itemQuantity = value; }
 
@@ -23,7 +19,7 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        if(ItemQuantity == 0)
+        if (ItemQuantity == 0)
         {
             ItemQuantity = 1;
         }
@@ -38,6 +34,5 @@ public class Item : MonoBehaviour
     {
         ItemCode = itemCode;
         spriteRenderer.sprite = itemLibrary.GetItemDetails(itemCode).itemSprite;
-        // spriteRenderer.sprite = itemLibrary.itemDetailsLibrary[itemCode].itemSprite;
     }
 }

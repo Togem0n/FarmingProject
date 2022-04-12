@@ -4,37 +4,27 @@ using UnityEngine;
 
 public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISaveable
 {
-    private Dictionary<int, ItemDetails> itemDetailsDictionary; // using itemCode to look up itemDetail
-
-    [SerializeField] private ItemLibrary itemLibrary; // ItemLibrary
-
+    #region Variables
+    [SerializeField] private ItemLibrary itemLibrary;
     [SerializeField] private UIInventoryBar inventoryBar;
+    [SerializeField] private PlayerData playerData;
 
-    [SerializeField] private PlayerData data;
+    private Dictionary<int, ItemDetails> itemDetailsDictionary;
 
     private int selectedItemCode = -1;
-    public int SelectedItemCode { get => selectedItemCode; set => selectedItemCode = value; }
-
     private int selectedItemIndex = -1;
-    public int SelectedItemIndex { get => selectedItemIndex; set => selectedItemIndex = value; }
-
-    private List<InventoryItem> inventoryList = new List<InventoryItem>(); // player's inventory list
-    public List<InventoryItem> InventoryList { get => inventoryList; }
-
     private string iSaveableUniqueID;
-    public string ISaveableUniqueID { get => iSaveableUniqueID; set => iSaveableUniqueID = value; }
-
     private GameObjectSave _gameObjectSave;
+    private List<InventoryItem> inventoryList = new List<InventoryItem>();
+    #endregion
+
+    #region Get/Setter
+    public int SelectedItemCode { get => selectedItemCode; set => selectedItemCode = value; }
+    public int SelectedItemIndex { get => selectedItemIndex; set => selectedItemIndex = value; }
+    public List<InventoryItem> InventoryList { get => inventoryList; }
+    public string ISaveableUniqueID { get => iSaveableUniqueID; set => iSaveableUniqueID = value; }
     public GameObjectSave GameObjectSave { get => _gameObjectSave; set => _gameObjectSave = value; }
-
-    protected override void Awake()
-    {
-        base.Awake();
-
-        ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
-
-        GameObjectSave = new GameObjectSave();
-    }
+    #endregion
 
     private void OnEnable()
     {
@@ -46,14 +36,39 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
         ISaveableDeregister();
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
+        GameObjectSave = new GameObjectSave();
+    }
+
     private void Start()
     {
         InitInventoryItemList();
         InitItemDetailsDictionary();
     }
 
+    #region Init inventory list
     /// <summary>
-    /// Init the itemDatilsDitionary from the sriptable object item list
+    /// Initialize Inventory List with blank item with the size of current Inventory capacity
+    /// </summary>
+    public void InitInventoryItemList()
+    {
+        InventoryItem inventoryItem = new InventoryItem();
+
+        inventoryItem.itemCode = 0;
+        inventoryItem.itemQuantity = 0;
+
+        for(int i = 0; i < playerData.currentInventoryCapacity; i++)
+        {
+            inventoryList.Add(inventoryItem);
+        }
+        // PrintInventoryList(InventoryList);
+    }
+
+    /// <summary>
+    /// Initialize the itemDatilsDitionary from the sriptable object item list
     /// </summary>
     private void InitItemDetailsDictionary()
     {
@@ -64,46 +79,37 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
             itemDetailsDictionary.Add(itemDetails.itemCode, itemDetails);
         }
     }
+    #endregion
 
+    #region Add item
     /// <summary>
-    /// Init Inventory List with blank item with the size of current Inventory capacity
+    /// called when player can pick up item and then destory it
     /// </summary>
-    public void InitInventoryItemList()
-    {
-        InventoryItem inventoryItem = new InventoryItem();
-
-        inventoryItem.itemCode = 0;
-        inventoryItem.itemQuantity = 0;
-
-        for(int i = 0; i < data.currentInventoryCapacity; i++)
-        {
-            inventoryList.Add(inventoryItem);
-        }
-        PrintInventoryList(InventoryList);
-    }
-
+    /// <param name="itemCode"></param>
+    /// <param name="itemQuantity"></param>
+    /// <param name="itemToDelete"></param>
     public void AddItem(int itemCode, int itemQuantity, GameObject itemToDelete)
     {
         AddItem(itemCode, itemQuantity);
         
         Destroy(itemToDelete);
-        
     }
 
+    /// <summary>
+    /// Add item into inventory list
+    /// </summary>
+    /// <param name="itemCode"></param>
+    /// <param name="itemQuantity"></param>
     public void AddItem(int itemCode, int itemQuantity)
     {
-        // Check if inventory already contains the item
         int itemIndex = GetItemIndexInInventory(itemCode);
 
-        // if contain
         if (itemIndex != -1)
         {
             AddItemAtIndex(itemCode, itemIndex, itemQuantity);
         }
-        // if not contain
         else
         {
-            // check inventory full or not
             if (GetFirstBlankSlotIndex() != -1)
             {
                 AddItemAtIndex(itemCode, GetFirstBlankSlotIndex(), itemQuantity);
@@ -113,7 +119,6 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
                 return;
             }
         }
-        // Send event that inventory has been updated
         EventHandler.CallInventoryUpdatedEvent(InventoryList);
         return;
     }
@@ -123,49 +128,38 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
     /// return true if successful
     /// return false if inventory is full
     /// </summary>
-    public bool TryAddItem(int itemCode, int itemQuantity)
+    public bool CheckIfCanAddItem(int itemCode, int itemQuantity)
     {
-        // Check if inventory already contains the item
         int itemIndex = GetItemIndexInInventory(itemCode);
 
-        // if contain
         if (itemIndex != -1)
         {
             return true;
-            //AddItemAtIndex(itemCode, itemIndex, itemQuantity);
         }
-        // if not contain
         else
         {
-            // check inventory full or not
-            if(GetFirstBlankSlotIndex() != -1)
-            {
-                return true;
-                //AddItemAtIndex(itemCode, GetFirstBlankSlotIndex(), itemQuantity);
-            }
-            else
-            {
-                return false;
-            }
+            return GetFirstBlankSlotIndex() != -1;
         }
-
-        // return true;
     }
 
     /// <summary>
-    /// Add item to the inventory of a given quantity if item already exist;
+    /// Add item of a given quantity to the inventory if item already exist;
     /// </summary>
     public void AddItemAtIndex(int itemCode, int itemIndex, int itemQuantity)
     {
-        InventoryItem inventoryItem = new InventoryItem();
+        if (CheckIfCanAddItem(itemCode, itemQuantity))
+        {
+            InventoryItem inventoryItem = new InventoryItem();
 
-        inventoryItem.itemCode = itemCode;
-        inventoryItem.itemQuantity = inventoryList[itemIndex].itemQuantity + itemQuantity;
-        inventoryList[itemIndex] = inventoryItem;
-        EventHandler.CallInventoryUpdatedEvent(InventoryList);
+            inventoryItem.itemCode = itemCode;
+            inventoryItem.itemQuantity = inventoryList[itemIndex].itemQuantity + itemQuantity;
+            inventoryList[itemIndex] = inventoryItem;
+            EventHandler.CallInventoryUpdatedEvent(InventoryList);
+        }
     }
+    #endregion
 
-
+    #region remove item
     /// <summary>
     /// Remove number of item by 1
     /// if num of item is 0, replace by 0item
@@ -192,23 +186,27 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
         EventHandler.CallInventoryUpdatedEvent(InventoryList);
     }
 
+    /// <summary>
+    /// Remove number of selected item by 1
+    /// if num of item is 0, replace by 0item
+    /// </summary>
     public void RemoveSelectedItemByOne()
     {
         InventoryItem inventoryItem = new InventoryItem();
 
-        int quantity = inventoryList[SelectedItemIndex].itemQuantity - 1;
         int itemCode = InventoryList[SelectedItemIndex].itemCode;
+        int quantity = inventoryList[SelectedItemIndex].itemQuantity - 1;
 
         if (quantity > 0)
         {
-            inventoryItem.itemQuantity = quantity;
             inventoryItem.itemCode = itemCode;
+            inventoryItem.itemQuantity = quantity;
             inventoryList[SelectedItemIndex] = inventoryItem;
         }
         else
         {
-            inventoryItem.itemQuantity = 0;
             inventoryItem.itemCode = 0;
+            inventoryItem.itemQuantity = 0;
             inventoryList[SelectedItemIndex] = inventoryItem;
             //ClearSelectedInventoryItem();
             inventoryBar.ClearHighLightOnInventorySlots();
@@ -217,10 +215,9 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
     }
 
     /// <summary>
-    /// Remove all items at index
-    /// if num of item is 0, replace by 0item
+    /// Remove all items at index and replace it by item0
     /// </summary>
-    public void RemoveItemAtIndex(int itemIndex)
+    public void RemoveAllItemAtIndex(int itemIndex)
     {
         InventoryItem inventoryItem = new InventoryItem();
 
@@ -230,7 +227,14 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
         
         EventHandler.CallInventoryUpdatedEvent(InventoryList);
     }
+    #endregion
 
+    #region swap item
+    /// <summary>
+    /// swap item
+    /// </summary>
+    /// <param name="first"></param>
+    /// <param name="second"></param>
     public void SwapItem(int first, int second)
     {
         InventoryItem firstItem = new InventoryItem();
@@ -241,19 +245,16 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
         secondItem.itemCode = InventoryList[second].itemCode;
         secondItem.itemQuantity = InventoryList[second].itemQuantity;
 
-        //InventoryItem tmpItem = new InventoryItem();
-        //int tmpItemCode = firstItemCode;
-        //int tmpItemQuantity = firstItemQuantity;
-
         inventoryList[first] = secondItem;
         inventoryList[second] = firstItem;
         EventHandler.CallInventoryUpdatedEvent(InventoryList);
     }
+    #endregion
 
-
+    #region Other Functions
     /// <summary>
     /// return index if item in inventory list
-    /// return -1 if not
+    /// return -1 if not found
     /// </summary>
     private int GetItemIndexInInventory(int itemCode)
     {
@@ -272,10 +273,9 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
     /// return -1 if no blank slot
     /// </summary>
     /// <returns></returns>
-
     private int GetFirstBlankSlotIndex()
     {
-        for(int i = 0; i < data.currentInventoryCapacity; i++)
+        for(int i = 0; i < playerData.currentInventoryCapacity; i++)
         {
             if(inventoryList[i].itemCode == 0)
             {
@@ -287,36 +287,37 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
 
     public ItemDetails GetItemDetails(int itemCode)
     {
-        ItemDetails itemDetails;
-        if (itemDetailsDictionary.TryGetValue(itemCode, out itemDetails))
-        {
-            return itemDetails;
-        }
-        else
-        {
-            return null;
-        }
+        //ItemDetails itemDetails;
+        //if (itemDetailsDictionary.TryGetValue(itemCode, out itemDetails))
+        //{
+        //    return itemDetails;
+        //}
+        //else
+        //{
+        //    return null;
+        //}
+        return itemLibrary.GetItemDetails(itemCode);
     }
 
     public ItemDetails GetSelectedItemDetails()
     {
-        ItemDetails itemDetails;
-        if (itemDetailsDictionary.TryGetValue(selectedItemCode, out itemDetails))
-        {
-            return itemDetails;
-        }
-        else
-        {
-            return null;
-        }
+        //ItemDetails itemDetails;
+        //if (itemDetailsDictionary.TryGetValue(selectedItemCode, out itemDetails))
+        //{
+        //    return itemDetails;
+        //}
+        //else
+        //{
+        //    return null;
+        //}
+        return itemLibrary.GetItemDetails(selectedItemCode);
     }
 
-
-    public ItemDetails GetItemDetailsByLocation(int index)
+    public ItemDetails GetItemDetailsByIndex(int index)
     {
-        int itemCode = GetItemCodeAtLocation(index);
+        int itemCode = GetItemCodeAtIndex(index);
 
-        if(itemCode == -1)
+        if (itemCode == -1)
         {
             return null;
         }
@@ -326,19 +327,15 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
         }
     }
 
-    public int GetItemCodeAtLocation(int index)
+    public int GetItemCodeAtIndex(int index)
     {
         return inventoryList[index].itemCode;
     }
 
-    public int GetItemQuantitiesAtLocation(int index)
+    public int GetItemQuantitiesAtIndex(int index)
     {
         return inventoryList[index].itemQuantity;
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
 
     public void SetSelectedInventoryItem(int itemCode, int index)
     {
@@ -361,7 +358,9 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
         //}
         //Debug.Log("************************************************************************");
     }
+    #endregion
 
+    #region Save inventory
     public void ISaveableRegister()
     {
         SaveLoadManager.Instance.iSaveableObjectList.Add(this);
@@ -414,4 +413,5 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
     {
 
     }
+    #endregion 
 }

@@ -6,10 +6,12 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
+public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Camera mainCamera;
     private Transform parentItem;
+    private Canvas parentCanvas;
+
     public GameObject draggedItem;
 
     private GridCursor gridCursor;
@@ -21,6 +23,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     [SerializeField] private GameObject slotsContainer;
 
     [SerializeField] private UIInventoryBar inventoryBar = null;
+
+    [SerializeField] private GameObject inventoryTooltipsBoxPrefab = null;
 
     [HideInInspector] public ItemDetails itemDetails;
 
@@ -48,7 +52,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         SetSlotID();
         gridCursor = FindObjectOfType<GridCursor>();
-
+        parentCanvas = GetComponentInParent<Canvas>();
         mainCamera = Camera.main;
     }
 
@@ -72,7 +76,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Image draggedItemImage = draggedItem.GetComponentInChildren<Image>();
             draggedItemImage.sprite = inventorySlotImage.sprite;
             Debug.Log(draggedItemImage.sprite);
-            InventoryManager.Instance.RemoveItemAtIndex(id);
+            InventoryManager.Instance.RemoveAllItemAtIndex(id);
         }
 
         SetSelectedItem();
@@ -107,7 +111,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             {
                 DropSelectedItemAtMousePosition();
             }
-
+            DestroyInventoryTooltipsBox();
             Player.Instance.EnablePlayerInput();
         }
     }
@@ -212,4 +216,43 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         InventoryManager.Instance.ClearSelectedInventoryItem();
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if(itemQuantity != 0)
+        {
+            inventoryBar.inventoryTooltipsBox = Instantiate(inventoryTooltipsBoxPrefab, transform.position, Quaternion.identity);
+            inventoryBar.inventoryTooltipsBox.transform.SetParent(parentCanvas.transform, false);
+
+            UIInventoryTooltipBox inventoryTooltipBox = inventoryBar.inventoryTooltipsBox.GetComponent<UIInventoryTooltipBox>();
+
+            string itemTypeDescription = itemDetails.itemType.ToString();
+
+            inventoryTooltipBox.SetToolTipsText(itemDetails.itemName, itemTypeDescription, "",
+                itemDetails.itemLongDescription, "", "");
+
+            if (inventoryBar.IsInventoryBarPositionBottom)
+            {
+                inventoryBar.inventoryTooltipsBox.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0f);
+                inventoryBar.inventoryTooltipsBox.transform.position = new Vector3(transform.position.x, transform.position.y + 50f, transform.position.z);
+            }
+            else
+            {
+                inventoryBar.inventoryTooltipsBox.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 1f);
+                inventoryBar.inventoryTooltipsBox.transform.position = new Vector3(transform.position.x, transform.position.y - 50f, transform.position.z);
+            }
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        DestroyInventoryTooltipsBox();
+    }
+
+    private void DestroyInventoryTooltipsBox()
+    {
+        if(inventoryBar.inventoryTooltipsBox != null)
+        {
+            Destroy(inventoryBar.inventoryTooltipsBox);
+        }
+    }
 }

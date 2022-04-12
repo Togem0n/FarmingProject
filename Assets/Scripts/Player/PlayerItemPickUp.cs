@@ -8,15 +8,11 @@ public class PlayerItemPickUp : MonoBehaviour
 
         if (item != null)
         {
-            //Get item details
             ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(item.ItemCode);
 
-            if (itemDetails.canBePickedUp && InventoryManager.Instance.TryAddItem(item.ItemCode, item.ItemQuantity))
+            if (itemDetails.canBePickedUp && InventoryManager.Instance.CheckIfCanAddItem(item.ItemCode, item.ItemQuantity))
             {
-                //collision.transform.position = Vector3.MoveTowards(collision.transform.position, transform.parent.transform.position, 3 * Time.deltaTime);
-
                 InventoryManager.Instance.AddItem(item.ItemCode, item.ItemQuantity, collision.gameObject);
-                
             }
         }
     }
