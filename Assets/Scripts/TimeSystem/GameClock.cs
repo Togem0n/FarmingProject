@@ -6,16 +6,15 @@ using TMPro;
 
 public class GameClock : MonoBehaviour
 {
-    [SerializeField] private Text hourText = null;
-    [SerializeField] private Text minuteText = null;
-    [SerializeField] private Text dateText = null;
-    [SerializeField] private Text seasonText = null;
-    [SerializeField] private Text yearText = null;
-    [SerializeField] private Text moneyText = null;
+    [SerializeField] private TextMeshProUGUI hourText = null;
+    [SerializeField] private TextMeshProUGUI dateText = null;
+    [SerializeField] private TextMeshProUGUI seasonText = null;
+    [SerializeField] private TextMeshProUGUI yearText = null;
+    [SerializeField] private TextMeshProUGUI moneyText = null;
 
     private void Start()
     {
-        moneyText.text = "Money: " + Player.Instance.playerData.currentMoney.ToString();
+        moneyText.text = Player.Instance.playerData.currentMoney.ToString();
     }
 
     private void OnEnable()
@@ -65,12 +64,11 @@ public class GameClock : MonoBehaviour
             sminute = minute.ToString();
         }
 
-        string time = hour.ToString() + " " + sminute + ampm;
+        string time = hour.ToString() + ":" + sminute + ampm;
 
-        hourText.text = hour.ToString();
-        minuteText.text = sminute;
-        //dateText.text = dayOfWeek + ". " + day.ToString();
-        dateText.text = dayOfWeek.ToLower();
+        hourText.text = time;
+        dateText.text = dayOfWeek + ". " + day.ToString();
+        //dateText.text = dayOfWeek.ToLower();
         seasonText.text = season.ToString().ToLower();
         yearText.text = "Year " + year;
 

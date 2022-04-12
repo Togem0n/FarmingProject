@@ -223,6 +223,14 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             inventoryBar.inventoryTooltipsBox = Instantiate(inventoryTooltipsBoxPrefab, transform.position, Quaternion.identity);
             inventoryBar.inventoryTooltipsBox.transform.SetParent(parentCanvas.transform, false);
 
+            //Vector2 movePosition;
+
+            //RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform,
+            //    Input.mousePosition, parentCanvas.worldCamera, out movePosition);
+
+            //Vector3 mousePosition = parentCanvas.transform.TransformPoint(movePosition);
+            //inventoryBar.inventoryTooltipsBox.transform.position = mousePosition;
+
             UIInventoryTooltipBox inventoryTooltipBox = inventoryBar.inventoryTooltipsBox.GetComponent<UIInventoryTooltipBox>();
 
             string itemTypeDescription = itemDetails.itemType.ToString();
@@ -255,4 +263,5 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Destroy(inventoryBar.inventoryTooltipsBox);
         }
     }
+
 }
