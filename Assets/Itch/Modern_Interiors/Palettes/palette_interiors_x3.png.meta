@@ -1,7 +1,274 @@
 fileFormatVersion: 2
 guid: 8b5be5c1b997bb849bd1cc33cf038dc7
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8092156318984260547
+    second: palette_interiors_x3_0
+  - first:
+      213: 3122801344698385587
+    second: palette_interiors_x3_1
+  - first:
+      213: 5176453702411241555
+    second: palette_interiors_x3_2
+  - first:
+      213: -991480110041105578
+    second: palette_interiors_x3_3
+  - first:
+      213: -1203679632162720048
+    second: palette_interiors_x3_4
+  - first:
+      213: -6766289290878731913
+    second: palette_interiors_x3_5
+  - first:
+      213: -3698475760759910135
+    second: palette_interiors_x3_6
+  - first:
+      213: -4176965499036269493
+    second: palette_interiors_x3_7
+  - first:
+      213: -8677521154067789923
+    second: palette_interiors_x3_8
+  - first:
+      213: 6707866438472141252
+    second: palette_interiors_x3_9
+  - first:
+      213: 1642145706546887626
+    second: palette_interiors_x3_10
+  - first:
+      213: 7674606405153339710
+    second: palette_interiors_x3_11
+  - first:
+      213: -7156795420979980276
+    second: palette_interiors_x3_12
+  - first:
+      213: 8592915169621957617
+    second: palette_interiors_x3_13
+  - first:
+      213: -7942008842034552116
+    second: palette_interiors_x3_14
+  - first:
+      213: -854269851240526164
+    second: palette_interiors_x3_15
+  - first:
+      213: 6622352754627422390
+    second: palette_interiors_x3_16
+  - first:
+      213: -7122015581208758386
+    second: palette_interiors_x3_17
+  - first:
+      213: 7169707676534826058
+    second: palette_interiors_x3_18
+  - first:
+      213: -9207042541093982307
+    second: palette_interiors_x3_19
+  - first:
+      213: 8314961247590394048
+    second: palette_interiors_x3_20
+  - first:
+      213: 7439820654087428435
+    second: palette_interiors_x3_21
+  - first:
+      213: -1261210658388036446
+    second: palette_interiors_x3_22
+  - first:
+      213: 3167896726293984637
+    second: palette_interiors_x3_23
+  - first:
+      213: -5704746256917714059
+    second: palette_interiors_x3_24
+  - first:
+      213: 4598422232382579914
+    second: palette_interiors_x3_25
+  - first:
+      213: -6084129250821611602
+    second: palette_interiors_x3_26
+  - first:
+      213: 6895436402501877234
+    second: palette_interiors_x3_27
+  - first:
+      213: -7565339066224335562
+    second: palette_interiors_x3_28
+  - first:
+      213: 6083817535710856836
+    second: palette_interiors_x3_29
+  - first:
+      213: 4362835125644730142
+    second: palette_interiors_x3_30
+  - first:
+      213: -8711745110963967465
+    second: palette_interiors_x3_31
+  - first:
+      213: -5373784400976309984
+    second: palette_interiors_x3_32
+  - first:
+      213: -6532431836684406678
+    second: palette_interiors_x3_33
+  - first:
+      213: -8356648252018332660
+    second: palette_interiors_x3_34
+  - first:
+      213: -4178284568850178034
+    second: palette_interiors_x3_35
+  - first:
+      213: 1959296770470921781
+    second: palette_interiors_x3_36
+  - first:
+      213: -5289862959457645219
+    second: palette_interiors_x3_37
+  - first:
+      213: 39944015327336301
+    second: palette_interiors_x3_38
+  - first:
+      213: 5482587806033897077
+    second: palette_interiors_x3_39
+  - first:
+      213: 5924651791030777822
+    second: palette_interiors_x3_40
+  - first:
+      213: 680780720152162119
+    second: palette_interiors_x3_41
+  - first:
+      213: -8359645417232975134
+    second: palette_interiors_x3_42
+  - first:
+      213: 6266658492610089430
+    second: palette_interiors_x3_43
+  - first:
+      213: -1446711671006834537
+    second: palette_interiors_x3_44
+  - first:
+      213: -1204899116348360048
+    second: palette_interiors_x3_45
+  - first:
+      213: 9188828038674008540
+    second: palette_interiors_x3_46
+  - first:
+      213: -289205063140267347
+    second: palette_interiors_x3_47
+  - first:
+      213: 277582721172750693
+    second: palette_interiors_x3_48
+  - first:
+      213: -8198998727660146629
+    second: palette_interiors_x3_49
+  - first:
+      213: -2785019556127893300
+    second: palette_interiors_x3_50
+  - first:
+      213: -2256608359007560455
+    second: palette_interiors_x3_51
+  - first:
+      213: -942858725043666813
+    second: palette_interiors_x3_52
+  - first:
+      213: -224395979216524211
+    second: palette_interiors_x3_53
+  - first:
+      213: 1896370086311851264
+    second: palette_interiors_x3_54
+  - first:
+      213: -7943208437744545351
+    second: palette_interiors_x3_55
+  - first:
+      213: 405717774071559890
+    second: palette_interiors_x3_56
+  - first:
+      213: -5970369614747553337
+    second: palette_interiors_x3_57
+  - first:
+      213: 4802745697056783580
+    second: palette_interiors_x3_58
+  - first:
+      213: -6932603268012689819
+    second: palette_interiors_x3_59
+  - first:
+      213: -83646531164998817
+    second: palette_interiors_x3_60
+  - first:
+      213: -7165817088085041483
+    second: palette_interiors_x3_61
+  - first:
+      213: 3982188641660347964
+    second: palette_interiors_x3_62
+  - first:
+      213: -8221841644729215702
+    second: palette_interiors_x3_63
+  - first:
+      213: -738780946429239895
+    second: palette_interiors_x3_64
+  - first:
+      213: 2674070468692247034
+    second: palette_interiors_x3_65
+  - first:
+      213: -1739091860357693791
+    second: palette_interiors_x3_66
+  - first:
+      213: -5394233598097523114
+    second: palette_interiors_x3_67
+  - first:
+      213: 3533575274782194264
+    second: palette_interiors_x3_68
+  - first:
+      213: 1267206879916783381
+    second: palette_interiors_x3_69
+  - first:
+      213: 3726008405965092433
+    second: palette_interiors_x3_70
+  - first:
+      213: -5951136156079654167
+    second: palette_interiors_x3_71
+  - first:
+      213: 6133935023860244121
+    second: palette_interiors_x3_72
+  - first:
+      213: 8634121641012583425
+    second: palette_interiors_x3_73
+  - first:
+      213: 5908135089192575802
+    second: palette_interiors_x3_74
+  - first:
+      213: 93452193049692771
+    second: palette_interiors_x3_75
+  - first:
+      213: 5763680545456194362
+    second: palette_interiors_x3_76
+  - first:
+      213: -6313645602177780211
+    second: palette_interiors_x3_77
+  - first:
+      213: -1491630482753277959
+    second: palette_interiors_x3_78
+  - first:
+      213: -7761727247206157359
+    second: palette_interiors_x3_79
+  - first:
+      213: -8627028433346530500
+    second: palette_interiors_x3_80
+  - first:
+      213: -5108833352722856720
+    second: palette_interiors_x3_81
+  - first:
+      213: -2939559420502671991
+    second: palette_interiors_x3_82
+  - first:
+      213: 7994234107667165793
+    second: palette_interiors_x3_83
+  - first:
+      213: -7247091234185606899
+    second: palette_interiors_x3_84
+  - first:
+      213: -7168844036290105012
+    second: palette_interiors_x3_85
+  - first:
+      213: -131490149865751642
+    second: palette_interiors_x3_86
+  - first:
+      213: -4722960731137659939
+    second: palette_interiors_x3_87
+  - first:
+      213: -1191273374191719008
+    second: palette_interiors_x3_88
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +299,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,12 +308,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 9
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +342,1890 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: palette_interiors_x3_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34b204b3b2e2bf80800000000000000
+      internalID: -8092156318984260547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b40cd6174b665b20800000000000000
+      internalID: 3122801344698385587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3584a70673576d740800000000000000
+      internalID: 5176453702411241555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_3
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b722fc71e8d32f0800000000000000
+      internalID: -991480110041105578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_4
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d6719d70cbab4fe0800000000000000
+      internalID: -1203679632162720048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_5
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779b4a14dbf4912a0800000000000000
+      internalID: -6766289290878731913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_6
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 126
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901538514ef5cacc0800000000000000
+      internalID: -3698475760759910135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_7
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4481e652007806c0800000000000000
+      internalID: -4176965499036269493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d970ad06c70439780800000000000000
+      internalID: -8677521154067789923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c985e96cf0271d50800000000000000
+      internalID: 6707866438472141252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_10
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbf824d1d21ac610800000000000000
+      internalID: 1642145706546887626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_11
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e393a1a1ddda18a60800000000000000
+      internalID: 7674606405153339710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_12
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c089852ab74fdac90800000000000000
+      internalID: -7156795420979980276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fbd16ec1da204770800000000000000
+      internalID: 8592915169621957617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_14
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 117
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2e487690158c190800000000000000
+      internalID: -7942008842034552116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_15
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae8b7ea8160524f0800000000000000
+      internalID: -854269851240526164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_16
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8a5ec5eb257eb50800000000000000
+      internalID: 6622352754627422390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_17
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e87314d1094892d90800000000000000
+      internalID: -7122015581208758386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_18
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a44ef33252bef7360800000000000000
+      internalID: 7169707676534826058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_19
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fee2207930a3080800000000000000
+      internalID: -9207042541093982307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_20
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c8a3cb333da46370800000000000000
+      internalID: 8314961247590394048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_21
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 108
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359de7f877d8f3760800000000000000
+      internalID: 7439820654087428435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_22
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a438df96974f7ee0800000000000000
+      internalID: -1261210658388036446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_23
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7530efc941a6fb20800000000000000
+      internalID: 3167896726293984637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_24
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b2eae118ba4d0b0800000000000000
+      internalID: -5704746256917714059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_25
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac42c6828a0e0df30800000000000000
+      internalID: 4598422232382579914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_26
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 99
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eafd6357ea4d09ba0800000000000000
+      internalID: -6084129250821611602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_27
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fdfb6edfd281bf50800000000000000
+      internalID: 6895436402501877234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_28
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6352050c334820790800000000000000
+      internalID: -7565339066224335562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_29
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4868656b0df0e6450800000000000000
+      internalID: 6083817535710856836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_30
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f96a57e67eb8c30800000000000000
+      internalID: 4362835125644730142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_31
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a2f377af9a91780800000000000000
+      internalID: -8711745110963967465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_32
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02195401f8b7c65b0800000000000000
+      internalID: -5373784400976309984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_33
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6039f6dad32855a0800000000000000
+      internalID: -6532431836684406678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_34
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 90
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cee81b0b8370c80800000000000000
+      internalID: -8356648252018332660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_35
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0060377250c306c0800000000000000
+      internalID: -4178284568850178034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_36
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5364d7d2802d03b10800000000000000
+      internalID: 1959296770470921781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_37
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dc70f4aa1a696b0800000000000000
+      internalID: -5289862959457645219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_38
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 81
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d671d7cced8ed8000800000000000000
+      internalID: 39944015327336301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_39
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576e984cf80161c40800000000000000
+      internalID: 5482587806033897077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_40
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7754ee967983250800000000000000
+      internalID: 5924651791030777822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_41
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74faa92457e927900800000000000000
+      internalID: 680780720152162119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_42
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea3b99c8c29cfb80800000000000000
+      internalID: -8359645417232975134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_43
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d195b462b4a7f650800000000000000
+      internalID: 6266658492610089430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_44
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 72
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790d935766f3cebe0800000000000000
+      internalID: -1446711671006834537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_45
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09abfd333a6574fe0800000000000000
+      internalID: -1204899116348360048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_46
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9405baa66458f70800000000000000
+      internalID: 9188828038674008540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_47
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daaa74007898cfbf0800000000000000
+      internalID: -289205063140267347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_48
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 561c943a30c2ad300800000000000000
+      internalID: 277582721172750693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_49
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b30ffebe81e473e80800000000000000
+      internalID: -8198998727660146629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_50
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 63
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc81b78287f9959d0800000000000000
+      internalID: -2785019556127893300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_51
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 54
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc5d2c47aaeea0e0800000000000000
+      internalID: -2256608359007560455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_52
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 54
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380056c2cfa4ae2f0800000000000000
+      internalID: -942858725043666813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_53
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 54
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ce5c9bb09c2ecf0800000000000000
+      internalID: -224395979216524211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_54
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 54
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0057b4dcb82415a10800000000000000
+      internalID: 1896370086311851264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_55
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1d953c20e04c190800000000000000
+      internalID: -7943208437744545351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_56
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6f89a7a2661a500800000000000000
+      internalID: 405717774071559890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_57
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1bf2fb77cf42da0800000000000000
+      internalID: -5970369614747553337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_58
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdcfa93f3c7c6a240800000000000000
+      internalID: 4802745697056783580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_59
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5663469ee027acf90800000000000000
+      internalID: -6932603268012689819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_60
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53773f4ce3d6def0800000000000000
+      internalID: -83646531164998817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_61
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 45
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be54431357ed8c90800000000000000
+      internalID: -7165817088085041483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_62
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36a2c69873934730800000000000000
+      internalID: 3982188641660347964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_63
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25d666d59626ed80800000000000000
+      internalID: -8221841644729215702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_64
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad1249b4a25fb5f0800000000000000
+      internalID: -738780946429239895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_65
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af183c66ce43c1520800000000000000
+      internalID: 2674070468692247034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_66
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae3b97ca218dd7e0800000000000000
+      internalID: -1739091860357693791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_67
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 36
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e7be55f15d325b0800000000000000
+      internalID: -5394233598097523114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_68
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 27
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85afe70adf7c90130800000000000000
+      internalID: 3533575274782194264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_69
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 27
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517fe5e71f5069110800000000000000
+      internalID: 1267206879916783381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_70
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 27
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1563bab67e075b330800000000000000
+      internalID: 3726008405965092433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_71
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 27
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea73ee4231596da0800000000000000
+      internalID: -5951136156079654167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_72
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 27
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99e548cb76d102550800000000000000
+      internalID: 6133935023860244121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_73
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 27
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c511013ef82d770800000000000000
+      internalID: 8634121641012583425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_74
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33285c9f89edf150800000000000000
+      internalID: 5908135089192575802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_75
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a453246420c4100800000000000000
+      internalID: 93452193049692771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_76
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a330fb63be4bcff40800000000000000
+      internalID: 5763680545456194362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_77
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d067c74a6cc6168a0800000000000000
+      internalID: -6313645602177780211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_78
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffa85b9af9ac4be0800000000000000
+      internalID: -1491630482753277959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_79
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d37eca213ec84490800000000000000
+      internalID: -7761727247206157359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_80
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 18
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c337f2b0953a64880800000000000000
+      internalID: -8627028433346530500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_81
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 9
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f4494a2227c919b0800000000000000
+      internalID: -5108833352722856720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_82
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 9
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98df8c018469437d0800000000000000
+      internalID: -2939559420502671991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_83
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 9
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16230dec09931fe60800000000000000
+      internalID: 7994234107667165793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_84
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 9
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0905835be82d6b90800000000000000
+      internalID: -7247091234185606899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_85
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4130c6c456238c90800000000000000
+      internalID: -7168844036290105012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_86
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abf9c5c76adc2ef0800000000000000
+      internalID: -131490149865751642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_87
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddbab640d3ca47eb0800000000000000
+      internalID: -4722960731137659939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: palette_interiors_x3_88
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adebe48d2fb77fe0800000000000000
+      internalID: -1191273374191719008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
