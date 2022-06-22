@@ -77,25 +77,25 @@ public class PlayerMoveState : PlayerState
         {
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
 
+
             GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
             Crop crop = GridPropertyManager.Instance.GetCropObjectAtGridLocation(gridPropertyDetails);
-
             if (crop != null)
             {
                 switch (InventoryManager.Instance.GetSelectedItemDetails().itemType)
                 {
-                    case ItemType.BreakingTool:
-                        crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
-                        stateMachine.ChangeState(player.BreakingState);
+                    case ItemType.CollectingTool:
+                        //crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
+                        stateMachine.ChangeState(player.HarvestingState);
                         break;
                     case ItemType.ChoppingTool:
-                        crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
+                        //crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
                         stateMachine.ChangeState(player.ChoppingState);
                         break;
-                    case ItemType.CollectingTool:
-                        crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
-                        stateMachine.ChangeState(player.HarvestingState);
+                    case ItemType.BreakingTool:
+                        //crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
+                        stateMachine.ChangeState(player.BreakingState);
                         break;
                 }
             }

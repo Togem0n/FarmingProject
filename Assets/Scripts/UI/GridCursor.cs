@@ -185,7 +185,6 @@ public class GridCursor : MonoBehaviour
             case ItemType.ChoppingTool:
             case ItemType.BreakingTool:
             case ItemType.CollectingTool:
-                Debug.Log("nmslchop");
                 if (gridPropertyDetails.seedItemCode != -1)
                 {
                     CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);

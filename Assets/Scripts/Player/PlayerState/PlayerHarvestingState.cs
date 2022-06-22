@@ -11,6 +11,14 @@ public class PlayerHarvestingState : PlayerUseToolState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+
+        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
+
+        Crop crop = GridPropertyManager.Instance.GetCropObjectAtGridLocation(gridPropertyDetails);
+        if (crop != null)
+        {
+            crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
+        }
         stateMachine.ChangeState(player.IdleState);
     }
 
@@ -27,6 +35,7 @@ public class PlayerHarvestingState : PlayerUseToolState
     public override void Enter()
     {
         base.Enter();
+        Debug.Log("Enter harvesting state");
     }
 
     public override void Exit()

@@ -37,15 +37,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 0a000000
+    cropProducedItemCode: 10270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropTomato
     seedItemCode: 20001
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -67,15 +67,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 0b000000
+    cropProducedItemCode: 11270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropStrawberry
     seedItemCode: 20002
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -97,15 +97,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 0c000000
+    cropProducedItemCode: 12270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropPumpkin
     seedItemCode: 20003
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -127,15 +127,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 0d000000
+    cropProducedItemCode: 13270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropCorn
     seedItemCode: 20004
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -157,15 +157,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 0e000000
+    cropProducedItemCode: 14270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropPotato
     seedItemCode: 20005
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -187,15 +187,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 0f000000
+    cropProducedItemCode: 15270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropOnions
     seedItemCode: 20007
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -217,15 +217,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 10000000
+    cropProducedItemCode: 17270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropCabbage
     seedItemCode: 20008
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -247,15 +247,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 11000000
+    cropProducedItemCode: 18270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropStraw
     seedItemCode: 20009
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -277,15 +277,15 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 12000000
+    cropProducedItemCode: 19270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
   - name: CropEggplant
     seedItemCode: 20010
-    growthDays: 010000000100000001000000010000000100000001000000
+    growthDays: 010000000200000003000000040000000500000006000000
     growthPrefab:
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
     - {fileID: 5664001656895998016, guid: 73bf7a5a8d64a134da9a2bdd9ef054b6, type: 3}
@@ -307,9 +307,9 @@ MonoBehaviour:
     disableCropCollidersBeforeHarvestedAnimation: 0
     isHarvestedAnimation: 0
     spawnCropProducedAtPlayerPosition: 0
-    harvestToolItemCode: 010000000200000003000000
+    harvestToolItemCode: 050000000500000005000000
     requiredHarvestActions: 010000000100000001000000
-    cropProducedItemCode: 13000000
+    cropProducedItemCode: 1a270000
     cropProducedMinQuantity: 01000000
     cropProducedMaxQuantity: 01000000
     daysToRegrow: 0
