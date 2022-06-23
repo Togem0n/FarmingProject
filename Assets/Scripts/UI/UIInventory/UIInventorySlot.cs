@@ -11,32 +11,25 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private Camera mainCamera;
     private Transform parentItem;
     private Canvas parentCanvas;
-
-    public GameObject draggedItem;
-
     private GridCursor gridCursor;
 
+    private int id;
+    private int draggedItemCode;
+    private int draggedItemQuantity;
+
+    public GameObject draggedItem;
     public Image inventorySlotHighlight;
     public Image inventorySlotImage;
     public TextMeshProUGUI textMeshProUGUI;
 
     [SerializeField] private GameObject slotsContainer;
-
     [SerializeField] private UIInventoryBar inventoryBar = null;
-
     [SerializeField] private GameObject inventoryTooltipsBoxPrefab = null;
-
-    [HideInInspector] public ItemDetails itemDetails;
-
     [SerializeField] private GameObject itemPrefab = null;
 
+    [HideInInspector] public ItemDetails itemDetails;
     [HideInInspector] public int itemQuantity;
-
     [HideInInspector] public bool isSelected = false;
-
-    private int id;
-    private int draggedItemCode;
-    private int draggedItemQuantity;
 
     private void OnEnable()
     {
@@ -56,13 +49,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         mainCamera = Camera.main;
     }
 
-    private void ClearCursors()
-    {
-        gridCursor.DisableCursor();
-
-        gridCursor.SelectedItemtype = ItemType.none;
-    }
-
+    #region Drag&Drop Item
     public void OnBeginDrag(PointerEventData eventData)
     {
         draggedItemCode = InventoryManager.Instance.InventoryList[id].itemCode;
@@ -144,7 +131,9 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         }
     }
+    #endregion
 
+    #region Set&Get SlotID
     private int SetSlotID()
     {
         string sid = transform.gameObject.name.ToString().Substring(15);
@@ -156,30 +145,9 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         return id;
     }
+    #endregion
 
-    public void SceneLoaded()
-    {
-        parentItem = GameObject.FindGameObjectWithTag("ItemParentTransform").transform;
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if(eventData.button == PointerEventData.InputButton.Left)
-        {
-            if (isSelected)
-            {
-                ClearSelectedItem();
-            }
-            else
-            {
-                if(itemQuantity > 0)
-                {
-                    SetSelectedItem();
-                }
-            }
-            //Debug.Log("select item: " + InventoryManager.Instance.SelectedItemCode);
-        }
-    }
+    #region Set&Clear Selected Item
     public void SetSelectedItem()
     {
         inventoryBar.ClearHighLightOnInventorySlots();
@@ -202,7 +170,6 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         gridCursor.SelectedItemtype = itemDetails.itemType;
 
         InventoryManager.Instance.SetSelectedInventoryItem(itemDetails.itemCode, id);
-        //Debug.Log("selected item's index is: " + id);
     }
 
     public void ClearSelectedItem()
@@ -216,20 +183,21 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         InventoryManager.Instance.ClearSelectedInventoryItem();
     }
 
+    private void ClearCursors()
+    {
+        gridCursor.DisableCursor();
+
+        gridCursor.SelectedItemtype = ItemType.none;
+    }
+    #endregion
+
+    #region Tooltips
     public void OnPointerEnter(PointerEventData eventData)
     {
         if(itemQuantity != 0)
         {
             inventoryBar.inventoryTooltipsBox = Instantiate(inventoryTooltipsBoxPrefab, transform.position, Quaternion.identity);
             inventoryBar.inventoryTooltipsBox.transform.SetParent(parentCanvas.transform, false);
-
-            //Vector2 movePosition;
-
-            //RectTransformUtility.ScreenPointToLocalPointInRectangle(parentCanvas.transform as RectTransform,
-            //    Input.mousePosition, parentCanvas.worldCamera, out movePosition);
-
-            //Vector3 mousePosition = parentCanvas.transform.TransformPoint(movePosition);
-            //inventoryBar.inventoryTooltipsBox.transform.position = mousePosition;
 
             UIInventoryTooltipBox inventoryTooltipBox = inventoryBar.inventoryTooltipsBox.GetComponent<UIInventoryTooltipBox>();
 
@@ -251,6 +219,24 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         }
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Left)
+        {
+            if (isSelected)
+            {
+                ClearSelectedItem();
+            }
+            else
+            {
+                if (itemQuantity > 0)
+                {
+                    SetSelectedItem();
+                }
+            }
+        }
+    }
+
     public void OnPointerExit(PointerEventData eventData)
     {
         DestroyInventoryTooltipsBox();
@@ -263,5 +249,10 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Destroy(inventoryBar.inventoryTooltipsBox);
         }
     }
+    #endregion
 
+    public void SceneLoaded()
+    {
+        parentItem = GameObject.FindGameObjectWithTag("ItemParentTransform").transform;
+    }
 }

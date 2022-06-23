@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class UIInventoryBar : MonoBehaviour
 {
-    //[SerializeField] private Sprite blankSprite = null;
     [SerializeField] private UIInventorySlot[] inventorySlots = null;
-
-    int test = 0;
-    public GameObject inventoryBarDraggedItem;
     [HideInInspector] public GameObject inventoryTooltipsBox;
-
+    public GameObject inventoryBarDraggedItem;
     private RectTransform rectTransform;
-
     private bool _isInventoryBarPositionBottom = true;
 
     public bool IsInventoryBarPositionBottom { get => _isInventoryBarPositionBottom; set => _isInventoryBarPositionBottom = value; }
@@ -52,6 +47,17 @@ public class UIInventoryBar : MonoBehaviour
         //SwitchInventoryBarPosition();
     }
 
+    public void SetHighlightedInventorySlots()
+    {
+        if(InventorySlots.Length > 0)
+        {
+            for(int i = 0; i < InventorySlots.Length; i++)
+            {
+                SetHighlightedInventorySlots(i);
+            }
+        }
+    }
+
     public void ClearHighLightOnInventorySlots()
     {
         if(InventorySlots.Length > 0)
@@ -64,17 +70,6 @@ public class UIInventoryBar : MonoBehaviour
                     InventorySlots[i].inventorySlotHighlight.color = new Color(0f, 0f, 0f, 0f);
                     InventoryManager.Instance.ClearSelectedInventoryItem();
                 }
-            }
-        }
-    }
-
-    public void SetHighlightedInventorySlots()
-    {
-        if(InventorySlots.Length > 0)
-        {
-            for(int i = 0; i < InventorySlots.Length; i++)
-            {
-                SetHighlightedInventorySlots(i);
             }
         }
     }
@@ -126,12 +121,9 @@ public class UIInventoryBar : MonoBehaviour
         }
     }
 
-    public void ClearCurrentlySelectedItems()
+    public void SetSelectedItem(int index)
     {
-        for(int i = 0; i < inventorySlots.Length; i++)
-        {
-            inventorySlots[i].ClearSelectedItem();
-        }
+        inventorySlots[index].SetSelectedItem();
     }
 
     public void SetSelectedItemFromUserInput()
@@ -158,9 +150,12 @@ public class UIInventoryBar : MonoBehaviour
 
     }
 
-    public void SetSelectedItem(int index)
+    public void ClearCurrentlySelectedItems()
     {
-        inventorySlots[index].SetSelectedItem();
+        for(int i = 0; i < inventorySlots.Length; i++)
+        {
+            inventorySlots[i].ClearSelectedItem();
+        }
     }
 
     public void ClearSelectedItem()

@@ -108,7 +108,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         if(gridPropertyDetails.seedItemCode > -1)
         {
             // get crop
-            //Debug.Log(gridPropertyDetails.seedItemCode);
+            Debug.Log(gridPropertyDetails.seedItemCode);
             CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
 
             GameObject cropPrefab;
