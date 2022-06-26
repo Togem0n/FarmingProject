@@ -3993,7 +3993,6 @@ GameObject:
   - component: {fileID: 829955396}
   - component: {fileID: 829955395}
   - component: {fileID: 829955394}
-  - component: {fileID: 829955397}
   m_Layer: 0
   m_Name: GridDetailsManager
   m_TagString: Untagged
@@ -4043,19 +4042,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &829955397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 829955393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 103c0a4b7e22007488adae70ece1680e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gUID: e372e51b-2539-49d3-83a5-71dedbf7ebe2
 --- !u!1 &849887462
 GameObject:
   m_ObjectHideFlags: 0

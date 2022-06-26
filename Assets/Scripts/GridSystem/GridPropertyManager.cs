@@ -102,12 +102,15 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         }
     }
 
+    public void SetTileToDug(int gridX, int gridY)
+    {
+        dugTilemap.SetTile(new Vector3Int(gridX, gridY, 0), dugTile);
+    }
+
     public void DisplayPlantedCrop(GridPropertyDetails gridPropertyDetails)
     {
         if(gridPropertyDetails.seedItemCode > -1)
         {
-            // get crop
-            // Debug.Log(gridPropertyDetails.seedItemCode);
             CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
 
             GameObject cropPrefab;
@@ -115,7 +118,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
             int growthStages = cropDetails.growthDays.Length;
 
             int currentGrowthStage = 0;
-            //int daysCounter = cropDetails.totalGrowDays;
+
             for(int i = growthStages - 1; i >=0; i--)
             {
                 if(gridPropertyDetails.growthDays >= cropDetails.growthDays[i])
@@ -123,15 +126,11 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
                     currentGrowthStage = i;
                     break;
                 }
-
-                //daysCounter = daysCounter - cropDetails.growthDays[i];
             }
 
             cropPrefab = cropDetails.growthPrefab[currentGrowthStage];
 
             Sprite growthSprite = cropDetails.growthSprite[currentGrowthStage];
-
-            //Debug.Log("current growth stage" + currentGrowthStage);
 
             Vector3 worldPosition = dugTilemap.CellToWorld(new Vector3Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY, 0));
 
@@ -145,9 +144,37 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         }
     }
 
-    /// <summary>
-    /// Store the value from gridProperties scriptabl object in GameObjectSave sceneData;
-    /// </summary>
+    public Crop GetCropObjectAtGridLocation(GridPropertyDetails gridPropertyDetails)
+    {
+        Vector3 worldPosition = grid.GetCellCenterLocal(new Vector3Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY, 0));
+        Collider2D[] collider2DArray = Physics2D.OverlapPointAll(worldPosition);
+
+        Crop crop = null;
+
+        for (int i = 0; i < collider2DArray.Length; i++)
+        {
+            // Get it using layer?
+            crop = collider2DArray[i].gameObject.GetComponentInParent<Crop>();
+            if (crop != null && crop.cropGridPosition == new Vector2Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY))
+            {
+                break;
+            }
+
+            crop = collider2DArray[i].gameObject.GetComponentInChildren<Crop>();
+            if (crop != null && crop.cropGridPosition == new Vector2Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY))
+            {
+                break;
+            }
+        }
+        return crop;
+    }
+
+    public CropDetails GetCropDetails(int seedItemCode)
+    {
+        return cropDetailsList.GetCropDetails(seedItemCode);
+    }
+
+    #region GridSystem
     private void InitialiseGridProperties()
     {
         // loop through all gridproperties in the array
@@ -252,41 +279,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
     {
         return GetGridPropertyDetails(gridX, gridY, gridPropertyDictionary);
     }
-
-    public void SetTileToDug(int gridX, int gridY)
-    {
-        dugTilemap.SetTile(new Vector3Int(gridX, gridY, 0), dugTile);
-    }
-
-    public Crop GetCropObjectAtGridLocation(GridPropertyDetails gridPropertyDetails)
-    {
-        Vector3 worldPosition = grid.GetCellCenterLocal(new Vector3Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY, 0));
-        Collider2D[] collider2DArray = Physics2D.OverlapPointAll(worldPosition);
-
-        Crop crop = null;
-
-        for (int i = 0; i < collider2DArray.Length; i++)
-        {
-            // Get it using layer?
-            crop = collider2DArray[i].gameObject.GetComponentInParent<Crop>();
-            if (crop != null && crop.cropGridPosition == new Vector2Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY))
-            {
-                break;
-            }
-
-            crop = collider2DArray[i].gameObject.GetComponentInChildren<Crop>();
-            if (crop != null && crop.cropGridPosition == new Vector2Int(gridPropertyDetails.gridX, gridPropertyDetails.gridY))
-            {
-                break;
-            }
-        }
-        return crop;
-    }
-
-    public CropDetails GetCropDetails(int seedItemCode)
-    {
-        return cropDetailsList.GetCropDetails(seedItemCode);
-    }
+    #endregion
 
     private void AfterSceneLoaded()
     {
@@ -408,6 +401,4 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
 
     #endregion
-
-
 }

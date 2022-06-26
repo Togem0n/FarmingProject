@@ -24,6 +24,7 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
     private GameObjectSave _gameObjectSave;
     public GameObjectSave GameObjectSave { get { return _gameObjectSave; } set { _gameObjectSave = value; } }
 
+    #region Initialization
     protected override void Awake()
     {
         base.Awake();
@@ -52,16 +53,23 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
     {
         InitialiseGridDetails();
     }
+    private void AfterSceneLoaded()
+    {
+        grid = GameObject.FindObjectOfType<Grid>();
+        //cropParentTransform = GameObject.FindWithTag("CropsParentTransform").transform;
+        //dugTilemap = GameObject.FindWithTag("DugTilemap").GetComponent<Tilemap>();
+        //wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
+    }
 
+    #endregion
+
+    #region Grid Manager
     private void InitialiseGridDetails()
     {
-        // loop through all gridproperties in the array
         foreach (GridDetailsScriptableObject gridDetailsScriptableObject in gridDetailsScriptableObjectArray)
         {
-            // create dictionary of grid property details
             Dictionary<string, GridDetails> gridDetailsDictionary = new Dictionary<string, GridDetails>();
 
-            // loop through gridproperty in the current map and set the property
             foreach (GridDetails gridDetails in gridDetailsScriptableObject.GridDetailsList)
             {
                 int gridX = gridDetails.gridX;
@@ -88,7 +96,9 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
             GameObjectSave.sceneData.Add(gridDetailsScriptableObject.sceneName.ToString(), sceneSave);
         }
     }
-    
+    #endregion
+
+    #region Get&Set GridDetails
     public GridDetails GetGridDetails(int gridX, int gridY)
     {
         return GetGridDetails(gridX, gridY, gridDetailsDictionary);
@@ -124,15 +134,8 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
         gridDetailsDictionary[key] = gridDetails;
     }
+    #endregion
 
-    private void AfterSceneLoaded()
-    {
-        grid = GameObject.FindObjectOfType<Grid>();
-        //cropParentTransform = GameObject.FindWithTag("CropsParentTransform").transform;
-        //dugTilemap = GameObject.FindWithTag("DugTilemap").GetComponent<Tilemap>();
-        //wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
-    }
-    
     #region ISaveable
     public void ISaveableDeregister()
     {
@@ -208,5 +211,4 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
         GameObjectSave.sceneData.Add(sceneName, sceneSave);
     }
     #endregion
-    
 }
