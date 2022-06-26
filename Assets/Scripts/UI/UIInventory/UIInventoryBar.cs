@@ -142,7 +142,7 @@ public class UIInventoryBar : MonoBehaviour
 
             index += Mathf.FloorToInt(-Input.GetAxis("Mouse ScrollWheel") * 10);
             index %= GetCurrentCapacityOfInventorySlots();
-            Debug.Log(index %= GetCurrentCapacityOfInventorySlots());
+            // Debug.Log(index %= GetCurrentCapacityOfInventorySlots());
             index = index < 0 ? GetCurrentCapacityOfInventorySlots() + index : index;
             inventorySlots[index].SetSelectedItem();
 

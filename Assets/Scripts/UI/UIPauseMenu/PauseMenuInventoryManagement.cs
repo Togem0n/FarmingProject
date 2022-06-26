@@ -5,14 +5,11 @@ using UnityEngine;
 public class PauseMenuInventoryManagement : MonoBehaviour
 {
     [SerializeField] private PauseMenuInventroySlot[] inventoryManagementSlot = null;
-
-    public GameObject inventroyMangementDraggedItemPrefab;
-
     [SerializeField] private Sprite transparent1616 = null;
-
     [SerializeField] PlayerData data;
 
     [HideInInspector] public GameObject inventoryTextBoxGameObject;
+    [HideInInspector] public GameObject inventroyMangementDraggedItemPrefab;
 
     private void OnEnable()
     {

@@ -13,7 +13,6 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
     private string dayOfWeek = "Mon";
 
     private bool clockPaused = false;
-
     private float clockTick = 0f;
 
     private string _iSaveableUniqueID;

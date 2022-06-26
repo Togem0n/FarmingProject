@@ -8,9 +8,9 @@ public interface ISaveable
 
     void ISaveableDeregister();
 
-    GameObjectSave ISaveableSave();
+    GameObjectSave ISaveableSave(); // save game to file
 
-    void ISaveableLoad(GameSave gameSave);
+    void ISaveableLoad(GameSave gameSave); // load game from file
 
     void ISaveableStoreScene(string sceneName);
 

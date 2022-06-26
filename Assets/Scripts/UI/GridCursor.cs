@@ -52,14 +52,14 @@ public class GridCursor : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(GetGridPositionForCursor().x, GetGridPositionForCursor().y);
-            if (gridPropertyDetails != null)
+            GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(GetGridPositionForCursor().x, GetGridPositionForCursor().y);
+
+            if (gridDetails != null)
             {
                 Debug.Log("*******************************************");
                 Debug.Log("Coordination: ( " + GetGridPositionForCursor().x + ", " + GetGridPositionForCursor().y + ")");
-                Debug.Log("can Drop Item: " + gridPropertyDetails.canDropItem);
-                Debug.Log("is Diggable: " + gridPropertyDetails.isDiaggable);
-                Debug.Log("days since dug: " + gridPropertyDetails.daysSinceDug);
+                Debug.Log("can Drop Item: " + gridDetails.canDropItem);
+                Debug.Log("is Diggable: " + gridDetails.isDiaggable);
             }
             else
             {

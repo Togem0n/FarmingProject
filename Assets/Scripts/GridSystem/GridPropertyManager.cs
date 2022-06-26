@@ -9,7 +9,6 @@ using UnityEngine.Tilemaps;
 public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, ISaveable
 {
     private Transform cropParentTransform;
-    private Tilemap tilemap;
     private Tilemap dugTilemap;
     private Tilemap wateredTilemap;
     private bool isFirstTimeSceneLoaded = true;
@@ -21,6 +20,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
     [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
     [SerializeField] private GridPropertyScriptableObjects[] gridPropertyScriptableObjectsArray = null;
 
+    // ISaveable
     private string _iSaveablUniqueID;
     public string ISaveableUniqueID { get { return _iSaveablUniqueID; } set { _iSaveablUniqueID = value; } }
 
@@ -54,7 +54,6 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
     private void Start()
     {
         InitialiseGridProperties();
-
     }
 
     private void ClearDisplayGroundDecorations()
@@ -108,7 +107,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         if(gridPropertyDetails.seedItemCode > -1)
         {
             // get crop
-            Debug.Log(gridPropertyDetails.seedItemCode);
+            // Debug.Log(gridPropertyDetails.seedItemCode);
             CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
 
             GameObject cropPrefab;
@@ -157,7 +156,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
             // create dictionary of grid property details
             Dictionary<string, GridPropertyDetails> gridPropertyDictionary = new Dictionary<string, GridPropertyDetails>();
 
-            // loop through gridproperty in the current map
+            // loop through gridproperty in the current map and set the property
             foreach(GridProperty gridProperty in gridPropertyScriptableObject.gridPropertyList)
             {
                 GridPropertyDetails gridPropertyDetails;
@@ -266,7 +265,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
 
         Crop crop = null;
 
-        for(int i = 0; i < collider2DArray.Length; i++)
+        for (int i = 0; i < collider2DArray.Length; i++)
         {
             // Get it using layer?
             crop = collider2DArray[i].gameObject.GetComponentInParent<Crop>();
@@ -297,6 +296,7 @@ public class GridPropertyManager : SingletonMonoBehaviour<GridPropertyManager>, 
         wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
     }
 
+    // Day crops info updates
     private void AdvanceDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
     {
         ClearDisplayGridPropertyDetails();

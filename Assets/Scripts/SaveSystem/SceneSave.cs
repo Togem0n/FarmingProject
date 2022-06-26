@@ -10,7 +10,7 @@ public class SceneSave
     public Dictionary<string, int[]> intArrayDictionary;
 
     public List<SceneItem> listSceneItem;
-    public Dictionary<string, GridPropertyDetails> gridPropertyDetailsDictionary;
     public List<InventoryItem> listInventoryItem;
-
+    public Dictionary<string, GridPropertyDetails> gridPropertyDetailsDictionary;
+    public Dictionary<string, GridDetails> gridDetailsDictionary;
 }

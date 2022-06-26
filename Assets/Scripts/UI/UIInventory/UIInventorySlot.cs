@@ -113,8 +113,6 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
             Vector3Int gridPostion = GridPropertyManager.Instance.grid.WorldToCell(worldPosition);
             GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(gridPostion.x, gridPostion.y);
 
-            //if (gridCursor.CursorPositionIsValid) 
-            //{ 
             if (gridPropertyDetails != null && gridPropertyDetails.canDropItem)
             {
                 GameObject itemGameObject = Instantiate(itemPrefab, worldPosition, Quaternion.identity, parentItem);
