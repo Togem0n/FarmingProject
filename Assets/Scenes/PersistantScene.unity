@@ -4013,6 +4013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
+  cropDetailsList: {fileID: 11400000, guid: 04fc047ff5c946a4d858645ed90f10bb, type: 2}
   gridDetailsScriptableObjectArray:
   - {fileID: 11400000, guid: 9a6299d87701211418e332d6321b2137, type: 2}
 --- !u!114 &829955395

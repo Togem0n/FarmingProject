@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneCropsInitiator : MonoBehaviour
 {
     private Grid grid;
-    [SerializeField] private GridPropertyScriptableObjects currentSceneGrid;
+    [SerializeField] private GridDetailsScriptableObject currentSceneGrid;
     [SerializeField] private GameObject stonePrefab;
     [SerializeField] private GameObject treePrefab;
 
@@ -27,44 +27,48 @@ public class SceneCropsInitiator : MonoBehaviour
     private void InstantiateSceneCrops()
     {
         grid = GameObject.FindObjectOfType<Grid>();
-
+        int x = 0;
         for (int i = currentSceneGrid.originX; i < currentSceneGrid.originX + currentSceneGrid.gridWidth; i++)
         {
             for(int j = currentSceneGrid.originY; j < currentSceneGrid.originY + currentSceneGrid.gridHeight; j++)
             {
-                GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(i, j);
+                GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(i, j);
 
-                if (gridPropertyDetails != null)
+                if (gridDetails != null)
                 {
-                    if (gridPropertyDetails.isDiaggable)
+                    if (gridDetails.isDiaggable)
                     {
                         int dice = Random.Range(0, 100);
 
-                        if(dice < 50)
+                        if(dice < 80)
                         {
+                            gridDetails.seedItemCode = -1;
                             continue;
-                        }else if (dice < 65)
+                        }else if (dice < 90)
                         {
-                            gridPropertyDetails.daysSinceDug = -1;
-                            gridPropertyDetails.daysSinceWatered = -1;
-                            gridPropertyDetails.seedItemCode = Random.Range(20014, 20016);
-                            gridPropertyDetails.growthDays = 0;
-                            GridPropertyManager.Instance.SetGridPropertyDetails(i, j, gridPropertyDetails);
-                        }else if(dice < 75)
+                            gridDetails.daysSinceDug = -1;
+                            gridDetails.daysSinceWatered = -1;
+                            gridDetails.seedItemCode = Random.Range(20014, 20016);
+                            gridDetails.growthDays = 0;
+                            GridDetailsManager.Instance.SetGridDetails(i, j, gridDetails);
+                            x += 1;
+                        }else if(dice < 100)
                         {
-                            gridPropertyDetails.daysSinceDug = -1;
-                            gridPropertyDetails.daysSinceWatered = -1;
+                            x += 1;
+                            gridDetails.daysSinceDug = -1;
+                            gridDetails.daysSinceWatered = -1;
                             List<int> tmp = new List<int>();
                             tmp.Add(20011);
                             tmp.Add(20012);
                             int num = Random.Range(0, tmp.Count);
-                            gridPropertyDetails.seedItemCode = tmp[num];
-                            gridPropertyDetails.growthDays = 6;
-                            GridPropertyManager.Instance.SetGridPropertyDetails(i, j, gridPropertyDetails);
+                            gridDetails.seedItemCode = tmp[num];
+                            gridDetails.growthDays = 6;
+                            GridDetailsManager.Instance.SetGridDetails(i, j, gridDetails);
                         }
                     }
                 }
             }
         }
+        Debug.Log(x);
     }
 }

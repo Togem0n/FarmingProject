@@ -10,14 +10,14 @@ public class Crop : MonoBehaviour
 
     public void ProcessToolAction(ItemDetails equippedItemDetails)
     {
-        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(cropGridPosition.x, cropGridPosition.y);
+        GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(cropGridPosition.x, cropGridPosition.y);
 
-        if(gridPropertyDetails == null)
+        if(gridDetails == null)
         {
             return;
         }
 
-        ItemDetails seedItemDetails = InventoryManager.Instance.GetItemDetails(gridPropertyDetails.seedItemCode);
+        ItemDetails seedItemDetails = InventoryManager.Instance.GetItemDetails(gridDetails.seedItemCode);
         if(seedItemDetails == null)
         {
             return;
@@ -39,44 +39,44 @@ public class Crop : MonoBehaviour
 
         if(harvestActionCount >= requiredHarvestActions)
         {
-            HarvestCrop(cropDetails, gridPropertyDetails);
+            HarvestCrop(cropDetails, gridDetails);
         }
     }
 
-    private void HarvestCrop(CropDetails cropDetails, GridPropertyDetails gridPropertyDetails)
+    private void HarvestCrop(CropDetails cropDetails, GridDetails gridDetails)
     {
-        gridPropertyDetails.seedItemCode = -1;
-        gridPropertyDetails.growthDays = -1;
-        gridPropertyDetails.daysSinceLastHarvest = -1;
-        gridPropertyDetails.daysSinceWatered = -1;
+        gridDetails.seedItemCode = -1;
+        gridDetails.growthDays = -1;
+        gridDetails.daysSinceLastHarvest = -1;
+        gridDetails.daysSinceWatered = -1;
 
-        GridPropertyManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
+        GridDetailsManager.Instance.SetGridDetails(gridDetails.gridX, gridDetails.gridY, gridDetails);
 
-        HarvestActions(cropDetails, gridPropertyDetails);
+        HarvestActions(cropDetails, gridDetails);
     }
 
-    private void HarvestActions(CropDetails cropDetails, GridPropertyDetails gridPropertyDetails)
+    private void HarvestActions(CropDetails cropDetails, GridDetails gridDetails)
     {
         SpawnHarvestedItems(cropDetails);
 
         if(cropDetails.harvestedTransfromItemCode > 0)
         {
-            CreateHarvestedTransformCrop(cropDetails, gridPropertyDetails);
+            CreateHarvestedTransformCrop(cropDetails, gridDetails);
         }
 
         Destroy(gameObject);
     }
 
-    private void CreateHarvestedTransformCrop(CropDetails cropDetails, GridPropertyDetails gridPropertyDetails)
+    private void CreateHarvestedTransformCrop(CropDetails cropDetails, GridDetails gridDetails)
     {
-        gridPropertyDetails.seedItemCode = cropDetails.harvestedTransfromItemCode;
-        gridPropertyDetails.growthDays = 0;
-        gridPropertyDetails.daysSinceLastHarvest = -1;
-        gridPropertyDetails.daysSinceWatered = -1;
+        gridDetails.seedItemCode = cropDetails.harvestedTransfromItemCode;
+        gridDetails.growthDays = 0;
+        gridDetails.daysSinceLastHarvest = -1;
+        gridDetails.daysSinceWatered = -1;
 
-        GridPropertyManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
+        GridDetailsManager.Instance.SetGridDetails(gridDetails.gridX, gridDetails.gridY, gridDetails);
 
-        GridPropertyManager.Instance.DisplayPlantedCrop(gridPropertyDetails);
+        GridDetailsManager.Instance.DisplayPlantedCrop(gridDetails);
     }
 
     private void SpawnHarvestedItems(CropDetails cropDetails)
