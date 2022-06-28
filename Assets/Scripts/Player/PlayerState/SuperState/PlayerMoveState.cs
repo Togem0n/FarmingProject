@@ -13,8 +13,6 @@ public class PlayerMoveState : PlayerState
     {
         base.LogicUpdate();
 
-        // dug logic
-
         if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.HoeingTool
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
@@ -23,15 +21,15 @@ public class PlayerMoveState : PlayerState
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
 
             //TODO make if position is allowed to hoeing into a method
-            GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
+            GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
             
-            if (gridPropertyDetails != null && gridPropertyDetails.daysSinceDug == -1 && gridPropertyDetails.seedItemCode == -1)
+            if (gridDetails != null && gridDetails.daysSinceDug == -1 && gridDetails.seedItemCode == -1)
             {
-                gridPropertyDetails.daysSinceDug = 0;
+                gridDetails.daysSinceDug = 0;
 
-                GridPropertyManager.Instance.SetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y, gridPropertyDetails);
+                GridDetailsManager.Instance.SetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y, gridDetails);
 
-                GridPropertyManager.Instance.DisplayDugGround(gridPropertyDetails);
+                GridDetailsManager.Instance.DisplayDugGround(gridDetails);
 
                 stateMachine.ChangeState(player.HoeingState);
             }
@@ -41,32 +39,24 @@ public class PlayerMoveState : PlayerState
             }
         }
 
-        // plant seed logic
         if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.Seed
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
             && !UIManager.Instance.IsPointerOverUIElement())
         {
             player.SetPlantDirection(Input.mousePosition.x, Input.mousePosition.y);
-            // if position is allowed to plant
             stateMachine.ChangeState(player.CarryingSeedState);
         }
 
-        // water crop logic
         if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.WateringTool
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
             && !UIManager.Instance.IsPointerOverUIElement())
         {
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
-            // if position is allowed to plant
-            Debug.Log("???");
             stateMachine.ChangeState(player.WateringState);
         }
 
-        // harvest logic
-        // change line 57 to
-        // if InventoryManager.Instance.GetSelectedItemDetails().itemType == getcropdetails? if can harvest?
         if (InventoryManager.Instance.SelectedItemCode != -1
             && ((InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.CollectingTool
             || InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.ChoppingTool) 
@@ -78,23 +68,20 @@ public class PlayerMoveState : PlayerState
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
 
 
-            GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
+            GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
-            Crop crop = GridPropertyManager.Instance.GetCropObjectAtGridLocation(gridPropertyDetails);
+            Crop crop = GridDetailsManager.Instance.GetCropObjectAtGridLocation(gridDetails);
             if (crop != null)
             {
                 switch (InventoryManager.Instance.GetSelectedItemDetails().itemType)
                 {
                     case ItemType.CollectingTool:
-                        //crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
                         stateMachine.ChangeState(player.HarvestingState);
                         break;
                     case ItemType.ChoppingTool:
-                        //crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
                         stateMachine.ChangeState(player.ChoppingState);
                         break;
                     case ItemType.BreakingTool:
-                        //crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());
                         stateMachine.ChangeState(player.BreakingState);
                         break;
                 }

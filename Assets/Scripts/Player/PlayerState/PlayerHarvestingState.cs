@@ -12,9 +12,9 @@ public class PlayerHarvestingState : PlayerUseToolState
     {
         base.AnimationFinishTrigger();
 
-        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
+        GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
-        Crop crop = GridPropertyManager.Instance.GetCropObjectAtGridLocation(gridPropertyDetails);
+        Crop crop = GridDetailsManager.Instance.GetCropObjectAtGridLocation(gridDetails);
         if (crop != null)
         {
             crop.ProcessToolAction(InventoryManager.Instance.GetSelectedItemDetails());

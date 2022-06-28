@@ -214,8 +214,8 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
         Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosX, mousePosY, -mainCamera.transform.position.z));
         Vector3 tmp = mouseWorldPosition - transform.position;
 
-        Vector3Int GridOfMouse = GridPropertyManager.Instance.grid.WorldToCell(mouseWorldPosition);
-        Vector3Int GridOfPlayer = GridPropertyManager.Instance.grid.WorldToCell(transform.position);
+        Vector3Int GridOfMouse = GridDetailsManager.Instance.grid.WorldToCell(mouseWorldPosition);
+        Vector3Int GridOfPlayer = GridDetailsManager.Instance.grid.WorldToCell(transform.position);
 
         int itemUseGridRadius = InventoryManager.Instance.GetSelectedItemDetails().itemUseGridRadius;
 
@@ -258,8 +258,8 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
         Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosX, mousePosY, -mainCamera.transform.position.z));
         Vector3 tmp = mouseWorldPosition - transform.position;
 
-        Vector3Int GridOfMouse = GridPropertyManager.Instance.grid.WorldToCell(mouseWorldPosition);
-        Vector3Int GridOfPlayer = GridPropertyManager.Instance.grid.WorldToCell(transform.position);
+        Vector3Int GridOfMouse = GridDetailsManager.Instance.grid.WorldToCell(mouseWorldPosition);
+        Vector3Int GridOfPlayer = GridDetailsManager.Instance.grid.WorldToCell(transform.position);
 
         int itemUseGridRadius = InventoryManager.Instance.GetSelectedItemDetails().itemUseGridRadius;
 

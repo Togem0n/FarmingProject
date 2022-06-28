@@ -9,8 +9,6 @@ using UnityEngine.Tilemaps;
 public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, ISaveable
 {
 
-    private Tile dugTile;
-    private Tile wateredTile;
     private Tilemap dugTilemap;
     private Tilemap wateredTilemap;
     private Transform cropParentTransform;
@@ -19,6 +17,8 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
     [HideInInspector] public Grid grid;
 
+    [SerializeField] private Tile dugTile;
+    [SerializeField] private Tile wateredTile;
     [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
     [SerializeField] private GridDetailsScriptableObject[] gridDetailsScriptableObjectArray = null;
 
@@ -74,14 +74,14 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
     private void AdvanceDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
     {
         ClearDisplayedGridDetails();
-
+        Debug.Log("NMSL");
         foreach (GridDetailsScriptableObject gridDetailsScriptableObject in gridDetailsScriptableObjectArray)
         {
             if (GameObjectSave.sceneData.TryGetValue(gridDetailsScriptableObject.sceneName.ToString(), out SceneSave sceneSave))
             {
-                if (sceneSave.gridPropertyDetailsDictionary != null)
+                if (sceneSave.gridDetailsDictionary != null)
                 {
-                    for (int i = sceneSave.gridPropertyDetailsDictionary.Count - 1; i >= 0; i--)
+                    for (int i = sceneSave.gridDetailsDictionary.Count - 1; i >= 0; i--)
                     {
                         KeyValuePair<string, GridDetails> item = sceneSave.gridDetailsDictionary.ElementAt(i);
 
@@ -177,9 +177,11 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
     private void ClearAllCrops()
     {
-        foreach (GameObject child in cropParentTransform)
+        Crop[] crops = FindObjectsOfType<Crop>();
+
+        foreach (Crop crop in crops)
         {
-            Destroy(child);
+            Destroy(crop.gameObject);
         }
     }
 
@@ -209,7 +211,7 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
         }
     }
 
-    private void DisplayDugGround(GridDetails gridDetails)
+    public void DisplayDugGround(GridDetails gridDetails)
     {
         if (gridDetails.daysSinceDug > -1)
         {

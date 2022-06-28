@@ -24,7 +24,7 @@ public class Crop : MonoBehaviour
             return;
         }
 
-        CropDetails cropDetails = GridPropertyManager.Instance.GetCropDetails(seedItemDetails.itemCode);
+        CropDetails cropDetails = GridDetailsManager.Instance.GetCropDetails(seedItemDetails.itemCode);
         if(cropDetails == null)
         {
             return;
