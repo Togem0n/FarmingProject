@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class GridCursor : MonoBehaviour
 {
-    private Canvas canvas;
     private Grid grid;
+    private Canvas canvas;
     private Camera mainCamera;
+
     [SerializeField] private Image cursorImage = null;
     [SerializeField] private RectTransform cursorRectTransform = null;
     [SerializeField] private Sprite greenCursorSprite = null;
@@ -23,18 +24,17 @@ public class GridCursor : MonoBehaviour
     private ItemType _selectedItemtype;
     public ItemType SelectedItemtype { get => _selectedItemtype; set => _selectedItemtype = value; }
     
-
     private bool _cursorIsEnable = false;
     public bool CursorIsEnable { get => _cursorIsEnable; set => _cursorIsEnable = value; }
 
-    private void OnDisable()
-    {
-        EventHandler.AfterSceneLoadEvent -= SceneLoaded;
-    }
 
     private void OnEnable()
     {
         EventHandler.AfterSceneLoadEvent += SceneLoaded;
+    }
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= SceneLoaded;
     }
 
     private void Start()
@@ -108,15 +108,14 @@ public class GridCursor : MonoBehaviour
             return;
         }
 
-        // // get grid property details at cursor position
-        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(cursorGridPosition.x, cursorGridPosition.y);
+        GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(cursorGridPosition.x, cursorGridPosition.y);
 
-        if(gridPropertyDetails != null)
+        if(gridDetails != null)
         {
             switch (itemDetails.itemType)
             {
                 case ItemType.Seed:
-                    if (!gridPropertyDetails.canDropItem)
+                    if (!gridDetails.canDropItem)
                     {
                         SetCursorToInValid();
                         return;
@@ -124,7 +123,7 @@ public class GridCursor : MonoBehaviour
                     break;
                 case ItemType.Commodity:
 
-                    if (!gridPropertyDetails.canDropItem)
+                    if (!gridDetails.canDropItem)
                     {
                         SetCursorToInValid();
                         return;
@@ -136,7 +135,7 @@ public class GridCursor : MonoBehaviour
                 case ItemType.BreakingTool:
                 case ItemType.ChoppingTool:
                 case ItemType.CollectingTool:
-                    if(!IsCursorValidForTool(gridPropertyDetails, itemDetails))
+                    if(!IsCursorValidForTool(gridDetails, itemDetails))
                     {
                         SetCursorToInValid();
                         return;
@@ -159,12 +158,12 @@ public class GridCursor : MonoBehaviour
 
     }
 
-    private bool IsCursorValidForTool(GridPropertyDetails gridPropertyDetails, ItemDetails itemDetails)
+    private bool IsCursorValidForTool(GridDetails gridDetails, ItemDetails itemDetails)
     {
         switch (itemDetails.itemType)
         {
             case ItemType.HoeingTool:
-                if(gridPropertyDetails.isDiaggable == true && gridPropertyDetails.daysSinceDug == -1)
+                if(gridDetails.isDiaggable == true && gridDetails.daysSinceDug == -1)
                 {
                     return true;
                 }
@@ -173,7 +172,7 @@ public class GridCursor : MonoBehaviour
                     return false;
                 }
             case ItemType.WateringTool:
-                if(gridPropertyDetails.daysSinceDug > -1 && gridPropertyDetails.daysSinceWatered == -1)
+                if(gridDetails.daysSinceDug > -1 && gridDetails.daysSinceWatered == -1)
                 {
                     return true;
                 }
@@ -185,13 +184,13 @@ public class GridCursor : MonoBehaviour
             case ItemType.ChoppingTool:
             case ItemType.BreakingTool:
             case ItemType.CollectingTool:
-                if (gridPropertyDetails.seedItemCode != -1)
+                if (gridDetails.seedItemCode != -1)
                 {
-                    CropDetails cropDetails = cropDetailsList.GetCropDetails(gridPropertyDetails.seedItemCode);
+                    CropDetails cropDetails = cropDetailsList.GetCropDetails(gridDetails.seedItemCode);
 
                     if(cropDetails != null)
                     {
-                        if (gridPropertyDetails.growthDays >= cropDetails.growthDays[cropDetails.growthDays.Length - 1])
+                        if (gridDetails.growthDays >= cropDetails.growthDays[cropDetails.growthDays.Length - 1])
                         {
                             if (cropDetails.CanUseToolToHarvestCrop(itemDetails.itemCode))
                             {

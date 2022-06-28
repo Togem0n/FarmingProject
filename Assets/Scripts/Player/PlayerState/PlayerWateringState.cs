@@ -35,14 +35,14 @@ public class PlayerWateringState : PlayerUseToolState
 
 
 
-        GridPropertyDetails gridPropertyDetails = GridPropertyManager.Instance.GetGridPropertyDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
+        GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
-        if (gridPropertyDetails != null
-            && gridPropertyDetails.daysSinceDug > -1
+        if (gridDetails != null
+            && gridDetails.daysSinceDug > -1
             )
         {
-            gridPropertyDetails.daysSinceWatered = 1;
-            GridPropertyManager.Instance.DisplayPlantedCrop(gridPropertyDetails);
+            gridDetails.daysSinceWatered = 1;
+            GridDetailsManager.Instance.DisplayPlantedCrop(gridDetails);
         }
     }
 

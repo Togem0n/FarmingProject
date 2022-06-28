@@ -4013,6 +4013,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
+  dugTile: {fileID: 11400000, guid: 58b42f2af723ce5459f4ac776cc5d094, type: 2}
+  wateredTile: {fileID: 0}
   cropDetailsList: {fileID: 11400000, guid: 04fc047ff5c946a4d858645ed90f10bb, type: 2}
   gridDetailsScriptableObjectArray:
   - {fileID: 11400000, guid: 9a6299d87701211418e332d6321b2137, type: 2}
