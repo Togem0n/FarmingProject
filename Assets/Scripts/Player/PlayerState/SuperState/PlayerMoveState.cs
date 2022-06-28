@@ -13,6 +13,20 @@ public class PlayerMoveState : PlayerState
     {
         base.LogicUpdate();
 
+        HoeStateCheck();
+
+        CarrySeedStateCheck();
+
+        UseToolStateCheck();
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
+
+    public void HoeStateCheck()
+    {
         if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.HoeingTool
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
@@ -20,25 +34,16 @@ public class PlayerMoveState : PlayerState
         {
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
 
-            //TODO make if position is allowed to hoeing into a method
-            GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
-            
-            if (gridDetails != null && gridDetails.daysSinceDug == -1 && gridDetails.seedItemCode == -1)
+            if (GridDetailsManager.Instance.IsHoeable(player.useToolGridPosition.x, player.useToolGridPosition.y))
             {
-                gridDetails.daysSinceDug = 0;
-
-                GridDetailsManager.Instance.SetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y, gridDetails);
-
-                GridDetailsManager.Instance.DisplayDugGround(gridDetails);
-
                 stateMachine.ChangeState(player.HoeingState);
             }
-            else
-            {
-                //Debug.Log("Not allowed to dug");
-            }
-        }
 
+        }
+    }
+
+    public void CarrySeedStateCheck()
+    {
         if (InventoryManager.Instance.SelectedItemCode != -1
             && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.Seed
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
@@ -47,26 +52,31 @@ public class PlayerMoveState : PlayerState
             player.SetPlantDirection(Input.mousePosition.x, Input.mousePosition.y);
             stateMachine.ChangeState(player.CarryingSeedState);
         }
+    }
 
+    public void WateringStateCheck()
+    {
         if (InventoryManager.Instance.SelectedItemCode != -1
-            && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.WateringTool
-            && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
-            && !UIManager.Instance.IsPointerOverUIElement())
+    && InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.WateringTool
+    && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
+    && !UIManager.Instance.IsPointerOverUIElement())
         {
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
             stateMachine.ChangeState(player.WateringState);
         }
+    }
 
+    public void UseToolStateCheck()
+    {
         if (InventoryManager.Instance.SelectedItemCode != -1
             && ((InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.CollectingTool
-            || InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.ChoppingTool) 
+            || InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.ChoppingTool)
             || InventoryManager.Instance.GetSelectedItemDetails().itemType == ItemType.BreakingTool)
             && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.F))
             && !UIManager.Instance.IsPointerOverUIElement()
             && player.gridCursor.CursorPositionIsValid)
         {
             player.SetUseToolDirection(Input.mousePosition.x, Input.mousePosition.y);
-
 
             GridDetails gridDetails = GridDetailsManager.Instance.GetGridDetails(player.useToolGridPosition.x, player.useToolGridPosition.y);
 
@@ -89,8 +99,4 @@ public class PlayerMoveState : PlayerState
         }
     }
 
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-    }
 }

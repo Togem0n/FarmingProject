@@ -275,6 +275,8 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
                 int gridX = gridDetails.gridX;
                 int gridY = gridDetails.gridY;
 
+                // ResetGridCropDetails(gridDetails);
+
                 if(GetGridDetails(gridX, gridY, gridDetailsDictionary) == null)
                 {
                     SetGridDetails(gridX, gridY, gridDetails, gridDetailsDictionary);
@@ -295,6 +297,36 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
             GameObjectSave.sceneData.Add(gridDetailsScriptableObject.sceneName.ToString(), sceneSave);
         }
+    }
+
+    private void ResetGridCropDetails(GridDetails gridDetails)
+    {
+        // Crop System
+        gridDetails.daysSinceDug = -1;
+        gridDetails.daysSinceWatered = -1;
+        gridDetails.seedItemCode = -1;
+        gridDetails.growthDays = -1;
+        gridDetails.daysSinceLastHarvest = -1;
+    }
+
+    #endregion
+
+    #region Use Tool Manager
+
+    public bool IsHoeable(int gridX, int gridY)
+    {
+        GridDetails gridDetails = GetGridDetails(gridX, gridY);
+
+        return gridDetails != null && gridDetails.daysSinceDug == -1 && gridDetails.seedItemCode == -1;
+    }
+
+    public void HoeingGround(int gridX, int gridY)
+    {
+        GridDetails gridDetails = GetGridDetails(gridX, gridY);
+        gridDetails.daysSinceDug = 0;
+
+        SetGridDetails(gridX, gridY, gridDetails);
+        DisplayDugGround(gridDetails);
     }
 
     #endregion
@@ -343,7 +375,6 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
             {
                 Debug.Log(gridDetailsDictionary.Count);
                 ClearDisplayedGridDetails();
-
                 DisplayGridDetails();
             }
             

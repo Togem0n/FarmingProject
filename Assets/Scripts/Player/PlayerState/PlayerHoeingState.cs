@@ -44,6 +44,8 @@ public class PlayerHoeingState : PlayerUseToolState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+
+        GridDetailsManager.Instance.HoeingGround(player.useToolGridPosition.x, player.useToolGridPosition.y);
         stateMachine.ChangeState(player.IdleState);
     }
 
