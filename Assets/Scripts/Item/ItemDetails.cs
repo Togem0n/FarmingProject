@@ -3,7 +3,6 @@ using UnityEngine;
 [System.Serializable]
 public class ItemDetails
 {
-    //public string name;
     public string itemName;
     public string itemDescription;
     public string itemLongDescription;

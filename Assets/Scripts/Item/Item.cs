@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+
     [ItemCodeDescription]
     [SerializeField] private int _itemCode;
     [SerializeField] private int _itemQuantity;
     [SerializeField] private ItemLibrary itemLibrary;
-
-    private SpriteRenderer spriteRenderer;
 
     public int ItemCode { get => _itemCode; set => _itemCode = value; }
     public int ItemQuantity { get => _itemQuantity; set => _itemQuantity = value; }
@@ -35,4 +35,5 @@ public class Item : MonoBehaviour
         ItemCode = itemCode;
         spriteRenderer.sprite = itemLibrary.GetItemDetails(itemCode).itemSprite;
     }
+
 }

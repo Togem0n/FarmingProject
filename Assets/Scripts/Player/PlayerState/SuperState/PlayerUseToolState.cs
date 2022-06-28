@@ -32,7 +32,6 @@ public class PlayerUseToolState : PlayerState
         player.animator.SetFloat("yInput", player.moveDirection.y);
         player.animator.SetFloat("speed", 0);
         player.DisablePlayerInput();
-        // enable when animation finish
     }
 
     public override void Exit()

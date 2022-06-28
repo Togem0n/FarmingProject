@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class Player : SingletonMonoBehaviour<Player>, ISaveable
 {
+
+    #region Variables
     [SerializeField] public PlayerData playerData;
     [SerializeField] public GridCursor gridCursor;
     [SerializeField] public UIInventoryBar uiInventoryBar;
 
-
-    #region StateMachine
+    // StateMachine
     public PlayerStateMachine Statemachine { get; private set; }
     public PlayerIdleState IdleState { get; private set; }
     public PlayerWalkState WalkState { get; private set; }
@@ -22,9 +23,7 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
     public PlayerChoppingState ChoppingState { get; private set; }
     public PlayerBreakingState BreakingState { get; private set; }
 
-    #endregion
-
-    #region Movement
+    // Movement
     public int xInput;
     public int yInput;
     public Vector2 inputVector;
@@ -34,24 +33,21 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
     public bool _playerInputDisabled = false;
 
     public bool PlayerInputDisabled { get => _playerInputDisabled; set => _playerInputDisabled = value; }
-    #endregion
 
-    #region Components
+    // Components
     [HideInInspector] public Rigidbody2D rb;
     [HideInInspector] public Animator animator;
     [SerializeField] public Animator animator_hair;
     [SerializeField] public Animator animator_cloth;
     [HideInInspector] public Camera mainCamera;
-    #endregion
 
-    #region Use Tool Variables
+    // Use Tool Variables
     public Vector3 useToolDirection;
     public float useToolDirectionForAnimator;
     public Vector3Int useToolGridDirection;
     public Vector3Int useToolGridPosition;
-    #endregion
 
-    #region Others
+    // Others
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
 
@@ -61,9 +57,21 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
     private GameObjectSave _gameObjectSave;
     public GameObjectSave GameObjectSave { get => _gameObjectSave; set => _gameObjectSave = value; }
     
-
     public Vector2 workspace;
+
     #endregion
+
+    #region Life Cycle
+
+    private void OnEnable()
+    {
+        ISaveableRegister();
+    }
+
+    private void OnDisable()
+    {
+        ISaveableDeregister();
+    }
 
     protected override void Awake()
     {
@@ -83,7 +91,6 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
         BreakingState = new PlayerBreakingState(this, Statemachine, playerData, "breaking");
 
         ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
-
         GameObjectSave = new GameObjectSave();
     }
 
@@ -93,16 +100,6 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
         FacingDirection = 1;
         Statemachine.Initialize(IdleState);
-    }
-
-    private void OnDisable()
-    {
-        ISaveableDeregister();
-    }
-
-    private void OnEnable()
-    {
-        ISaveableRegister();
     }
 
     private void Update()
@@ -122,6 +119,8 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
     {
         Statemachine.CurrentState.PhysicsUpdate();
     }
+
+    #endregion
 
     private void GetPlayerInput()
     {
@@ -302,6 +301,8 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
     private void AniamtionFinishTrigger() => Statemachine.CurrentState.AnimationFinishTrigger();
 
+    #region ISaveable
+
     public void ISaveableRegister()
     {
         SaveLoadManager.Instance.iSaveableObjectList.Add(this);
@@ -370,4 +371,6 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
     {
         
     }
+
+    #endregion
 }

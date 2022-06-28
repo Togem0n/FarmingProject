@@ -5,8 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CropDetailsList", menuName = "ScriptableObjects/Crop/Crop Details List")]
 public class CropDetailsScriptableObjects : ScriptableObject
 {
-    [SerializeField]
-    public List<CropDetails> cropDetails;
+    [SerializeField] public List<CropDetails> cropDetails;
 
     public CropDetails GetCropDetails(int seedItemCode)
     {

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerState
 {
-    // protected : similar to private, except class inherited from this script can use it
     protected Player player;
     protected PlayerStateMachine stateMachine;
     protected PlayerData playerData;
@@ -15,7 +14,6 @@ public class PlayerState
 
     private string animBoolName;
 
-    // constructor
     public PlayerState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
     {
         this.player = player;
@@ -24,13 +22,11 @@ public class PlayerState
         this.animBoolName = animBoolName;
     }
 
-    // virtual can be overidden by classes that inheriented from this class;
     public virtual void Enter()
     {
         DoChecks();
         player.animator.SetBool(animBoolName, true);
         startTime = Time.time;
-        //Debug.Log(animBoolName);
 
         isAnimationFinished = false;
     }

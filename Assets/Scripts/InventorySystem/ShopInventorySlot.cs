@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class ShopInventorySlot : MonoBehaviour
 {
-    private ShopInventoryContainer container;
-    private TextMeshProUGUI text;
     private int price;
+    private TextMeshProUGUI text;
+    private ShopInventoryContainer container;
 
     private void Awake()
     {      
-        container = GetComponentInParent<ShopInventoryContainer>();
         text = GetComponentInChildren<TextMeshProUGUI>();
+        container = GetComponentInParent<ShopInventoryContainer>();
     }
 
     private void Start()
@@ -48,11 +48,12 @@ public class ShopInventorySlot : MonoBehaviour
             Player.Instance.playerData.currentMoney -= price;
             InventoryManager.Instance.AddItem(itemcode, 1);
             EventHandler.CallBuyItemEvent();
-            Debug.Log("buy one item");
+            // Debug.Log("buy one item");
         }
         else
         {
-            Debug.Log("inventory is full or not enough money");
+            // Debug.Log("inventory is full or not enough money");
         }
     }
+
 }

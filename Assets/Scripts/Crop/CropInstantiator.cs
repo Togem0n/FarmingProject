@@ -5,13 +5,12 @@ using UnityEngine;
 public class CropInstantiator : MonoBehaviour
 {
     private Grid grid;
+
     [SerializeField] private int daysSinceDug = -1;
     [SerializeField] private int daysSinceWatered = -1;
-
     [SerializeField] private int seedItemCode = 0;
     [SerializeField] private int growthDays = 0;
-
-    [SerializeField] private bool isStone; // stone item code 33 - 36
+    [SerializeField] private bool isStone;
 
     private void OnEnable()
     {
@@ -65,4 +64,5 @@ public class CropInstantiator : MonoBehaviour
 
         }
     }
+
 }

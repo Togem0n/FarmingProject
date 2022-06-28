@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Crop : MonoBehaviour
 {
-    [HideInInspector] public Vector2Int cropGridPosition;
     private int harvestActionCount = 0;
+
+    [HideInInspector] public Vector2Int cropGridPosition;
 
     public void ProcessToolAction(ItemDetails equippedItemDetails)
     {
@@ -52,22 +53,22 @@ public class Crop : MonoBehaviour
 
         GridDetailsManager.Instance.SetGridDetails(gridDetails.gridX, gridDetails.gridY, gridDetails);
 
-        HarvestActions(cropDetails, gridDetails);
+        SpawnHarvestItemsAndCreateHarvestedCrop(cropDetails, gridDetails);
     }
 
-    private void HarvestActions(CropDetails cropDetails, GridDetails gridDetails)
+    private void SpawnHarvestItemsAndCreateHarvestedCrop(CropDetails cropDetails, GridDetails gridDetails)
     {
         SpawnHarvestedItems(cropDetails);
 
         if(cropDetails.harvestedTransfromItemCode > 0)
         {
-            CreateHarvestedTransformCrop(cropDetails, gridDetails);
+            CreateHarvestedCrop(cropDetails, gridDetails);
         }
 
         Destroy(gameObject);
     }
 
-    private void CreateHarvestedTransformCrop(CropDetails cropDetails, GridDetails gridDetails)
+    private void CreateHarvestedCrop(CropDetails cropDetails, GridDetails gridDetails)
     {
         gridDetails.seedItemCode = cropDetails.harvestedTransfromItemCode;
         gridDetails.growthDays = 0;
@@ -75,7 +76,6 @@ public class Crop : MonoBehaviour
         gridDetails.daysSinceWatered = -1;
 
         GridDetailsManager.Instance.SetGridDetails(gridDetails.gridX, gridDetails.gridY, gridDetails);
-
         GridDetailsManager.Instance.DisplayPlantedCrop(gridDetails);
     }
 
@@ -93,23 +93,16 @@ public class Crop : MonoBehaviour
             }
             else
             {
-                cropsToProduce = UnityEngine.Random.Range(cropDetails.cropProducedMinQuantity[i], cropDetails.cropProducedMaxQuantity[i] + 1);
+                cropsToProduce = 
+                    UnityEngine.Random.Range(cropDetails.cropProducedMinQuantity[i], cropDetails.cropProducedMaxQuantity[i] + 1);
             }
 
-            //if (InventoryManager.Instance.TryAddItem(cropDetails.cropProducedItemCode[i], cropsToProduce))
-            //{
-
-            //}
-            //else
-            //{
-            //    Debug.Log("Inventory is full");
-            //    Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-1f, 1f), transform.position.y + UnityEngine.Random.Range(-1f, 1f), 0f);
-            //    Debug.Log("Produce item code:" + cropDetails.cropProducedItemCode[i]);
-            //    SceneItemsManager.Instance.InstantiateSceneItem(cropDetails.cropProducedItemCode[i], spawnPosition);
-            //}
             for(int j = 0; j < cropsToProduce; j++)
             {
-                Vector3 spawnPosition = new Vector3(transform.position.x + UnityEngine.Random.Range(-1f, 1f), transform.position.y + UnityEngine.Random.Range(-1f, 1f), 0f);
+                Vector3 spawnPosition = 
+                    new Vector3
+                    (transform.position.x + UnityEngine.Random.Range(-1f, 1f), 
+                    transform.position.y + UnityEngine.Random.Range(-1f, 1f), 0f);
                 SceneItemsManager.Instance.InstantiateSceneItem(cropDetails.cropProducedItemCode[i], spawnPosition);
             }
 

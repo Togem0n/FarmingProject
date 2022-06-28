@@ -8,7 +8,6 @@ public class CropDetails
     [ItemCodeDescription]
     public int seedItemCode;
     public int[] growthDays;
-    //public int totalGrowDays;
     public GameObject[] growthPrefab;
     public Sprite[] growthSprite;
     public Season[] seasons;
@@ -20,7 +19,6 @@ public class CropDetails
     public bool disableCropCollidersBeforeHarvestedAnimation;
     public bool isHarvestedAnimation;
     public bool spawnCropProducedAtPlayerPosition;
-    //public HarvestActionEffect harvestActionEffect;
 
     [ItemCodeDescription]
     public int[] harvestToolItemCode;

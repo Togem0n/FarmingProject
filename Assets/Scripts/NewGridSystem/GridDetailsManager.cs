@@ -8,34 +8,27 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(GenerateGUID))]
 public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, ISaveable
 {
-    private Transform cropParentTransform;
-    private Tilemap dugTilemap;
-    private Tilemap wateredTilemap;
-    private bool isFirstTimeSceneLoaded = true;
-
-    [HideInInspector]public Grid grid;
-    private Dictionary<string, GridDetails> gridDetailsDictionary;
-    [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
-    [SerializeField] private GridDetailsScriptableObject[] gridDetailsScriptableObjectArray = null;
 
     private Tile dugTile;
     private Tile wateredTile;
+    private Tilemap dugTilemap;
+    private Tilemap wateredTilemap;
+    private Transform cropParentTransform;
+    private bool isFirstTimeSceneLoaded = true;
+    private Dictionary<string, GridDetails> gridDetailsDictionary;
 
-    // ISaveable
+    [HideInInspector] public Grid grid;
+
+    [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
+    [SerializeField] private GridDetailsScriptableObject[] gridDetailsScriptableObjectArray = null;
+
     private string _iSaveablUniqueID;
     public string ISaveableUniqueID { get { return _iSaveablUniqueID; } set { _iSaveablUniqueID = value; } }
 
     private GameObjectSave _gameObjectSave;
     public GameObjectSave GameObjectSave { get { return _gameObjectSave; } set { _gameObjectSave = value; } }
 
-    #region Initialization
-    protected override void Awake()
-    {
-        base.Awake();
-
-        ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
-        GameObjectSave = new GameObjectSave();
-    }
+    #region LifeCycle
 
     private void OnEnable()
     {
@@ -53,10 +46,23 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
         EventHandler.AdvanceGameDayEvent -= AdvanceDay;
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
+        GameObjectSave = new GameObjectSave();
+    }
+
     private void Start()
     {
         InitialiseGridDetails();
     }
+
+    #endregion
+
+    #region Events Related
+
     private void AfterSceneLoaded()
     {
         grid = GameObject.FindObjectOfType<Grid>();
@@ -65,56 +71,43 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
         wateredTilemap = GameObject.FindWithTag("WateredTilemap").GetComponent<Tilemap>();
     }
 
+    private void AdvanceDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
+    {
+        ClearDisplayedGridDetails();
+
+        foreach (GridDetailsScriptableObject gridDetailsScriptableObject in gridDetailsScriptableObjectArray)
+        {
+            if (GameObjectSave.sceneData.TryGetValue(gridDetailsScriptableObject.sceneName.ToString(), out SceneSave sceneSave))
+            {
+                if (sceneSave.gridPropertyDetailsDictionary != null)
+                {
+                    for (int i = sceneSave.gridPropertyDetailsDictionary.Count - 1; i >= 0; i--)
+                    {
+                        KeyValuePair<string, GridDetails> item = sceneSave.gridDetailsDictionary.ElementAt(i);
+
+                        GridDetails gridDetails = item.Value;
+
+                        if (gridDetails.growthDays > -1)
+                        {
+                            gridDetails.growthDays += 1;
+                        }
+
+                        if (gridDetails.daysSinceWatered > -1)
+                        {
+                            gridDetails.daysSinceWatered = -1;
+                        }
+
+                        SetGridDetails(gridDetails.gridX, gridDetails.gridY, gridDetails, sceneSave.gridDetailsDictionary);
+                    }
+                }
+            }
+        }
+        DisplayGridDetails();
+    }
+
     #endregion
 
-    // TODO: need to rework crop manager!!!
     #region Crop Manager
-    private void ClearAllCrops()
-    {
-        foreach(GameObject child in cropParentTransform)
-        {
-            Destroy(child);
-        }
-    }
-
-    private void ClearAllDecorations()
-    {
-        dugTilemap.ClearAllTiles();
-        wateredTilemap.ClearAllTiles();
-    }
-
-    private void ClearDisplayedGridDetails()
-    {
-        ClearAllCrops();
-        ClearAllDecorations();
-    }
-
-    private void DisplayGridDetails()
-    {
-        foreach (KeyValuePair<string, GridDetails> item in gridDetailsDictionary)
-        {
-            GridDetails gridDetails = item.Value;
-
-            DisplayDugGround(gridDetails);
-
-            // DisplayWaterGround(gridPropertyDetails);
-
-            DisplayPlantedCrop(gridDetails);
-        }
-    }
-
-    public void DisplayDugGround(GridDetails gridDetails)
-    {
-        if (gridDetails.daysSinceDug > -1)
-        {
-            SetTileToDug(gridDetails.gridX, gridDetails.gridY);
-        }
-    }
-
-    public void SetTileToDug(int gridX, int gridY)
-    {
-        dugTilemap.SetTile(new Vector3Int(gridX, gridY, 0), dugTile);
-    }
 
     public void DisplayPlantedCrop(GridDetails gridDetails)
     {
@@ -162,7 +155,6 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
         for (int i = 0; i < collider2DArray.Length; i++)
         {
-            // Get it using layer?
             crop = collider2DArray[i].gameObject.GetComponentInParent<Crop>();
             if (crop != null && crop.cropGridPosition == new Vector2Int(gridDetails.gridX, gridDetails.gridY))
             {
@@ -183,44 +175,57 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
         return cropDetailsList.GetCropDetails(seedItemCode);
     }
 
+    private void ClearAllCrops()
+    {
+        foreach (GameObject child in cropParentTransform)
+        {
+            Destroy(child);
+        }
+    }
+
+    private void ClearAllDecorations()
+    {
+        dugTilemap.ClearAllTiles();
+        wateredTilemap.ClearAllTiles();
+    }
+
+    private void ClearDisplayedGridDetails()
+    {
+        ClearAllCrops();
+        ClearAllDecorations();
+    }
+
+    private void DisplayGridDetails()
+    {
+        foreach (KeyValuePair<string, GridDetails> item in gridDetailsDictionary)
+        {
+            GridDetails gridDetails = item.Value;
+
+            DisplayDugGround(gridDetails);
+
+            // DisplayWaterGround(gridPropertyDetails);
+
+            DisplayPlantedCrop(gridDetails);
+        }
+    }
+
+    private void DisplayDugGround(GridDetails gridDetails)
+    {
+        if (gridDetails.daysSinceDug > -1)
+        {
+            SetTileToDug(gridDetails.gridX, gridDetails.gridY);
+        }
+    }
+
+    private void SetTileToDug(int gridX, int gridY)
+    {
+        dugTilemap.SetTile(new Vector3Int(gridX, gridY, 0), dugTile);
+    }
+
     #endregion
 
     #region Grid Manager
-    private void InitialiseGridDetails()
-    {
-        foreach (GridDetailsScriptableObject gridDetailsScriptableObject in gridDetailsScriptableObjectArray)
-        {
-            Dictionary<string, GridDetails> gridDetailsDictionary = new Dictionary<string, GridDetails>();
 
-            foreach (GridDetails gridDetails in gridDetailsScriptableObject.GridDetailsList)
-            {
-                int gridX = gridDetails.gridX;
-                int gridY = gridDetails.gridY;
-
-                if(GetGridDetails(gridX, gridY, gridDetailsDictionary) == null)
-                {
-                    SetGridDetails(gridX, gridY, gridDetails, gridDetailsDictionary);
-                }
-            }
-
-            SceneSave sceneSave = new SceneSave();
-
-            sceneSave.gridDetailsDictionary = gridDetailsDictionary;
-
-            if (gridDetailsScriptableObject.sceneName.ToString() == SceneControllerManager.Instance.startingSceneName.ToString())
-            {
-                this.gridDetailsDictionary = gridDetailsDictionary;
-            }
-
-            sceneSave.boolDictionary = new Dictionary<string, bool>();
-            sceneSave.boolDictionary.Add("isFirstTimeLoaded", true);
-
-            GameObjectSave.sceneData.Add(gridDetailsScriptableObject.sceneName.ToString(), sceneSave);
-        }
-    }
-    #endregion
-
-    #region Get&Set GridDetails
     public GridDetails GetGridDetails(int gridX, int gridY)
     {
         return GetGridDetails(gridX, gridY, gridDetailsDictionary);
@@ -256,41 +261,41 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
         gridDetailsDictionary[key] = gridDetails;
     }
-    #endregion
-
-    private void AdvanceDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
+    
+    private void InitialiseGridDetails()
     {
-        ClearDisplayedGridDetails();
-
         foreach (GridDetailsScriptableObject gridDetailsScriptableObject in gridDetailsScriptableObjectArray)
         {
-            if (GameObjectSave.sceneData.TryGetValue(gridDetailsScriptableObject.sceneName.ToString(), out SceneSave sceneSave))
+            Dictionary<string, GridDetails> gridDetailsDictionary = new Dictionary<string, GridDetails>();
+
+            foreach (GridDetails gridDetails in gridDetailsScriptableObject.GridDetailsList)
             {
-                if (sceneSave.gridPropertyDetailsDictionary != null)
+                int gridX = gridDetails.gridX;
+                int gridY = gridDetails.gridY;
+
+                if(GetGridDetails(gridX, gridY, gridDetailsDictionary) == null)
                 {
-                    for (int i = sceneSave.gridPropertyDetailsDictionary.Count - 1; i >= 0; i--)
-                    {
-                        KeyValuePair<string, GridDetails> item = sceneSave.gridDetailsDictionary.ElementAt(i);
-
-                        GridDetails gridDetails = item.Value;
-
-                        if (gridDetails.growthDays > -1)
-                        {
-                            gridDetails.growthDays += 1;
-                        }
-
-                        if (gridDetails.daysSinceWatered > -1)
-                        {
-                            gridDetails.daysSinceWatered = -1;
-                        }
-
-                        SetGridDetails(gridDetails.gridX, gridDetails.gridY, gridDetails, sceneSave.gridDetailsDictionary);
-                    }
+                    SetGridDetails(gridX, gridY, gridDetails, gridDetailsDictionary);
                 }
             }
+
+            SceneSave sceneSave = new SceneSave();
+
+            sceneSave.gridDetailsDictionary = gridDetailsDictionary;
+
+            if (gridDetailsScriptableObject.sceneName.ToString() == SceneControllerManager.Instance.startingSceneName.ToString())
+            {
+                this.gridDetailsDictionary = gridDetailsDictionary;
+            }
+
+            sceneSave.boolDictionary = new Dictionary<string, bool>();
+            sceneSave.boolDictionary.Add("isFirstTimeLoaded", true);
+
+            GameObjectSave.sceneData.Add(gridDetailsScriptableObject.sceneName.ToString(), sceneSave);
         }
-        DisplayGridDetails();
     }
+
+    #endregion
 
     #region ISaveable
     public void ISaveableDeregister()
@@ -367,5 +372,6 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
         GameObjectSave.sceneData.Add(sceneName, sceneSave);
     }
+
     #endregion
 }

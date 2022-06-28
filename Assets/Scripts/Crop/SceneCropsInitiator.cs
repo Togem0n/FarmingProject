@@ -5,14 +5,10 @@ using UnityEngine;
 public class SceneCropsInitiator : MonoBehaviour
 {
     private Grid grid;
+
     [SerializeField] private GridDetailsScriptableObject currentSceneGrid;
     [SerializeField] private GameObject stonePrefab;
     [SerializeField] private GameObject treePrefab;
-
-    private void Start()
-    {
-
-    }
 
     private void OnEnable()
     {
@@ -27,7 +23,7 @@ public class SceneCropsInitiator : MonoBehaviour
     private void InstantiateSceneCrops()
     {
         grid = GameObject.FindObjectOfType<Grid>();
-        int x = 0;
+
         for (int i = currentSceneGrid.originX; i < currentSceneGrid.originX + currentSceneGrid.gridWidth; i++)
         {
             for(int j = currentSceneGrid.originY; j < currentSceneGrid.originY + currentSceneGrid.gridHeight; j++)
@@ -51,10 +47,8 @@ public class SceneCropsInitiator : MonoBehaviour
                             gridDetails.seedItemCode = Random.Range(20014, 20016);
                             gridDetails.growthDays = 0;
                             GridDetailsManager.Instance.SetGridDetails(i, j, gridDetails);
-                            x += 1;
                         }else if(dice < 100)
                         {
-                            x += 1;
                             gridDetails.daysSinceDug = -1;
                             gridDetails.daysSinceWatered = -1;
                             List<int> tmp = new List<int>();
@@ -69,6 +63,5 @@ public class SceneCropsInitiator : MonoBehaviour
                 }
             }
         }
-        Debug.Log(x);
     }
 }

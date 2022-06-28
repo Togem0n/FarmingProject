@@ -9,9 +9,10 @@ using System;
 public class TilemapDrawGridDetails : MonoBehaviour
 {
     private Tilemap tilemap;
-    [SerializeField] private GridDetailsScriptableObject gridDetailsScriptableObject;
+
     [SerializeField] private bool isDiggable;
     [SerializeField] private bool canDropItem;
+    [SerializeField] private GridDetailsScriptableObject gridDetailsScriptableObject;
 
     private void OnEnable()
     {
@@ -69,11 +70,4 @@ public class TilemapDrawGridDetails : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        //if (!Application.IsPlaying(gameObject))
-        //{
-        //    Debug.Log("DISABLE PROPERTY TILEMAPS");
-        //}
-    }
 }

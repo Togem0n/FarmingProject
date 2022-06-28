@@ -7,12 +7,12 @@ public class AttractingItem : MonoBehaviour
         Item item = collision.GetComponent<Item>();
         if(item != null)
         {
-            //Get item details
             ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(item.ItemCode);
 
             if (itemDetails.canBePickedUp && InventoryManager.Instance.CheckIfCanAddItem(item.ItemCode, item.ItemQuantity))
             {
-                collision.transform.position = Vector3.MoveTowards(collision.transform.position, transform.parent.transform.position, 6 * Time.deltaTime);
+                collision.transform.position = 
+                    Vector3.MoveTowards(collision.transform.position, transform.parent.transform.position, 6 * Time.deltaTime);
             }
         }
     }
