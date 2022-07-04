@@ -331,6 +331,28 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
     #endregion
 
+    public bool GetGridDimensions(SceneName sceneName, out Vector2Int gridDimensions, out Vector2Int gridOrigin)
+    {
+        gridDimensions = Vector2Int.zero;
+        gridOrigin = Vector2Int.zero;
+
+        foreach(GridDetailsScriptableObject gridDetailsScriptableObject in gridDetailsScriptableObjectArray)
+        {
+            if(gridDetailsScriptableObject.sceneName == sceneName)
+            {
+                gridDimensions.x = gridDetailsScriptableObject.gridWidth;
+                gridDimensions.y = gridDetailsScriptableObject.gridHeight;
+
+                gridOrigin.x = gridDetailsScriptableObject.originX;
+                gridOrigin.y = gridDetailsScriptableObject.originY;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
     #region ISaveable
     public void ISaveableDeregister()
     {

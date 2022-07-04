@@ -12,6 +12,8 @@ public class TilemapDrawGridDetails : MonoBehaviour
 
     [SerializeField] private bool isDiggable;
     [SerializeField] private bool canDropItem;
+    [SerializeField] private bool isNPCObstacle;
+    [SerializeField] private bool isPath;
     [SerializeField] private GridDetailsScriptableObject gridDetailsScriptableObject;
 
     private void OnEnable()
@@ -62,6 +64,8 @@ public class TilemapDrawGridDetails : MonoBehaviour
                             GridDetails gridDetails = new GridDetails(x, y);
                             gridDetails.isDiaggable = isDiggable;
                             gridDetails.canDropItem = canDropItem;
+                            gridDetails.isNPCObstacle = isNPCObstacle;
+                            gridDetails.isPath = isPath;
                             gridDetailsScriptableObject.GridDetailsList.Add(gridDetails);
                         }
                     }
