@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
 {
@@ -153,6 +153,12 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
             default:
                 return "";
         }
+    }
+
+    public TimeSpan GetGameTime()
+    {
+        TimeSpan gameTime = new TimeSpan(hour, minute, second);
+        return gameTime;
     }
 
     public void TestAdvanceGameMinute()

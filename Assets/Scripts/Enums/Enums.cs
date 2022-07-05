@@ -46,6 +46,15 @@ public enum Season
     count,
 }
 
+public enum Weather
+{
+    dry,
+    raining,
+    snowing,
+    none,
+    count,
+}
+
 public enum GridBoolProperty
 {
     diggable,

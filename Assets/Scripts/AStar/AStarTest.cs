@@ -7,70 +7,30 @@ using UnityEngine.Tilemaps;
 [RequireComponent(typeof(AStar))]
 public class AStarTest : MonoBehaviour
 {
-    private AStar aStar;
-    [SerializeField] private Vector2Int startPosition;
-    [SerializeField] private Vector2Int endPosition;
-    [SerializeField] private Tilemap tilemapToDisplayPathOn;
-    [SerializeField] private Tile tileToUseToDisplayPath;
-    [SerializeField] private bool displayStartAndEnd = false;
-    [SerializeField] private bool displayPath = false;
-
-    private Stack<NPCMovementStep> npcMovementSteps;
-
-    private void Awake()
-    {
-        aStar = GetComponent<AStar>();
-
-        npcMovementSteps = new Stack<NPCMovementStep>();
-    }
+    [SerializeField] private NPCPath npcPath = null;
+    [SerializeField] private bool moveNPC = false;
+    [SerializeField] private Vector2Int finishPosition;
+    [SerializeField] private AnimationClip idleDownAnimationClip = null;
+    [SerializeField] private AnimationClip eventAnimationClip = null;
+    private NPCMovement npcMovement;
 
     private void Start()
     {
-        
+        npcMovement = npcPath.GetComponent<NPCMovement>();
+        npcMovement.npcFacingDirectionAtDestination = Direction.none;
+        npcMovement.npcTargetAnimationClip = idleDownAnimationClip;
     }
 
     private void Update()
     {
-        if(startPosition != null && endPosition != null && tilemapToDisplayPathOn != null  &&  tileToUseToDisplayPath != null)
+        if (moveNPC)
         {
-            if (displayStartAndEnd)
-            {
-                tilemapToDisplayPathOn.SetTile(new Vector3Int(startPosition.x, startPosition.y, 0), tileToUseToDisplayPath);
+            moveNPC = false;
 
-                tilemapToDisplayPathOn.SetTile(new Vector3Int(endPosition.x, endPosition.y, 0), tileToUseToDisplayPath);
-            }
-            else
-            {
-                tilemapToDisplayPathOn.SetTile(new Vector3Int(startPosition.x, startPosition.y, 0), null);
+            NPCScheduleEvent npcScheduleEvent = new NPCScheduleEvent(0, 0, 0, 0, Weather.none, Season.none, SceneName.Scene1_Farm,
+                                                    new GridCoordinate(finishPosition.x, finishPosition.y), eventAnimationClip);
 
-                tilemapToDisplayPathOn.SetTile(new Vector3Int(endPosition.x, endPosition.y, 0), null);
-            }
-
-            if (displayPath)
-            {
-                System.Enum.TryParse<SceneName>(SceneManager.GetActiveScene().name, out SceneName sceneName);
-
-                aStar.BuildPath(sceneName, startPosition, endPosition, npcMovementSteps);
-
-                foreach(NPCMovementStep nPCMovementStep in npcMovementSteps)
-                {
-                    tilemapToDisplayPathOn.SetTile(new Vector3Int(nPCMovementStep.gridCoordinate.x,
-                        nPCMovementStep.gridCoordinate.y, 0), tileToUseToDisplayPath);
-                }
-            }
-            else
-            {
-                if (npcMovementSteps.Count > 0)
-                {
-                    foreach (NPCMovementStep nPCMovementStep in npcMovementSteps)
-                    {
-                        tilemapToDisplayPathOn.SetTile(new Vector3Int(nPCMovementStep.gridCoordinate.x,
-                            nPCMovementStep.gridCoordinate.y, 0), null);
-                    }
-
-                    npcMovementSteps.Clear();
-                }
-            }
-        } 
+            npcPath.BuildPath(npcScheduleEvent);
+        }
     }
 }

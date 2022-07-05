@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public static class Settings
 {
@@ -12,6 +13,8 @@ public static class Settings
     public const float secondsPerGameSecond = 0.012f;
 
     public const float gridCellSize = 1f;
+    public const float gridCellDiagonalSize = 1.41f;
+    public static float pixelSize = 0.0625f;
 
     public const string HoeingTool = "Hoe";
     public const string ChoppingTool = "Axe";
@@ -19,4 +22,21 @@ public static class Settings
     public const string ReapingTool = "Scythe";
     public const string WateringTool = "WateringCan";
     public const string CollectingTool = "Basket";
+
+    public static int walkUp;
+    public static int walkDown;
+    public static int walkLeft;
+    public static int walkRight;
+    public static int eventAnimation;
+
+
+    static Settings()
+    {
+        walkUp = Animator.StringToHash("walkUp");
+        walkDown = Animator.StringToHash("walkDown");
+        walkLeft = Animator.StringToHash("walkLeft");
+        walkRight = Animator.StringToHash("walkRight");
+        eventAnimation = Animator.StringToHash("eventAnimation");
+    }
+
 }
