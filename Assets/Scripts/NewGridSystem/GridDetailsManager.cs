@@ -387,9 +387,10 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
             {
                 isFirstTimeSceneLoaded = storedIsFirstTimeSceneLoaded;
             }
-
+            Debug.Log("isfirsttime?" + isFirstTimeSceneLoaded);
             if (isFirstTimeSceneLoaded)
             {
+                Debug.Log("init crops");
                 EventHandler.CallInstantiateCropPrefabsEvent();
             }
 
@@ -403,6 +404,7 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
             if (isFirstTimeSceneLoaded)
             {
                 isFirstTimeSceneLoaded = false;
+                sceneSave.boolDictionary["isFirstTimeSceneLoaded"] = false;
             }
         }
     }

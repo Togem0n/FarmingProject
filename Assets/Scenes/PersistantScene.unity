@@ -1072,8 +1072,8 @@ MonoBehaviour:
   endPosition: {x: -17, y: 32}
   tilemapToDisplayPathOn: {fileID: 1582733387}
   tileToUseToDisplayPath: {fileID: 11400000, guid: b6af29351927e4a45b9908146cb2a7c8, type: 2}
-  displayStartAndEnd: 1
-  displayPath: 1
+  displayStartAndEnd: 0
+  displayPath: 0
 --- !u!114 &327726569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2480,7 +2480,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -38.3, y: 37.5, z: -10}
+  m_LocalPosition: {x: -38.3, y: 41.98, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4083,6 +4083,7 @@ MonoBehaviour:
   cropDetailsList: {fileID: 11400000, guid: 04fc047ff5c946a4d858645ed90f10bb, type: 2}
   gridDetailsScriptableObjectArray:
   - {fileID: 11400000, guid: 9a6299d87701211418e332d6321b2137, type: 2}
+  - {fileID: 11400000, guid: 9c5100a665f61e1488b0dc0f47035e3c, type: 2}
 --- !u!114 &829955395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9382,7 +9383,7 @@ MonoBehaviour:
   fadeDuration: 0.5
   faderCanvasGroup: {fileID: 1892172844}
   fadeImage: {fileID: 1892172842}
-  startingSceneName: 0
+  startingSceneName: 2
 --- !u!1 &1865806684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1401368524986772861, guid: f652d57b9ddb05243abb6b811c61f8b7, type: 3}
@@ -11218,7 +11219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3009617464119116076, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.5
+      value: 41.98
       objectReference: {fileID: 0}
     - target: {fileID: 3009617464119116076, guid: a73e55c30fdc8f947b656dac8e27b52b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11400,7 +11401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7072814101396685729, guid: f2db9588aa41ea5489513329a0b1e28b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 37.5
+      value: 41.98
       objectReference: {fileID: 0}
     - target: {fileID: 7072814101396685729, guid: f2db9588aa41ea5489513329a0b1e28b, type: 3}
       propertyPath: m_LocalPosition.z
