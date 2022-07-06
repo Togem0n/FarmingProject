@@ -32,10 +32,10 @@ public static class Settings
 
     static Settings()
     {
-        walkUp = Animator.StringToHash("walkUp");
-        walkDown = Animator.StringToHash("walkDown");
-        walkLeft = Animator.StringToHash("walkLeft");
-        walkRight = Animator.StringToHash("walkRight");
+        walkUp = Animator.StringToHash("walk_up");
+        walkDown = Animator.StringToHash("walk_down");
+        walkLeft = Animator.StringToHash("walk_left");
+        walkRight = Animator.StringToHash("walk_right");
         eventAnimation = Animator.StringToHash("eventAnimation");
     }
 

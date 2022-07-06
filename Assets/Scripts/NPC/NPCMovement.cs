@@ -168,19 +168,19 @@ public class NPCMovement : MonoBehaviour
         switch (npcFacingDirectionAtDestination)
         {
             case Direction.up:
-                animator.SetBool("IdleUp", true);
+                animator.SetBool("idle_up", true);
                 break;
 
             case Direction.down:
-                animator.SetBool("IdleDown", true);
+                animator.SetBool("idle_down", true);
                 break;
 
             case Direction.left:
-                animator.SetBool("IdleLeft", true);
+                animator.SetBool("idle_left", true);
                 break;
 
             case Direction.right:
-                animator.SetBool("IdleRight", true);
+                animator.SetBool("idle_right", true);
                 break;
 
             default:
@@ -273,15 +273,15 @@ public class NPCMovement : MonoBehaviour
 
     private void SetIdleAnimation()
     {
-        animator.SetBool("IdleDown", true);
+        animator.SetBool("idle_down", true);
     }
 
     private void ResetIdleAnimation()
     {
-        animator.SetBool("IdleDown", false);
-        animator.SetBool("IdleUp", false);
-        animator.SetBool("IdleLeft", false);
-        animator.SetBool("IdleRight", false);
+        animator.SetBool("idle_down", false);
+        animator.SetBool("idle_up", false);
+        animator.SetBool("idle_left", false);
+        animator.SetBool("idle_right", false);
     }
 
     public void SetNPCActiveInScene()
