@@ -33,6 +33,7 @@ public class AStar : MonoBehaviour
         {
             if (FindShortestPath())
             {
+                Debug.Log("found path");
                 UpdatePathOnNPCMovementStepStack(sceneName, npcMovementStepStack);
 
                 return true;
@@ -44,7 +45,7 @@ public class AStar : MonoBehaviour
     private void UpdatePathOnNPCMovementStepStack(SceneName sceneName, Stack<NPCMovementStep> npcMovementStepStack)
     {
         Node nextNode = targetNode;
-
+        Debug.Log(targetNode.gridPosition);
         while (nextNode != null)
         {
             NPCMovementStep npcMovementStep = new NPCMovementStep();
@@ -118,11 +119,11 @@ public class AStar : MonoBehaviour
                     string coordx = (currentNodeGridPosition.x + i).ToString();
                     string coordy = (currentNodeGridPosition.y + j).ToString();
 
-                    Debug.Log("coordination x: " + coordx + " y: " + coordy + " gcost: " + 
+               /*     Debug.Log("coordination x: " + coordx + " y: " + coordy + " gcost: " + 
                         currentNode.gCost + "distance cost = node a:" + 
                         currentNode.gridPosition.x + ", " + currentNode.gridPosition.y + 
                         "node b: " + validNeighbourNode.gridPosition.x + ", " + validNeighbourNode.gridPosition.y + "cost = " +
-                        GetDistance(currentNode, validNeighbourNode));
+                        GetDistance(currentNode, validNeighbourNode));*/
 
 
                     bool isValidNeighbourNodeInOpenList = openNodeList.Contains(validNeighbourNode);
@@ -191,6 +192,12 @@ public class AStar : MonoBehaviour
                     gridHeight = gridDimensions.y;
                     originX = gridOrigin.x;
                     originY = gridOrigin.y;
+
+                    Debug.Log("gridWidth: " + gridWidth);
+                    Debug.Log("gridHeight: " + gridHeight);
+                    Debug.Log("originX: " + originX);
+                    Debug.Log("originY: " + originY);
+
 
                     openNodeList = new List<Node>();
 

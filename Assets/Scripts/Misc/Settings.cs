@@ -14,6 +14,8 @@ public static class Settings
 
     public const float gridCellSize = 1f;
     public const float gridCellDiagonalSize = 1.41f;
+    public const int maxGridWidth = 99999;
+    public const int maxGridHeight = 99999;
     public static float pixelSize = 0.0625f;
 
     public const string HoeingTool = "Hoe";

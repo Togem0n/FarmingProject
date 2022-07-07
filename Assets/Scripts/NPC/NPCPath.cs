@@ -31,18 +31,66 @@ public class NPCPath : MonoBehaviour
             Vector2Int npcTargetGridPosition = (Vector2Int)npcScheduleEvent.toGridCoordinate;
 
             NPCManager.Instance.BuildPath(npcScheduleEvent.toSceneName, npcCurrentGridPosition, npcTargetGridPosition, npcMovementStepStack);
-        }
-
-        if(npcMovementStepStack.Count > 1)
+        }else if(npcScheduleEvent.toSceneName != npcMovement.npcCurrentScene)
         {
-            UpdateTiesOnPath();
+            SceneRoute sceneRoute;
+
+            sceneRoute = NPCManager.Instance.GetSceneRoute(npcMovement.npcCurrentScene.ToString(), npcScheduleEvent.toSceneName.ToString());
+            if (sceneRoute != null)
+            {
+                for (int i = sceneRoute.scenePathList.Count - 1; i >= 0; i--)
+                {
+                    int toGridX, toGridY, fromGridX, fromGridY;
+
+                    ScenePath scenePath = sceneRoute.scenePathList[i];
+
+                    if (scenePath.toGridCell.x >= Settings.maxGridWidth || scenePath.toGridCell.y >= Settings.maxGridHeight)
+                    {
+                        toGridX = npcScheduleEvent.toGridCoordinate.x;
+                        toGridY = npcScheduleEvent.toGridCoordinate.y;
+                    }
+                    else
+                    {
+                        toGridX = scenePath.toGridCell.x;
+                        toGridY = scenePath.toGridCell.y;
+                    }
+
+                    if (scenePath.fromGridCell.x >= Settings.maxGridWidth || scenePath.fromGridCell.y >= Settings.maxGridHeight)
+                    {
+                        fromGridX = npcMovement.npcCurrentGridPosition.x;
+                        fromGridY = npcMovement.npcCurrentGridPosition.y;
+                    }
+                    else
+                    {
+                        fromGridX = scenePath.fromGridCell.x;
+                        fromGridY = scenePath.fromGridCell.y;
+                    }
+
+                    Vector2Int fromGridPosition = new Vector2Int(fromGridX, fromGridY);
+                    Vector2Int toGridPosition = new Vector2Int(toGridX, toGridY);
+                    NPCManager.Instance.BuildPath(scenePath.sceneName, fromGridPosition, toGridPosition, npcMovementStepStack);
+
+                    Debug.Log("****************************");
+                    Debug.Log("fromGridX: " + fromGridX + ", fromGridY: " + fromGridY);
+                    Debug.Log("toGridX: " + toGridX + ", toGridY: " + toGridY);
+                    Debug.Log("step count:" + npcMovementStepStack.Count);
+                    Debug.Log("****************************");
+
+                }
+            }
+            
+        }
+        Debug.Log("step count:" + npcMovementStepStack.Count);
+        if (npcMovementStepStack.Count > 1)
+        {
+            UpdateTimesOnPath();
             npcMovementStepStack.Pop();
 
             npcMovement.SetScheduleEventDetails(npcScheduleEvent);
         }
     }
 
-    private void UpdateTiesOnPath()
+    public void UpdateTimesOnPath()
     {
         TimeSpan currentGameTime = TimeManager.Instance.GetGameTime();
 

@@ -1071,9 +1071,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcPath: {fileID: 2096782629}
   moveNPC: 0
-  finishPosition: {x: -26, y: 15}
-  idleDownAnimationClip: {fileID: 0}
-  eventAnimationClip: {fileID: 0}
+  toSceneName: 2
+  finishPosition: {x: -35, y: 48}
+  idleDownAnimationClip: {fileID: 7400000, guid: fd8d7be7e65aca44580559461a65abc2, type: 2}
+  eventAnimationClip: {fileID: 7400000, guid: fd8d7be7e65aca44580559461a65abc2, type: 2}
 --- !u!114 &327726569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0094f7420badf674f98d38d3b09f08cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sO_SceneRouteList: {fileID: 11400000, guid: 35dc9d1a87d6be04db50452620b16e86, type: 2}
   npcArray: []
 --- !u!1 &348530582
 GameObject:
@@ -1998,11 +2000,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8765420615554057873, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.57
+      value: -29.16
       objectReference: {fileID: 0}
     - target: {fileID: 8765420615554057873, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 41.98
+      value: 42.31
       objectReference: {fileID: 0}
     - target: {fileID: 8765420615554057873, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2034,6 +2036,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8765420615554057873, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8765420615554057875, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
+      propertyPath: blankAnimation
+      value: 
+      objectReference: {fileID: 7400000, guid: fd8d7be7e65aca44580559461a65abc2, type: 2}
+    - target: {fileID: 8765420615554057875, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
+      propertyPath: npcCurrentScene
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8765420615554057875, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}

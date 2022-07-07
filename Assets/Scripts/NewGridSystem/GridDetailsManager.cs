@@ -345,9 +345,10 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
 
                 gridOrigin.x = gridDetailsScriptableObject.originX;
                 gridOrigin.y = gridDetailsScriptableObject.originY;
+                
+                return true;
             }
 
-            return true;
         }
 
         return false;
