@@ -1982,6 +1982,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8673344360435380094, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
+      propertyPath: npcScheduleEventScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 5494f725ce422504e8f4fe24f6aaa403, type: 2}
     - target: {fileID: 8765420615554057873, guid: b18c7d09bc0eb0c44a05489cde7f7828, type: 3}
       propertyPath: m_RootOrder
       value: 1

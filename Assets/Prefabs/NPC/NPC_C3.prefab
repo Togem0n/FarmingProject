@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 8765420615554057885}
   - component: {fileID: 8765420615554057875}
   - component: {fileID: 8765420615554057874}
+  - component: {fileID: 8673344360435380094}
   m_Layer: 0
   m_Name: NPC_C3
   m_TagString: Untagged
@@ -468,6 +469,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680d0b3eb2f875040a7403c88d7d6af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8673344360435380094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8765420615554057879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e4d47e2a75d6e4fa6e53bcea19b4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcScheduleEventScriptableObject: {fileID: 0}
 --- !u!1 &8765420615742118142
 GameObject:
   m_ObjectHideFlags: 0
