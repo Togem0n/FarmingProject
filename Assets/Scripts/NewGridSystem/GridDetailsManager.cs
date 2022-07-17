@@ -12,7 +12,7 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
     private Tilemap dugTilemap;
     private Tilemap wateredTilemap;
     private Transform cropParentTransform;
-    private bool isFirstTimeSceneLoaded = true;
+    private bool isFirstTimeSceneLoaded = false;
     private Dictionary<string, GridDetails> gridDetailsDictionary;
 
     [HideInInspector] public Grid grid;
@@ -292,8 +292,11 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
                 this.gridDetailsDictionary = gridDetailsDictionary;
             }
 
+           
             sceneSave.boolDictionary = new Dictionary<string, bool>();
-            sceneSave.boolDictionary.Add("isFirstTimeLoaded", true);
+            sceneSave.boolDictionary.Add("isFirstTimeSceneLoaded", true);
+            Debug.Log("??dasdsadadsa?");
+            
 
             GameObjectSave.sceneData.Add(gridDetailsScriptableObject.sceneName.ToString(), sceneSave);
         }
@@ -384,11 +387,14 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
                 gridDetailsDictionary = sceneSave.gridDetailsDictionary;
             }
 
-            if (sceneSave.boolDictionary != null && sceneSave.boolDictionary.TryGetValue("isFirstTimeSceneLoaded", out bool storedIsFirstTimeSceneLoaded))
+            if (sceneSave.boolDictionary != null && sceneName == "Scene1_Farm" 
+                && sceneSave.boolDictionary.TryGetValue("isFirstTimeSceneLoaded", out bool storedIsFirstTimeSceneLoaded))
             {
                 isFirstTimeSceneLoaded = storedIsFirstTimeSceneLoaded;
             }
+
             Debug.Log("isfirsttime?" + isFirstTimeSceneLoaded);
+
             if (isFirstTimeSceneLoaded)
             {
                 Debug.Log("init crops");
