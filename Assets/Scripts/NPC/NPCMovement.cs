@@ -274,10 +274,13 @@ public class NPCMovement : MonoBehaviour
         {
             if(directionVector.x > 0)
             {
+                Debug.Log("walk right");
                 animator.SetBool(Settings.walkRight, true);
             }
             else
             {
+                Debug.Log("walk left");
+
                 animator.SetBool(Settings.walkLeft, true);
             }
         }
@@ -285,10 +288,14 @@ public class NPCMovement : MonoBehaviour
         {
             if (directionVector.y > 0)
             {
+                Debug.Log("walk up");
+
                 animator.SetBool(Settings.walkUp, true);
             }
             else
             {
+                Debug.Log("walk down");
+
                 animator.SetBool(Settings.walkDown, true);
             }
         }
@@ -296,10 +303,10 @@ public class NPCMovement : MonoBehaviour
 
     private void ResetMoveAnimation()
     {
-        animator.SetBool(Settings.walkRight, false);
-        animator.SetBool(Settings.walkLeft, false);
-        animator.SetBool(Settings.walkUp, false);
-        animator.SetBool(Settings.walkDown, false);
+        animator.SetBool("walk_down", false);
+        animator.SetBool("walk_up", false);
+        animator.SetBool("walk_left", false);
+        animator.SetBool("walk_right", false);
     }
 
     private void SetIdleAnimation()
