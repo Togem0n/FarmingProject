@@ -162,6 +162,15 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
         return gameTime;
     }
 
+    public void GoToNextDay()
+    {
+        day++;
+        hour = 6;
+        minute = 0;
+        second = 0;
+        EventHandler.CallAdvanceGameDayEvent(year, season, day, dayOfWeek, hour, minute, second);
+    }
+
     public void TestAdvanceGameMinute()
     {
         for(int i = 0; i < 60; i++)

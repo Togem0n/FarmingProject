@@ -169,19 +169,13 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
     private void DialogueInput()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(Interactable != null)
         {
-            if(Interactable != null)
-            {
+            if(!Interactable.needClick() || (Interactable.needClick() && Input.GetKeyDown(KeyCode.E))){
                 Interactable.Interact(this);
                 Debug.Log("interact");
             }
-            else
-            {
-                Debug.Log("not interactable");
-            }
-           
-        }
+        } 
     }
 
     public Vector3 GetPlyerViewportPosition()
@@ -230,7 +224,7 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
         if (Input.GetKey(KeyCode.L))
         {
-            SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene1_Farm.ToString(), transform.position);
+            TimeManager.Instance.GoToNextDay();
         }
     }
 

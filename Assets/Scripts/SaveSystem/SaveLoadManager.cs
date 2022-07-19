@@ -49,6 +49,8 @@ public class SaveLoadManager : SingletonMonoBehaviour<SaveLoadManager>
 
     public void SaveDataToFile()
     {
+        TimeManager.Instance.GoToNextDay();
+
         gameSave = new GameSave();
 
         if(iSaveableObjectList == null)

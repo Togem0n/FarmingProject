@@ -2098,6 +2098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 91b3800845bf18e4085adc25d69babbc, type: 2}
+  needPlayerInput: 1
 --- !u!114 &437733627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7796,6 +7797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: 91b3800845bf18e4085adc25d69babbc, type: 2}
+  needPlayerInput: 1
 --- !u!61 &1341632626
 BoxCollider2D:
   m_ObjectHideFlags: 0
