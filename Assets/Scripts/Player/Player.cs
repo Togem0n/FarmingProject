@@ -47,6 +47,11 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
     public Vector3Int useToolGridDirection;
     public Vector3Int useToolGridPosition;
 
+    // Dialogue system
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
+    public IInteractable Interactable { get; set; }
+
     // Others
     public Vector2 CurrentVelocity { get; private set; }
     public int FacingDirection { get; private set; }
@@ -110,6 +115,8 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
             GetPlayerInput();
 
             PlayerTestInput();
+
+            DialogueInput();
         }
 
         Statemachine.CurrentState.LogicUpdate();
@@ -160,6 +167,23 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
         }
     }
 
+    private void DialogueInput()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(Interactable != null)
+            {
+                Interactable.Interact(this);
+                Debug.Log("interact");
+            }
+            else
+            {
+                Debug.Log("not interactable");
+            }
+           
+        }
+    }
+
     public Vector3 GetPlyerViewportPosition()
     {
         return mainCamera.WorldToViewportPoint(transform.position);
@@ -172,6 +196,7 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
     public void DisablePlayerInput()
     {
+        ResetMovement();
         PlayerInputDisabled = true;
     }
 

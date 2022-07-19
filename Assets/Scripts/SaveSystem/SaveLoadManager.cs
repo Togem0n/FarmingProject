@@ -51,6 +51,11 @@ public class SaveLoadManager : SingletonMonoBehaviour<SaveLoadManager>
     {
         gameSave = new GameSave();
 
+        if(iSaveableObjectList == null)
+        {
+            Debug.Log("????????nmsl????????");
+        }
+
         foreach(ISaveable iSaveableObject in iSaveableObjectList)
         {
             gameSave.gameObjectData.Add(iSaveableObject.ISaveableUniqueID, iSaveableObject.ISaveableSave());
@@ -82,5 +87,10 @@ public class SaveLoadManager : SingletonMonoBehaviour<SaveLoadManager>
         {
             iSaveableObject.ISaveableRestoreScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    public void test()
+    {
+        Debug.Log("testttttttttttttttttttttttttttting");
     }
 }

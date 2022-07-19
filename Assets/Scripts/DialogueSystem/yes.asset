@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: yes
   m_EditorClassIdentifier: 
   dialogue:
-  - you clicked yes
+  - Game saved
   responses: []

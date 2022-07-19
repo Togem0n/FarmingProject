@@ -5,8 +5,9 @@ using System.Collections;
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text textLabel;
-    [SerializeField] private DialogueObject test;
     [SerializeField] private GameObject dialogueBox;
+
+    public bool IsOpen { get; private set; }
 
     private TypewritterEffect typewritterEffect;
     private ResponseHandler responseHandler;
@@ -16,11 +17,17 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
 
         CloseDialogueBox();
-        ShowDialogue(test);
+    }
+
+    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    {
+        responseHandler.AddResponseEvents(responseEvents);
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        IsOpen = true;
+        Player.Instance.DisablePlayerInput();
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
@@ -49,6 +56,8 @@ public class DialogueUI : MonoBehaviour
 
     private void CloseDialogueBox()
     {
+        Player.Instance.EnablePlayerInput();
+        IsOpen = false;
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
     }

@@ -79,6 +79,7 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
             UpdateGameSecond();
         }
     }
+
     private void UpdateGameSecond()
     {
         second++;

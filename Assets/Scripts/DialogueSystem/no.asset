@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: no
   m_EditorClassIdentifier: 
   dialogue:
-  - you clicked no
+  - okey
   responses: []
