@@ -4,6 +4,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
 {
     [SerializeField] private DialogueObject dialogueObject;
     [SerializeField] public bool needPlayerInput = true;
+    [SerializeField] private DialogueObject[] dialogueObjects;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,5 +36,11 @@ public class DialogueActivator : MonoBehaviour, IInteractable
     public bool needClick()
     {
         return needPlayerInput;
+    }
+
+    public void ShowDialogue()
+    {
+        Debug.Log("nmsl");
+        GameObject.FindWithTag("Player").GetComponent<Player>().DialogueUI.ShowDialogue(dialogueObject);
     }
 }

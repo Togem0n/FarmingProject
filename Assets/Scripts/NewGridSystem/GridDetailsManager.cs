@@ -4,6 +4,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 [RequireComponent(typeof(GenerateGUID))]
 public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, ISaveable
@@ -21,6 +23,8 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
     [SerializeField] private Tile wateredTile;
     [SerializeField] private CropDetailsScriptableObjects cropDetailsList = null;
     [SerializeField] private GridDetailsScriptableObject[] gridDetailsScriptableObjectArray = null;
+    [SerializeField] private List<PlayableDirector> playableDirectors;
+    [SerializeField] private List<TimelineAsset> timelines;
 
     private string _iSaveablUniqueID;
     public string ISaveableUniqueID { get { return _iSaveablUniqueID; } set { _iSaveablUniqueID = value; } }
@@ -292,11 +296,8 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
                 this.gridDetailsDictionary = gridDetailsDictionary;
             }
 
-           
             sceneSave.boolDictionary = new Dictionary<string, bool>();
             sceneSave.boolDictionary.Add("isFirstTimeSceneLoaded", true);
-            Debug.Log("??dasdsadadsa?");
-            
 
             GameObjectSave.sceneData.Add(gridDetailsScriptableObject.sceneName.ToString(), sceneSave);
         }
@@ -398,6 +399,7 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
             if (isFirstTimeSceneLoaded)
             {
                 Debug.Log("init crops");
+                playableDirectors[0].Play(timelines[0]);
                 EventHandler.CallInstantiateCropPrefabsEvent();
             }
 

@@ -228,6 +228,11 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
         }
     }
 
+    public void TimelineEventTest()
+    {
+        Debug.Log("timelineeventtest");
+    }
+
     public void SetUseToolDirection(float mousePosX, float mousePosY)
     {
         Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(new Vector3(mousePosX, mousePosY, -mainCamera.transform.position.z));
