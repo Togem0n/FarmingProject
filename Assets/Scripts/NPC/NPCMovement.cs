@@ -396,8 +396,6 @@ public class NPCMovement : MonoBehaviour
         {
             SetNPCInactiveInScene();
         }
-        Debug.Log("npc current scene:" + npcCurrentScene.ToString());
-        Debug.Log("get active scene:" + SceneManager.GetActiveScene().name);
 
         npcPreviousMovementStepScene = npcCurrentScene;
 

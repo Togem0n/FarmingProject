@@ -4,6 +4,7 @@ using System.Collections;
 
 public class DialogueUI : MonoBehaviour
 {
+    [SerializeField] private GameObject inventoryBar;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private GameObject dialogueBox;
 
@@ -27,8 +28,18 @@ public class DialogueUI : MonoBehaviour
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         IsOpen = true;
-        Player.Instance.DisablePlayerInput();
+
         dialogueBox.SetActive(true);
+
+        inventoryBar.SetActive(false);
+
+        Player.Instance.DisablePlayerInput();
+
+        if (TimelineManager.Instance.timelineToPlay != null)
+        {
+            TimelineManager.Instance.PauseTimeline();
+        }
+
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
 
@@ -56,9 +67,19 @@ public class DialogueUI : MonoBehaviour
 
     private void CloseDialogueBox()
     {
-        Player.Instance.EnablePlayerInput();
+
+        if (TimelineManager.Instance.timelineToPlay != null)
+        {
+            TimelineManager.Instance.ResumeTimeline();
+        }
+        else
+        {
+            Player.Instance.EnablePlayerInput();
+        }
+
         IsOpen = false;
         dialogueBox.SetActive(false);
+        inventoryBar.SetActive(true);
         textLabel.text = string.Empty;
     }
 }

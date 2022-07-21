@@ -101,7 +101,7 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
     private void Start()
     {
-        EventHandler.AfterSceneLoadFadeInEvent += EnablePlayerInput;
+        // EventHandler.AfterSceneLoadFadeInEvent += EnablePlayerInput;
 
         FacingDirection = 1;
         Statemachine.Initialize(IdleState);
@@ -190,6 +190,7 @@ public class Player : SingletonMonoBehaviour<Player>, ISaveable
 
     public void DisablePlayerInput()
     {
+        Debug.Log("stop move");
         ResetMovement();
         PlayerInputDisabled = true;
     }

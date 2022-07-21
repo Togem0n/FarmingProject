@@ -394,18 +394,15 @@ public class GridDetailsManager : SingletonMonoBehaviour<GridDetailsManager>, IS
                 isFirstTimeSceneLoaded = storedIsFirstTimeSceneLoaded;
             }
 
-            Debug.Log("isfirsttime?" + isFirstTimeSceneLoaded);
-
             if (isFirstTimeSceneLoaded)
             {
                 Debug.Log("init crops");
-                playableDirectors[0].Play(timelines[0]);
+                TimelineManager.Instance.SetTimelineToPlay("NPC_C3Timeline", true);
                 EventHandler.CallInstantiateCropPrefabsEvent();
             }
 
             if (gridDetailsDictionary.Count > 0)
             {
-                Debug.Log(gridDetailsDictionary.Count);
                 ClearDisplayedGridDetails();
                 DisplayGridDetails();
             }

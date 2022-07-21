@@ -38,9 +38,20 @@ public class DialogueActivator : MonoBehaviour, IInteractable
         return needPlayerInput;
     }
 
-    public void ShowDialogue()
+    public void ShowDialogue(string name)
     {
-        Debug.Log("nmsl");
-        GameObject.FindWithTag("Player").GetComponent<Player>().DialogueUI.ShowDialogue(dialogueObject);
+        SetDialogueToPlay(name);
+        Player.Instance.DialogueUI.ShowDialogue(dialogueObject);
+    }
+
+    public void SetDialogueToPlay(string name)
+    {
+        foreach(DialogueObject dialogueObject in dialogueObjects)
+        {
+            if (dialogueObject.Name == name)
+            {
+                this.dialogueObject = dialogueObject;
+            }
+        }
     }
 }

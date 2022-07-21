@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9372c29e9e6bcc4da35fb900cc22aea, type: 3}
   m_Name: yes
   m_EditorClassIdentifier: 
+  name: 
   dialogue:
-  - Game saved
+  - Have a nice day
   responses: []

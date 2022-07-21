@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine.Timeline;
+using UnityEngine.Playables;
 
 public delegate void MovementDelegate(float inputX, float inputY, bool isWalking, bool isRunning, bool isIdle, bool isCarrying,
     ToolEffect toolEffect, 
@@ -178,6 +180,14 @@ public static class EventHandler
         }
     }
 
+    public static event Action<string> AfterSceneLoadFadeInPlayTimeline;
 
-
+    public static void CallAfterSceneLoadFadeInPlayTimeline(string timelineName)
+    {
+        if (AfterSceneLoadFadeInPlayTimeline != null)
+        {
+            AfterSceneLoadFadeInPlayTimeline(timelineName);
+        }
+    }
+    // public static event Action<PlayableDirector> OnPlayableDirectorStopped;
 }
