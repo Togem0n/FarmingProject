@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISaveable
 {
-
+    #region Variables
     private int selectedItemCode = -1;
     private int selectedItemIndex = -1;
     private string iSaveableUniqueID;
@@ -21,6 +21,7 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>, ISavea
     public string ISaveableUniqueID { get => iSaveableUniqueID; set => iSaveableUniqueID = value; }
     public List<InventoryItem> InventoryList { get => inventoryList; }
     public GameObjectSave GameObjectSave { get => _gameObjectSave; set => _gameObjectSave = value; }
+    #endregion
 
     #region Life Cycle
 

@@ -4,6 +4,7 @@ using System;
 
 public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
 {
+    #region Varibles
     private int year = 1;
     private Season season = Season.Spring;
     private int day = 1;
@@ -20,6 +21,9 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
 
     private GameObjectSave _gameObjectSave;
     public GameObjectSave GameObjectSave { get => _gameObjectSave; set => _gameObjectSave = value; }
+    #endregion
+
+    #region Life Cycle
 
     protected override void Awake()
     {
@@ -67,6 +71,9 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
             GameTick();
         }
     }
+    #endregion
+
+    #region Gametime Update Function
 
     private void GameTick()
     {
@@ -186,6 +193,10 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
         }
     }
 
+    #endregion
+
+    #region ISaveable
+
     public void ISaveableRegister()
     {
         SaveLoadManager.Instance.iSaveableObjectList.Add(this);
@@ -254,4 +265,5 @@ public class TimeManager : SingletonMonoBehaviour<TimeManager>, ISaveable
     {
 
     }
+    #endregion
 }

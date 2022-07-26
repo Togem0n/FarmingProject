@@ -53,15 +53,6 @@ TagManager:
   - name: Background
     uniqueID: 3948272483
     locked: 0
-  - name: Decoration1
-    uniqueID: 2706023177
-    locked: 0
-  - name: Decoration2
-    uniqueID: 1578279281
-    locked: 0
-  - name: Fence
-    uniqueID: 315721927
-    locked: 0
   - name: DugTilemap
     uniqueID: 3424205973
     locked: 0
